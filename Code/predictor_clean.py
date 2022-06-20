@@ -295,6 +295,7 @@ def create_model(batch_size, length):
     print("length")
     print(length)
 
+    # pab1 model
     # model = tf.keras.Sequential([
     #        tf.keras.layers.Input(batch_input_shape=input_shape),
     # #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
@@ -320,6 +321,7 @@ def create_model(batch_size, length):
     #        tf.keras.layers.Dense(1)
     # ])
 
+    # bgl3 model
     # model = tf.keras.Sequential([
     #       tf.keras.layers.Input(batch_input_shape=input_shape),
     #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
@@ -359,7 +361,7 @@ def main(dataset, settings):
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 64
+        BATCH_SIZE = 64     # 64 ube4b, 128 pab1/bgl3
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -424,14 +426,44 @@ def main(dataset, settings):
 
         history = run_experiment(model, keras.losses.MeanSquaredError(), train_dataset, test_dataset, num_epochs)
 
+        print("successfully ran experiment!!!")
+
         # Get samples to use in validation
         sample = full_size - train_size    # number of samples
+
+        print("reached examples and targets line")
         examples, targets = list(test_dataset.unbatch().shuffle(BATCH_SIZE * 10).batch(sample))[0]
 
-        predicted = model(examples).numpy()
+        print("successfully assigned examples and targets")
 
+        print("reached predictions part")
+
+        print(type(model(examples)))
+
+        # predicted = []
+        # for ex in examples:
+        #     print('model(ex).numpy() type')
+        #     print(type(model(ex).numpy()))
+        #     predicted.append(model(ex).numpy())
+
+        predicted = model(examples)  # <- allocator issue on this line
+        print(predicted)
+        predicted = predicted.numpy()
+        print("passed predicted line")
+
+        # predicted = model(examples)
+
+        # print("passed model line! on numpy line")
+
+        # predicted = predicted.numpy()
+
+        print("successfully assigned predictions!!!")
+
+        print("reached this_r part")
 
         this_r = scipy.stats.pearsonr([predicted[ii][0] for ii in range(sample)], [targets[ii] for ii in range(sample)])
+
+        print("successfully passed this_r part!!!")
 
         if best_r == None or this_r > best_r:
             best_r = this_r
@@ -452,8 +484,8 @@ def main(dataset, settings):
     # plt.ylabel('loss')
     # plt.legend(['train', 'test'], loc='upper left')
     # plt.show()
-    open('last_loss_curve_ube4b_ss_3000_lim.txt','w').write(str(best_history.history['loss']))
-    open('last_val_loss_curve_ube4b_ss_3000_lim.txt', 'w').write(str(best_history.history['val_loss']))
+    open('last_loss_curve_ube4b_all.txt','w').write(str(best_history.history['loss']))
+    open('last_val_loss_curve_ube4b_all.txt', 'w').write(str(best_history.history['val_loss']))
 
     predicted = best_model(best_examples).numpy()
     for idx in range(best_sample):
@@ -466,8 +498,8 @@ def main(dataset, settings):
 
     pred = [predicted[idx][0] for idx in range(best_sample)]
 
-    open('pred_ube4b_ss_3000_lim.txt', 'w').write(str(pred))
-    open('best_targets_ube4b_ss_3000_lim.txt', 'w').write(str(best_targets))
+    open('pred_ube4b_all.txt', 'w').write(str(pred))
+    open('best_targets_ube4b_all.txt', 'w').write(str(best_targets))
 
     # plt.scatter(pred, best_targets, s=3)#, c=colors)
     # plt.plot([0, 1], [0, 1])
@@ -514,13 +546,14 @@ if __name__ == "__main__":
 
     # this stuff is needed
     # seq_score_name= input('Enter file name: ')
-    # seq_and_score = 'ube4b_MLformat_all.txt'  # set the path to the training data file here
+    # seq_and_score = 'ube4b_MLformat_all_90960.txt'  # set the path to the training data file here
+    seq_and_score = 'ube4b_MLformat_80.txt'
     # seq_and_score = 'bgl_MLformat_all.txt'  # set the path to the training data file here
     # seq_and_score = 'ube4b_MLformat_3200.txt'
     # seq_and_score = 'bgl3_MLformat_ss_3000_lim.txt'
     # seq_and_score = 'bgl3_MLformat_not_ss_3000_lim.txt'
     # seq_and_score = 'ube4b_MLformat_ss_3000_lim.txt'
-    seq_and_score = 'ube4b_MLformat_not_ss_3000_lim.txt'
+    # seq_and_score = 'ube4b_MLformat_not_ss_3000_lim.txt'
 
     settings.seq = open(seq_and_score, 'r').readlines()[0].replace('\n', '').split(':')[0].split()
 
