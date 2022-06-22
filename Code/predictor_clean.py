@@ -296,30 +296,30 @@ def create_model(batch_size, length):
     print(length)
 
     # pab1 model
-    # model = tf.keras.Sequential([
-    #        tf.keras.layers.Input(batch_input_shape=input_shape),
-    # #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
-    # #       # tf.expand_dims(batch_size, axis=1),
-    # #       # tf.keras.layers.Embedding(20, 15),
-    # #       # tf.expand_dims(axis=-1),
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu, input_shape=input_shape),  # relu performs much better than linear
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #
-    # #       # tf.keras.layers.BatchNormalization(1),      # subjectively performing much better than dropout
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #
-    # #       # tf.keras.layers.BatchNormalization(1),
-    # #       tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #       # tf.keras.layers.GlobalAveragePooling1D(),   # global avg. pooling or flatten --> dense "head" network
-    #        tf.keras.layers.Flatten(),
-    # #
-    #        tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-    #        tf.keras.layers.Dropout(0.2),
-    #        tf.keras.layers.Dense(1)
-    # ])
+    model = tf.keras.Sequential([
+           tf.keras.layers.Input(batch_input_shape=input_shape),
+    #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
+    #       # tf.expand_dims(batch_size, axis=1),
+    #       # tf.keras.layers.Embedding(20, 15),
+    #       # tf.expand_dims(axis=-1),
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu, input_shape=input_shape),  # relu performs much better than linear
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #
+    #       # tf.keras.layers.BatchNormalization(1),      # subjectively performing much better than dropout
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #
+    #       # tf.keras.layers.BatchNormalization(1),
+    #       tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #       # tf.keras.layers.GlobalAveragePooling1D(),   # global avg. pooling or flatten --> dense "head" network
+           tf.keras.layers.Flatten(),
+    #
+           tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+           tf.keras.layers.Dropout(0.2),
+           tf.keras.layers.Dense(1)
+    ])
 
     # bgl3 model
     # model = tf.keras.Sequential([
@@ -336,16 +336,16 @@ def create_model(batch_size, length):
     # ])
 
     # ube4b model
-    model = tf.keras.Sequential([
-          tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-
-          tf.keras.layers.Flatten(),
-
-          tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-          tf.keras.layers.Dropout(0.2),
-          tf.keras.layers.Dense(1)
-      ])
+    # model = tf.keras.Sequential([
+    #       tf.keras.layers.Input(batch_input_shape=input_shape),
+    #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #
+    #       tf.keras.layers.Flatten(),
+    #
+    #       tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Dropout(0.2),
+    #       tf.keras.layers.Dense(1)
+    #   ])
 
     model.summary()
 
@@ -361,7 +361,7 @@ def main(dataset, settings):
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 64     # 64 ube4b, 128 pab1/bgl3
+        BATCH_SIZE = 128     # 64 ube4b, 128 pab1/bgl3
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -438,7 +438,7 @@ def main(dataset, settings):
 
         print("reached predictions part")
 
-        print(type(model(examples)))
+        # print(type(model(examples)))
 
         # predicted = []
         # for ex in examples:
@@ -446,10 +446,31 @@ def main(dataset, settings):
         #     print(type(model(ex).numpy()))
         #     predicted.append(model(ex).numpy())
 
-        predicted = model(examples)  # <- allocator issue on this line
+
+        examples_first_quart = examples[:int(len(examples)/4)]
+        examples_second_quart = examples[int(len(examples)/4):int(len(examples)/2)]
+        examples_third_quart = examples[int(len(examples)/2):int(len(examples)/(4/3))]
+        examples_fourth_quart = examples[int(len(examples)/(4/3)):]
+
+        print("reaches first_pred")
+        first_pred = model(examples_first_quart).numpy()
+
+        print("reaches second pred")
+        second_pred = model(examples_second_quart).numpy()
+
+        print("reaches third pred")
+        third_pred = model(examples_third_quart).numpy()
+
+        print("reaches fourth pred")
+        fourth_pred = model(examples_fourth_quart).numpy()
+
+        print(first_pred)
+        print(second_pred)
+        print(third_pred)
+        print(fourth_pred)
+
+        predicted = np.concatenate((first_pred, second_pred, third_pred, fourth_pred), axis=0)
         print(predicted)
-        predicted = predicted.numpy()
-        print("passed predicted line")
 
         # predicted = model(examples)
 
@@ -484,10 +505,12 @@ def main(dataset, settings):
     # plt.ylabel('loss')
     # plt.legend(['train', 'test'], loc='upper left')
     # plt.show()
-    open('last_loss_curve_ube4b_all.txt','w').write(str(best_history.history['loss']))
-    open('last_val_loss_curve_ube4b_all.txt', 'w').write(str(best_history.history['val_loss']))
+    open('last_loss_curve_pab1_ss_2880_lim.txt','w').write(str(best_history.history['loss']))
+    open('last_val_loss_curve_pab1_ss_2880_lim.txt', 'w').write(str(best_history.history['val_loss']))
 
     predicted = best_model(best_examples).numpy()
+
+
     for idx in range(best_sample):
         print(f"Predicted: {round(float(predicted[idx][0]), 3)} - Actual: {round(float(targets[idx]), 3)}")
         # if round(float(targets[idx]), 7) in [round(val, 7) for val in [0.246499653, 0.277258577, 0.292320875, 0.246250577, 0.200327526]]:
@@ -498,8 +521,8 @@ def main(dataset, settings):
 
     pred = [predicted[idx][0] for idx in range(best_sample)]
 
-    open('pred_ube4b_all.txt', 'w').write(str(pred))
-    open('best_targets_ube4b_all.txt', 'w').write(str(best_targets))
+    open('pred_pab1_ss_2880_lim.txt', 'w').write(str(pred))
+    open('best_targets_pab1_ss_2880_lim.txt', 'w').write(str(best_targets))
 
     # plt.scatter(pred, best_targets, s=3)#, c=colors)
     # plt.plot([0, 1], [0, 1])
@@ -547,13 +570,18 @@ if __name__ == "__main__":
     # this stuff is needed
     # seq_score_name= input('Enter file name: ')
     # seq_and_score = 'ube4b_MLformat_all_90960.txt'  # set the path to the training data file here
-    seq_and_score = 'ube4b_MLformat_80.txt'
+    # seq_and_score = 'ube4b_MLformat_80.txt'
     # seq_and_score = 'bgl_MLformat_all.txt'  # set the path to the training data file here
     # seq_and_score = 'ube4b_MLformat_3200.txt'
     # seq_and_score = 'bgl3_MLformat_ss_3000_lim.txt'
     # seq_and_score = 'bgl3_MLformat_not_ss_3000_lim.txt'
     # seq_and_score = 'ube4b_MLformat_ss_3000_lim.txt'
     # seq_and_score = 'ube4b_MLformat_not_ss_3000_lim.txt'
+    # seq_and_score = 'pab1_MLformat_ss_2880_lim.txt' // predictor_clean.py_pab1_ss_2880_lim
+    # seq_and_score = 'pab1_MLformat_not_ss_2880_lim.txt' // predictor_clean.py_pab1_not_ss_2880_lim
+    # seq_and_score = 'bgl3_MLformat_ss_2880_lim.txt' //
+    # seq_and_score = 'bgl3_MLformat_not_ss_2880_lim.txt' // 
+
 
     settings.seq = open(seq_and_score, 'r').readlines()[0].replace('\n', '').split(':')[0].split()
 
