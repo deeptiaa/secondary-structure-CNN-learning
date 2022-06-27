@@ -35,3 +35,10 @@ Meeting Notes 6/23 (next meeting July 5th)
 
 Questions
 - why is pab1 consistently higher in terms of secondary structure?
+
+
+## Choosing Other proteins
+- 3 from curated database:
+   - nuclease - (ddG 1282 vals)
+   - lysozyme - (ddG 1376 vals)
+   - protein G - (ddg 1221 vals)
