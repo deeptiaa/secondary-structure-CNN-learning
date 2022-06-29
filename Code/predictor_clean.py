@@ -322,30 +322,30 @@ def create_model(batch_size, length):
     # ])
 
     # bgl3 model
-    # model = tf.keras.Sequential([
-    #       tf.keras.layers.Input(batch_input_shape=input_shape),
-    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    #
-    #       tf.keras.layers.Flatten(),
-    #
-    #       tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-    #       tf.keras.layers.Dropout(0.2),
-    #       tf.keras.layers.Dense(1)
-    # ])
-
-    # ube4b model
     model = tf.keras.Sequential([
           tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
 
           tf.keras.layers.Flatten(),
 
           tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
           tf.keras.layers.Dropout(0.2),
           tf.keras.layers.Dense(1)
-      ])
+    ])
+
+    # ube4b model
+    # model = tf.keras.Sequential([
+    #       tf.keras.layers.Input(batch_input_shape=input_shape),
+    #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #
+    #       tf.keras.layers.Flatten(),
+    #
+    #       tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Dropout(0.2),
+    #       tf.keras.layers.Dense(1)
+    #   ])
 
     model.summary()
 
@@ -361,7 +361,7 @@ def main(dataset, settings):
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 64     # 64 ube4b, 128 pab1/bgl3
+        BATCH_SIZE = 128     # 64 ube4b, 128 pab1/bgl3
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -572,18 +572,20 @@ if __name__ == "__main__":
     # seq_and_score = 'ube4b_MLformat_all_90960.txt'  # set the path to the training data file here
     # seq_and_score = 'ube4b_MLformat_80.txt'
     # seq_and_score = 'bgl_MLformat_all.txt'  # set the path to the training data file here
-    # seq_and_score = 'ube4b_MLformat_3200.txt'
-    # seq_and_score = 'bgl3_MLformat_ss_3000_lim.txt'
-    # seq_and_score = 'bgl3_MLformat_not_ss_3000_lim.txt'
-    # seq_and_score = 'ube4b_MLformat_ss_3000_lim.txt'
-    # seq_and_score = 'ube4b_MLformat_not_ss_3000_lim.txt'
+
     # seq_and_score = 'pab1_MLformat_ss_2880_lim.txt' # predictor_clean.py_pab1_ss_2880_lim
     # seq_and_score = 'pab1_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_pab1_not_ss_2880_lim
     # seq_and_score = 'bgl3_MLformat_ss_2880_lim.txt' # predictor_clean.py_bgl3_ss_2880_lim
     # seq_and_score = 'bgl3_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_bgl3_not_ss_2880_lim
     # seq_and_score = 'ube4b_MLformat_ss_2880_lim.txt' # predictor_clean.py_ube4b_ss_2880_lim
-    seq_and_score = 'ube4b_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_ube4b_not_ss_2880_lim
+    # seq_and_score = 'ube4b_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_ube4b_not_ss_2880_lim
 
+    # seq_and_score = 'pab1_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_pab1_ss_v2_2880_lim
+    # seq_and_score = 'pab1_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_pab1_not_ss_v2_2880_lim
+    # seq_and_score = 'bgl3_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_bgl3_ss_v2_2880_lim
+    # seq_and_score = 'bgl3_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_bgl3_not_ss_v2_2880_lim
+    # seq_and_score = 'ube4b_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_ube4b_ss_v2_2880_lim
+    # seq_and_score = 'ube4b_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_ube4b_not_ss_v2_2880_lim
 
 
     settings.seq = open(seq_and_score, 'r').readlines()[0].replace('\n', '').split(':')[0].split()

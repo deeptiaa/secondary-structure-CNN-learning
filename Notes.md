@@ -24,13 +24,13 @@ Documentation:
 
 
 Meeting Notes 6/23 (next meeting July 5th)
-- Limiting the number of mutations in sec. str. vs. out of sec. str. (Friday)
-  - changing the blocks to be equal
-- running again with the limiting number (do it again with the chunks?) (Monday)
-- running with alpha helices versus beta sheets (Tuesday)
-- finding ~10 proteins with functional data (Tuesday/Wednesday)
-- run all 10 (Wednesday/Thursday)
-- fraction of sec. str. vs. learnability
+- ~~Limiting the number of mutations in sec. str. vs. out of sec. str. (Friday)~~
+  - ~~changing the blocks to be equal~~
+- running again with the limiting number (do it again with the chunks?) (Tuesday)
+- running with alpha helices versus beta sheets (Wednesday)
+- finding ~10 proteins with functional data (Wednesday/Thursday)
+- run all 10 (Friday)
+- fraction of sec. str. vs. learnability (Monday)
 
 
 Questions
