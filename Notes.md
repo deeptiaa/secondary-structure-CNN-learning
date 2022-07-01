@@ -42,3 +42,12 @@ Questions
    - nuclease - (ddG 1282 vals)
    - lysozyme - (ddG 1376 vals)
    - protein G - (ddg 1221 vals)
+- 2 from Gelman et al.
+  - GB1 -
+  - avGFP -
+
+
+Pip table w/ percent secondary structure
+
+## Associated Files
+- third run for limiting mutations (v3)

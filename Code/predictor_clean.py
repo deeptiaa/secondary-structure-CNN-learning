@@ -568,7 +568,7 @@ if __name__ == "__main__":
     session = tf.compat.v1.Session(config=config)
 
     # this stuff is needed
-    # seq_score_name= input('Enter file name: ')
+    seq_and_score = input('Enter file name: ')
     # seq_and_score = 'ube4b_MLformat_all_90960.txt'  # set the path to the training data file here
     # seq_and_score = 'ube4b_MLformat_80.txt'
     # seq_and_score = 'bgl_MLformat_all.txt'  # set the path to the training data file here
