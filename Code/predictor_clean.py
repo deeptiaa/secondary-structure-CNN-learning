@@ -322,30 +322,30 @@ def create_model(batch_size, length):
     # ])
 
     # bgl3 model
-    model = tf.keras.Sequential([
-          tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-
-          tf.keras.layers.Flatten(),
-
-          tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-          tf.keras.layers.Dropout(0.2),
-          tf.keras.layers.Dense(1)
-    ])
-
-    # ube4b model
     # model = tf.keras.Sequential([
     #       tf.keras.layers.Input(batch_input_shape=input_shape),
-    #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
     #
     #       tf.keras.layers.Flatten(),
     #
     #       tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
     #       tf.keras.layers.Dropout(0.2),
     #       tf.keras.layers.Dense(1)
-    #   ])
+    # ])
+
+    # ube4b model
+    model = tf.keras.Sequential([
+          tf.keras.layers.Input(batch_input_shape=input_shape),
+          tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+
+          tf.keras.layers.Flatten(),
+
+          tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+          tf.keras.layers.Dropout(0.2),
+          tf.keras.layers.Dense(1)
+      ])
 
     model.summary()
 
@@ -361,7 +361,7 @@ def main(dataset, settings):
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 128     # 64 ube4b, 128 pab1/bgl3
+        BATCH_SIZE = 64     # 64 ube4b, 128 pab1/bgl3
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -521,7 +521,7 @@ def main(dataset, settings):
 
     pred = [predicted[idx][0] for idx in range(best_sample)]
 
-    open('pred_bgl3_ss_2880_lim.txt', 'w').write(str(pred))
+    open('pred_ube_ss_2880_lim.txt', 'w').write(str(pred))
     open('best_targets_bgl3_ss_2880_lim.txt', 'w').write(str(best_targets))
 
     # plt.scatter(pred, best_targets, s=3)#, c=colors)
