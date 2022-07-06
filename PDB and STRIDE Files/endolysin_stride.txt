@@ -1,0 +1,232 @@
+REM  --------------------------------------------------------------------  102L
+REM                                                                        102L
+REM  STRIDE: Knowledge-based secondary structure assignment                102L
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         102L
+REM                                                                        102L
+REM  Residue accessible surface area calculation                           102L
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 102L
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       102L
+REM                                                                        102L
+REM  ------------------------ General information -----------------------  102L
+REM                                                                        102L
+HDR  HYDROLASE(O-GLYCOSYL)                   29-SEP-92   102L              102L
+CMP  MOL_ID: 1;                                                            102L
+CMP   MOLECULE: T4 LYSOZYME;                                               102L
+CMP   CHAIN: A;                                                            102L
+CMP   ENGINEERED: YES                                                      102L
+SRC  MOL_ID: 1;                                                            102L
+SRC   ORGANISM_SCIENTIFIC: ENTEROBACTERIA PHAGE T4;                        102L
+SRC   ORGANISM_TAXID: 10665;                                               102L
+SRC   EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              102L
+SRC   EXPRESSION_SYSTEM_PLASMID: M13                                       102L
+AUT  D.W.HEINZ,B.W.MATTHEWS                                                102L
+REM                                                                        102L
+REM  -------------------- Secondary structure summary -------------------  102L
+REM                                                                        102L
+CHN  /home/proj/stride/tmp/tmpNv3i5epdb A                                  102L
+REM                                                                        102L
+REM                .         .         .         .         .               102L
+SEQ  1    MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAAKSELDKA   50          102L
+STR         HHHHHHHHH  EEEEEETTTT EEEETTEEEE   TTTTHHHHHHHHH               102L
+REM                                                                        102L
+REM                .         .         .         .         .               102L
+SEQ  51   IGRNTNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRAAL  100          102L
+STR       H   TTTB  HHHHHHHHHHHHHHHHHHHHH  HHHHHHHH  HHHHHHH               102L
+REM                                                                        102L
+REM                .         .         .         .         .               102L
+SEQ  101  INMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRV  150          102L
+STR       HHHHHHH HHHHHH HHHHHHHHH  HHHHHHHHH  HHHHH HHHHHHH               102L
+REM                                                                        102L
+REM                .                                                       102L
+SEQ  151  ITTFRTGTWDAYK                                       163          102L
+STR       HHHHHH   GGG                                                     102L
+REM                                                                        102L
+REM                                                                        102L
+REM                                                                        102L
+LOC  AlphaHelix   ILE     3 A      GLU     11 A                            102L
+LOC  AlphaHelix   ALA    41 A      ILE     50 A                            102L
+LOC  AlphaHelix   LYS    60 A      ARG     80 A                            102L
+LOC  AlphaHelix   LYS    83 A      SER     90 A                            102L
+LOC  AlphaHelix   ALA    93 A      MET    106 A                            102L
+LOC  AlphaHelix   GLU   108 A      GLY    113 A                            102L
+LOC  AlphaHelix   THR   115 A      GLN    123 A                            102L
+LOC  AlphaHelix   TRP   126 A      ALA    134 A                            102L
+LOC  AlphaHelix   ARG   137 A      GLN    141 A                            102L
+LOC  AlphaHelix   PRO   143 A      THR    155 A                            102L
+LOC  310Helix     ASP   159 A      TYR    161 A                            102L
+LOC  Strand       ARG    14 A      LYS     19 A                            102L
+LOC  Strand       TYR    25 A      GLY     28 A                            102L
+LOC  Strand       HIS    31 A      THR     34 A                            102L
+LOC  TurnI        ASP    20 A      GLY     23 A                            102L
+LOC  TurnIV       ILE    27 A      GLY     30 A                            102L
+LOC  TurnIV       GLY    28 A      HIS     31 A                            102L
+LOC  TurnIV       SER    38 A      ALA    40A A                            102L
+LOC  TurnIV       LEU    39 A      ALA     41 A                            102L
+LOC  TurnI'       THR    54 A      VAL     57 A                            102L
+REM                                                                        102L
+REM  --------------- Detailed secondary structure assignment-------------  102L
+REM                                                                        102L
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      102L
+ASG  MET A    1    1    C          Coil    360.00    150.23      73.9      102L
+ASG  ASN A    2    2    C          Coil   -147.97    175.09      69.3      102L
+ASG  ILE A    3    3    H    AlphaHelix    -51.92    -42.98      26.3      102L
+ASG  PHE A    4    4    H    AlphaHelix    -66.25    -45.34      76.7      102L
+ASG  GLU A    5    5    H    AlphaHelix    -66.33    -37.85     101.8      102L
+ASG  MET A    6    6    H    AlphaHelix    -63.36    -51.37       0.0      102L
+ASG  LEU A    7    7    H    AlphaHelix    -67.32    -27.86       0.0      102L
+ASG  ARG A    8    8    H    AlphaHelix    -67.27    -32.55     103.4      102L
+ASG  ILE A    9    9    H    AlphaHelix    -71.88    -42.39      86.6      102L
+ASG  ASP A   10   10    H    AlphaHelix    -70.93    -36.01      19.4      102L
+ASG  GLU A   11   11    H    AlphaHelix   -100.91    -26.62      44.9      102L
+ASG  GLY A   12   12    C          Coil     73.39   -170.90      21.7      102L
+ASG  LEU A   13   13    C          Coil   -135.03    122.85      40.0      102L
+ASG  ARG A   14   14    E        Strand   -128.97    127.76     137.4      102L
+ASG  LEU A   15   15    E        Strand    -91.74     -1.17      66.8      102L
+ASG  LYS A   16   16    E        Strand   -122.30    151.54      96.0      102L
+ASG  ILE A   17   17    E        Strand    -56.83    136.99      18.3      102L
+ASG  TYR A   18   18    E        Strand   -140.35    170.35      27.6      102L
+ASG  LYS A   19   19    E        Strand   -102.42    135.39     125.6      102L
+ASG  ASP A   20   20    T          Turn    -75.84   -177.32      47.8      102L
+ASG  THR A   21   21    T          Turn    -57.35    -19.17     109.3      102L
+ASG  GLU A   22   22    T          Turn   -102.65      3.06      70.0      102L
+ASG  GLY A   23   23    T          Turn     81.10     18.12      35.3      102L
+ASG  TYR A   24   24    C          Coil    -95.33    153.29      75.0      102L
+ASG  TYR A   25   25    E        Strand    -73.81    123.43      32.7      102L
+ASG  THR A   26   26    E        Strand   -137.37    166.82       2.8      102L
+ASG  ILE A   27   27    E        Strand   -153.87    165.36       0.0      102L
+ASG  GLY A   28   28    E        Strand     63.06   -124.40       0.0      102L
+ASG  ILE A   29   29    T          Turn   -106.80     71.71       3.4      102L
+ASG  GLY A   30   30    T          Turn     72.73     25.55      15.0      102L
+ASG  HIS A   31   31    E        Strand    -84.62    105.80      31.7      102L
+ASG  LEU A   32   32    E        Strand    -67.33    132.27      70.4      102L
+ASG  LEU A   33   33    E        Strand    -95.30    -49.53      15.3      102L
+ASG  THR A   34   34    E        Strand   -162.35    153.78      25.3      102L
+ASG  LYS A   35   35    C          Coil    -91.58    -12.55     140.5      102L
+ASG  SER A   36   36    C          Coil    -65.23    144.17      42.0      102L
+ASG  PRO A   37   37    C          Coil    -77.02     -6.22     121.8      102L
+ASG  SER A   38   38    T          Turn    -86.41    115.92      54.8      102L
+ASG  LEU A   39   39    T          Turn    -79.41    -63.57      54.2      102L
+ASG  ASN A   40   40    T          Turn    -58.83    -14.47     112.1      102L
+ASG  ALA A  40A   41    T          Turn   -123.42    -78.14      56.5      102L
+ASG  ALA A   41   42    H    AlphaHelix    -43.34    -60.47      27.7      102L
+ASG  ALA A   42   43    H    AlphaHelix    -66.84    -44.50       0.0      102L
+ASG  LYS A   43   44    H    AlphaHelix    -66.70    -29.89      27.9      102L
+ASG  SER A   44   45    H    AlphaHelix    -66.87    -47.80      68.9      102L
+ASG  GLU A   45   46    H    AlphaHelix    -63.71    -41.63      64.9      102L
+ASG  LEU A   46   47    H    AlphaHelix    -60.51    -46.06       0.0      102L
+ASG  ASP A   47   48    H    AlphaHelix    -64.87    -35.04      31.9      102L
+ASG  LYS A   48   49    H    AlphaHelix    -69.31    -36.58     140.7      102L
+ASG  ALA A   49   50    H    AlphaHelix    -68.78    -37.48      43.8      102L
+ASG  ILE A   50   51    H    AlphaHelix    -88.88    -29.98      35.3      102L
+ASG  GLY A   51   52    C          Coil     88.81     23.21      64.6      102L
+ASG  ARG A   52   53    C          Coil   -159.25    167.88      97.8      102L
+ASG  ASN A   53   54    C          Coil    -79.04    104.37     143.7      102L
+ASG  THR A   54   55    T          Turn    -90.25    -33.79       9.8      102L
+ASG  ASN A   55   56    T          Turn     64.40     37.39     119.9      102L
+ASG  GLY A   56   57    T          Turn     64.76     10.64       0.0      102L
+ASG  VAL A   57   58    B        Bridge   -127.57    134.96      65.3      102L
+ASG  ILE A   58   59    C          Coil   -125.92    168.41       3.6      102L
+ASG  THR A   59   60    C          Coil    -93.98    168.55      68.9      102L
+ASG  LYS A   60   61    H    AlphaHelix    -61.03    -43.99     104.3      102L
+ASG  ASP A   61   62    H    AlphaHelix    -58.63    -41.39     118.9      102L
+ASG  GLU A   62   63    H    AlphaHelix    -61.51    -44.83      38.5      102L
+ASG  ALA A   63   64    H    AlphaHelix    -60.23    -41.69       0.2      102L
+ASG  GLU A   64   65    H    AlphaHelix    -71.54    -32.88      76.9      102L
+ASG  LYS A   65   66    H    AlphaHelix    -66.47    -45.61     137.4      102L
+ASG  LEU A   66   67    H    AlphaHelix    -60.04    -41.15       3.0      102L
+ASG  PHE A   67   68    H    AlphaHelix    -62.15    -48.09      13.6      102L
+ASG  ASN A   68   69    H    AlphaHelix    -55.78    -43.82      88.5      102L
+ASG  GLN A   69   70    H    AlphaHelix    -62.66    -42.92      92.9      102L
+ASG  ASP A   70   71    H    AlphaHelix    -69.39    -32.72      36.7      102L
+ASG  VAL A   71   72    H    AlphaHelix    -71.74    -42.06       5.8      102L
+ASG  ASP A   72   73    H    AlphaHelix    -59.59    -45.75      85.9      102L
+ASG  ALA A   73   74    H    AlphaHelix    -60.47    -39.17      44.4      102L
+ASG  ALA A   74   75    H    AlphaHelix    -63.65    -54.46       8.5      102L
+ASG  VAL A   75   76    H    AlphaHelix    -54.53    -48.31      33.3      102L
+ASG  ARG A   76   77    H    AlphaHelix    -66.18    -32.86     118.9      102L
+ASG  GLY A   77   78    H    AlphaHelix    -65.49    -43.46       1.3      102L
+ASG  ILE A   78   79    H    AlphaHelix    -57.36    -44.00       0.0      102L
+ASG  LEU A   79   80    H    AlphaHelix    -71.34    -18.83      64.7      102L
+ASG  ARG A   80   81    H    AlphaHelix    -96.98    -13.71     175.5      102L
+ASG  ASN A   81   82    C          Coil    -86.43    123.26      20.1      102L
+ASG  ALA A   82   83    C          Coil    -59.83    -32.80      85.2      102L
+ASG  LYS A   83   84    H    AlphaHelix    -83.86    -34.81     127.8      102L
+ASG  LEU A   84   85    H    AlphaHelix    -85.13    -36.92       0.0      102L
+ASG  LYS A   85   86    H    AlphaHelix    -51.25    -49.30      81.8      102L
+ASG  PRO A   86   87    H    AlphaHelix    -64.02    -34.85      52.7      102L
+ASG  VAL A   87   88    H    AlphaHelix    -66.83    -47.59       3.2      102L
+ASG  TYR A   88   89    H    AlphaHelix    -56.00    -48.36      34.9      102L
+ASG  ASP A   89   90    H    AlphaHelix    -61.89    -31.84      76.3      102L
+ASG  SER A   90   91    H    AlphaHelix    -76.35    -16.13      34.8      102L
+ASG  LEU A   91   92    C          Coil    -91.17    164.34       6.6      102L
+ASG  ASP A   92   93    C          Coil    -77.50    172.10      54.5      102L
+ASG  ALA A   93   94    H    AlphaHelix    -58.64    -39.50      80.3      102L
+ASG  VAL A   94   95    H    AlphaHelix    -67.96    -49.70      25.4      102L
+ASG  ARG A   95   96    H    AlphaHelix    -63.25    -31.75      24.5      102L
+ASG  ARG A   96   97    H    AlphaHelix    -59.12    -40.06      80.0      102L
+ASG  ALA A   97   98    H    AlphaHelix    -59.70    -41.61       7.8      102L
+ASG  ALA A   98   99    H    AlphaHelix    -63.95    -33.71       0.0      102L
+ASG  LEU A   99  100    H    AlphaHelix    -72.43    -36.83       0.4      102L
+ASG  ILE A  100  101    H    AlphaHelix    -63.27    -37.80       8.6      102L
+ASG  ASN A  101  102    H    AlphaHelix    -61.60    -50.11       0.0      102L
+ASG  MET A  102  103    H    AlphaHelix    -57.06    -42.26       2.8      102L
+ASG  VAL A  103  104    H    AlphaHelix    -62.22    -39.94       8.7      102L
+ASG  PHE A  104  105    H    AlphaHelix    -63.66    -42.02      30.1      102L
+ASG  GLN A  105  106    H    AlphaHelix    -72.30    -45.97      60.0      102L
+ASG  MET A  106  107    H    AlphaHelix   -109.87     -8.86      51.6      102L
+ASG  GLY A  107  108    C          Coil     89.88    147.25      29.5      102L
+ASG  GLU A  108  109    H    AlphaHelix    -59.60    -39.63      52.8      102L
+ASG  THR A  109  110    H    AlphaHelix    -66.73    -40.58     122.0      102L
+ASG  GLY A  110  111    H    AlphaHelix    -62.56    -48.55      32.0      102L
+ASG  VAL A  111  112    H    AlphaHelix    -64.42    -39.37       0.4      102L
+ASG  ALA A  112  113    H    AlphaHelix    -54.60    -23.07      11.8      102L
+ASG  GLY A  113  114    H    AlphaHelix    -79.93     -7.34      55.3      102L
+ASG  PHE A  114  115    C          Coil    -89.02     55.70      39.0      102L
+ASG  THR A  115  116    H    AlphaHelix    -46.52    -52.81      85.8      102L
+ASG  ASN A  116  117    H    AlphaHelix    -64.43    -43.98      85.4      102L
+ASG  SER A  117  118    H    AlphaHelix    -62.18    -43.76       0.4      102L
+ASG  LEU A  118  119    H    AlphaHelix    -55.03    -42.72      14.4      102L
+ASG  ARG A  119  120    H    AlphaHelix    -69.03    -35.58     121.8      102L
+ASG  MET A  120  121    H    AlphaHelix    -71.20    -32.60      23.3      102L
+ASG  LEU A  121  122    H    AlphaHelix    -68.23    -40.79       1.8      102L
+ASG  GLN A  122  123    H    AlphaHelix    -60.69    -37.73      93.9      102L
+ASG  GLN A  123  124    H    AlphaHelix    -79.78     -2.95      84.1      102L
+ASG  LYS A  124  125    C          Coil     67.44     33.20      96.8      102L
+ASG  ARG A  125  126    C          Coil    -98.09     78.28     112.7      102L
+ASG  TRP A  126  127    H    AlphaHelix    -56.83    -53.22      48.4      102L
+ASG  ASP A  127  128    H    AlphaHelix    -64.84    -35.17     110.0      102L
+ASG  GLU A  128  129    H    AlphaHelix    -73.60    -38.15     106.8      102L
+ASG  ALA A  129  130    H    AlphaHelix    -62.63    -37.48       0.0      102L
+ASG  ALA A  130  131    H    AlphaHelix    -63.49    -38.70      12.2      102L
+ASG  VAL A  131  132    H    AlphaHelix    -65.70    -47.09      86.0      102L
+ASG  ASN A  132  133    H    AlphaHelix    -62.82    -42.35      40.8      102L
+ASG  LEU A  133  134    H    AlphaHelix    -59.69    -33.60       1.6      102L
+ASG  ALA A  134  135    H    AlphaHelix    -68.15    -19.59      26.2      102L
+ASG  LYS A  135  136    C          Coil    -90.83     70.21     156.9      102L
+ASG  SER A  136  137    C          Coil   -152.45    159.38      18.6      102L
+ASG  ARG A  137  138    H    AlphaHelix    -62.60    -38.53     147.9      102L
+ASG  TRP A  138  139    H    AlphaHelix    -48.43    -53.11      17.9      102L
+ASG  TYR A  139  140    H    AlphaHelix    -66.66    -38.41      60.1      102L
+ASG  ASN A  140  141    H    AlphaHelix    -68.02    -34.28     108.4      102L
+ASG  GLN A  141  142    H    AlphaHelix    -82.16    -39.02     102.8      102L
+ASG  THR A  142  143    C          Coil   -131.56     66.43      21.1      102L
+ASG  PRO A  143  144    H    AlphaHelix    -58.48    -40.86      48.7      102L
+ASG  ASN A  144  145    H    AlphaHelix    -64.58    -47.22     114.7      102L
+ASG  ARG A  145  146    H    AlphaHelix    -65.64    -49.54      19.6      102L
+ASG  ALA A  146  147    H    AlphaHelix    -53.46    -47.07       0.0      102L
+ASG  LYS A  147  148    H    AlphaHelix    -57.24    -38.29      93.0      102L
+ASG  ARG A  148  149    H    AlphaHelix    -62.68    -48.84      68.2      102L
+ASG  VAL A  149  150    H    AlphaHelix    -62.92    -41.02       0.0      102L
+ASG  ILE A  150  151    H    AlphaHelix    -63.31    -39.54      14.4      102L
+ASG  THR A  151  152    H    AlphaHelix    -66.35    -36.82      38.5      102L
+ASG  THR A  152  153    H    AlphaHelix    -60.45    -45.34       0.0      102L
+ASG  PHE A  153  154    H    AlphaHelix    -67.46    -41.32       1.2      102L
+ASG  ARG A  154  155    H    AlphaHelix    -62.93    -51.53      97.8      102L
+ASG  THR A  155  156    H    AlphaHelix    -90.69    -29.23      42.9      102L
+ASG  GLY A  156  157    C          Coil     70.52     20.59      16.9      102L
+ASG  THR A  157  158    C          Coil   -125.69    172.71      45.9      102L
+ASG  TRP A  158  159    C          Coil    -96.75     15.68      43.0      102L
+ASG  ASP A  159  160    G      310Helix    -47.41    -40.97      96.3      102L
+ASG  ALA A  160  161    G      310Helix    -62.00    -20.27      35.6      102L
+ASG  TYR A  161  162    G      310Helix   -104.47     -4.61      19.7      102L
+ASG  LYS A  162  163    C          Coil    -99.65    360.00     175.2      102L

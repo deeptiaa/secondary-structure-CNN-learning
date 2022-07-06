@@ -1,0 +1,118 @@
+REM  --------------------------------------------------------------------  2QMT
+REM                                                                        2QMT
+REM  STRIDE: Knowledge-based secondary structure assignment                2QMT
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         2QMT
+REM                                                                        2QMT
+REM  Residue accessible surface area calculation                           2QMT
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 2QMT
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       2QMT
+REM                                                                        2QMT
+REM  ------------------------ General information -----------------------  2QMT
+REM                                                                        2QMT
+HDR  IMMUNE SYSTEM                           16-JUL-07   2QMT              2QMT
+CMP  MOL_ID: 1;                                                            2QMT
+CMP   MOLECULE: IMMUNOGLOBULIN G-BINDING PROTEIN G;                        2QMT
+CMP   CHAIN: A;                                                            2QMT
+CMP   FRAGMENT: IMMUNOGLOBULIN BETA 1 BINDING DOMAIN (RESIDUES             2QMT
+CMP   303-357);                                                            2QMT
+CMP   SYNONYM: IGG-BINDING PROTEIN G;                                      2QMT
+CMP   ENGINEERED: YES;                                                     2QMT
+CMP   MUTATION: YES                                                        2QMT
+SRC  MOL_ID: 1;                                                            2QMT
+SRC   ORGANISM_SCIENTIFIC: STAPHYLOCOCCUS AUREUS;                          2QMT
+SRC   ORGANISM_TAXID: 1280;                                                2QMT
+SRC   GENE: SPG;                                                           2QMT
+SRC   EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       2QMT
+SRC   EXPRESSION_SYSTEM_TAXID: 469008;                                     2QMT
+SRC   EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 2QMT
+SRC   EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              2QMT
+SRC   OTHER_DETAILS: SYNTHESIZED PLASMID, PREPARED ACCORDING TO            2QMT
+SRC   SMITH, C., WITHKA, J., AND REGAN, L. BIOCHEMISTRY 1994, 33,          2QMT
+SRC   5510-5517, EXPRESSING PROTEIN IDENTICAL IN SEQUENCE AND              2QMT
+SRC   STRUCTURE TO THE IGG BETA 1 BINDING DOMAIN OF PROTEIN G OF           2QMT
+SRC   STREPTOCOCCUS AREUS                                                  2QMT
+AUT  H.L.FRERICKS SCHMIDT,L.J.SPERLING,Y.G.GAO,B.J.WYLIE,                  2QMT
+AUT   J.M.BOETTCHER,S.R.WILSON,C.M.RIENSTRA                                2QMT
+REM                                                                        2QMT
+REM  -------------------- Secondary structure summary -------------------  2QMT
+REM                                                                        2QMT
+CHN  /home/proj/stride/tmp/tmp-aqvzmpdb A                                  2QMT
+REM                                                                        2QMT
+REM                .         .         .         .         .               2QMT
+SEQ  1    MQYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATK   50          2QMT
+STR        EEEEEEETTTTEEEEEEE   HHHHHHHHHHHHHHH    EEEEETTTT               2QMT
+REM                                                                        2QMT
+REM                                                                        2QMT
+SEQ  51   TFTVTE                                               56          2QMT
+STR       EEEEE                                                            2QMT
+REM                                                                        2QMT
+REM                                                                        2QMT
+REM                                                                        2QMT
+LOC  AlphaHelix   ALA    23 A      ASN     37 A                            2QMT
+LOC  Strand       GLN     2 A      ASN      8 A                            2QMT
+LOC  Strand       LYS    13 A      GLU     19 A                            2QMT
+LOC  Strand       GLU    42 A      ASP     46 A                            2QMT
+LOC  Strand       THR    51 A      THR     55 A                            2QMT
+LOC  TurnI        GLY     9 A      LEU     12 A                            2QMT
+LOC  TurnI        ASP    46 A      THR     49 A                            2QMT
+LOC  TurnI        ASP    47 A      LYS     50 A                            2QMT
+REM                                                                        2QMT
+REM  --------------- Detailed secondary structure assignment-------------  2QMT
+REM                                                                        2QMT
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      2QMT
+ASG  MET A    1    1    C          Coil    360.00    147.57     125.4      2QMT
+ASG  GLN A    2    2    E        Strand    -83.10    132.03     121.1      2QMT
+ASG  TYR A    3    3    E        Strand   -120.36    146.32      12.0      2QMT
+ASG  LYS A    4    4    E        Strand   -118.26    144.08      65.9      2QMT
+ASG  LEU A    5    5    E        Strand   -117.94    125.61       0.0      2QMT
+ASG  ILE A    6    6    E        Strand    -98.13    121.44      64.4      2QMT
+ASG  LEU A    7    7    E        Strand    -98.01    121.06       7.1      2QMT
+ASG  ASN A    8    8    E        Strand   -131.95     58.45      73.4      2QMT
+ASG  GLY A    9    9    T          Turn    -77.69    171.59       1.2      2QMT
+ASG  LYS A   10   10    T          Turn    -58.39    -42.21     154.9      2QMT
+ASG  THR A   11   11    T          Turn   -122.70    -20.80     137.4      2QMT
+ASG  LEU A   12   12    T          Turn    -98.26    117.75      42.2      2QMT
+ASG  LYS A   13   13    E        Strand   -133.19    157.14     124.0      2QMT
+ASG  GLY A   14   14    E        Strand    130.46   -146.10      35.6      2QMT
+ASG  GLU A   15   15    E        Strand   -145.28    148.70     119.8      2QMT
+ASG  THR A   16   16    E        Strand   -143.66    157.88      54.9      2QMT
+ASG  THR A   17   17    E        Strand   -125.97    156.96      71.4      2QMT
+ASG  THR A   18   18    E        Strand   -141.75    149.75      32.8      2QMT
+ASG  GLU A   19   19    E        Strand    -95.21    120.33     115.1      2QMT
+ASG  ALA A   20   20    C          Coil   -142.95    157.09      11.4      2QMT
+ASG  VAL A   21   21    C          Coil    -72.19    -25.19     123.0      2QMT
+ASG  ASP A   22   22    C          Coil   -162.86    169.55      69.6      2QMT
+ASG  ALA A   23   23    H    AlphaHelix    -68.86    -32.64      20.1      2QMT
+ASG  ALA A   24   24    H    AlphaHelix    -63.95    -37.11      51.7      2QMT
+ASG  THR A   25   25    H    AlphaHelix    -71.95    -42.95      53.3      2QMT
+ASG  ALA A   26   26    H    AlphaHelix    -59.83    -39.00       0.0      2QMT
+ASG  GLU A   27   27    H    AlphaHelix    -57.47    -44.52      74.2      2QMT
+ASG  LYS A   28   28    H    AlphaHelix    -63.29    -45.12     136.9      2QMT
+ASG  VAL A   29   29    H    AlphaHelix    -58.75    -49.98      64.6      2QMT
+ASG  PHE A   30   30    H    AlphaHelix    -67.59    -40.43       5.0      2QMT
+ASG  LYS A   31   31    H    AlphaHelix    -67.98    -36.30      81.8      2QMT
+ASG  GLN A   32   32    H    AlphaHelix    -64.77    -43.78     125.1      2QMT
+ASG  TYR A   33   33    H    AlphaHelix    -59.78    -47.68      73.5      2QMT
+ASG  ALA A   34   34    H    AlphaHelix    -61.89    -48.81       1.6      2QMT
+ASG  ASN A   35   35    H    AlphaHelix    -56.77    -44.91     115.5      2QMT
+ASG  ASP A   36   36    H    AlphaHelix    -67.65    -23.74     117.7      2QMT
+ASG  ASN A   37   37    H    AlphaHelix    -99.53     13.80      81.6      2QMT
+ASG  GLY A   38   38    C          Coil     74.96     20.17      58.7      2QMT
+ASG  VAL A   39   39    C          Coil    -92.97    121.92      10.2      2QMT
+ASG  ASP A   40   40    C          Coil   -126.76     92.49     141.1      2QMT
+ASG  GLY A   41   41    C          Coil   -139.74   -172.03      10.2      2QMT
+ASG  GLU A   42   42    E        Strand    -96.07    143.60     153.0      2QMT
+ASG  TRP A   43   43    E        Strand   -119.48    143.02      68.3      2QMT
+ASG  THR A   44   44    E        Strand   -124.98    162.05      83.4      2QMT
+ASG  TYR A   45   45    E        Strand   -146.21    130.73      74.4      2QMT
+ASG  ASP A   46   46    E        Strand   -115.77    114.00      86.4      2QMT
+ASG  ASP A   47   47    T          Turn    -71.09    -16.79      94.8      2QMT
+ASG  ALA A   48   48    T          Turn    -80.04    -35.96      87.2      2QMT
+ASG  THR A   49   49    T          Turn   -106.73      2.44      83.0      2QMT
+ASG  LYS A   50   50    T          Turn     55.79     37.14      54.7      2QMT
+ASG  THR A   51   51    E        Strand   -122.89    129.48      26.1      2QMT
+ASG  PHE A   52   52    E        Strand   -101.30    150.21       6.2      2QMT
+ASG  THR A   53   53    E        Strand   -131.48    146.60      30.7      2QMT
+ASG  VAL A   54   54    E        Strand   -131.73    131.56       0.0      2QMT
+ASG  THR A   55   55    E        Strand   -133.53    129.65      55.0      2QMT
+ASG  GLU A   56   56    C          Coil    -97.57    360.00      84.2      2QMT
