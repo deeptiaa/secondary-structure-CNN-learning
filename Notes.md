@@ -36,9 +36,7 @@ Documentation:
 | GB1 | (56) | | 70 |
 | Human glucokinase | |
 | GAL4 | | | 47 |
-
-
-
+| Small ubiquitin-related modifier 1 | | | 46
 
 
 
@@ -76,9 +74,57 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0261829
 Gal4 - https://www.mavedb.org/scoreset/urn:mavedb:00000012-a-3/
 https://www.mavedb.org/scoreset/urn:mavedb:00000051-c-1/
 Alpha-synuclein - https://www.mavedb.org/scoreset/urn:mavedb:00000045-a-1/
+P63165 (Small ubiquitin-related modifier 1) - https://www.mavedb.org/scoreset/urn:mavedb:00000001-b-1/
 
+Linking protein structural and functional change to mutation using amino acid networks:
 
+https://github.com/CrisSotomayor/perturbation-networks/tree/main/data
 
+- 1be9: 3 (https://www.uniprot.org/uniprotkb/P31016/entry#structure)
+- 1d5r:
+- 1nd4:
+- 3dqw:
+- 4bz3:
+
+MaveDB:
+
+Homo Sapiens:
+- ~~UBE2I:~~ 3
+- ~~SUMO1:~~ around 50%
+- ~~CALM1:~~ 3.5
+- ~~TPK1:~~ 4
+- **hYAP65 WW domain: come back**
+- ~~BRCA1 RING domain: (maybe)~~
+- ~~CBS:~~ 4
+- ~~HMGCR:~~
+- ~~LDLRAP1:~~
+- ~~alpha-synuclein:~~
+- ~~CCR5:~~
+- ~~CXCR4:~~
+- ~~MTHFR:~~ 4
+- ~~MSH2:~~
+- ~~ErbB2:~~
+- ~~Glycophorin A:~~
+- ~~PSD95 PDZ3:~~
+- ~~NUDT15:~~
+- Aβ42:
+- p53:
+- **TARDBP:**
+- ~~RAF:~~
+- ~~CYP2C19:~~
+- ~~NCS1:~~
+- ~~TP53 (P72R):~~
+- ~~IGHG1:~~
+- ~~BRCA1:~~
+- ~~GCK:~~
+
+Other:
+- ~~SARS-CoV-2 receptor binding domain:~~
+- ~~human L-Selectin:~~
+- ~~DHFR:~~
+- ~~LamB:~~
+- ~~Dlg4 (PSD95_PDZ3):~~
+- ~~HA (H1N1):~~
 
 ## Associated Files
 - third run for limiting mutations (v3)
