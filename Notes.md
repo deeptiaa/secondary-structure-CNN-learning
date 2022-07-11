@@ -24,29 +24,30 @@ Documentation:
 
 ## Secondary Structure Fractions
 
-| Protein | Protein Length (domain) | Dataset Size | Sec. Str. % | Alpha Hel. % | Beta Sheet % |
-| ------- | -------------- | ----------- | ------------ | ------------ | --------|
-| Pab1 | 577 (75) | | 69 | TBD | TBD |
-| Bgl3 | (501) | |54 | TBD | TBD |
-| Ube4b | 1173 (102) || 52
-| Thermonuclease | 231 | | 62 |
-| Endolysin | 164 | | 75 |
-| Immunoglobulin G-binding protein G | 448 | | 53
-| avGFP | 237 | | 64 |
-| GB1 | (56) | | 70 |
-| Human glucokinase | |
-| GAL4 | | | 47 |
-| Small ubiquitin-related modifier 1 | | | 46
+| Protein | Source | Protein Length (domain) | Dataset Size (ss) (not ss)| Sec. Str. % | Alpha Hel. % | Beta Sheet % |
+| ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------|
+| Pab1 | Gelman | 577 (75) | 37,710 | 69 | TBD | TBD |
+| Bgl3 | Gelman | (501) | 91,031 |54 | TBD | TBD |
+| Ube4b | Gelman | 1173 (102) |25,737 | 52
+| Thermonuclease | Curated | 231 | 1,068 | 62 |
+| Endolysin | Curated | 164 | 1,376 | 75 |
+| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 53
+| avGFP | Gelman | 237 | 51,714 | 64 |
+| GB1 | Gelman | (56) | | 70 |
+| Human glucokinase | Biorex | |
+| GAL4 | MaveDB | 881 | | 47 |
+| Small ubiquitin-related modifier 1 | MaveDb | 101 | | 46
+| TAR DNA-binding protein 43 | MaveDB | 414 | | 36
 
-
+**CHECK OFFSET**
 
 
 
 
 
 Meeting Notes (July 12th, July 21st)
-- find the fraction of secondary structure for the proteins we have now (even distribution, if not look for more), and fraction alpha/beta
-- train on differing amounts of data and find protein in middle of distribution that has Pearson's R of ~0.4
+- ~~find the fraction of secondary structure for the proteins we have now (even distribution, if not look for more)~~, and fraction alpha/beta
+- train on differing amounts of data and find protein in middle of distribution that has Pearson's R of ~0.4 (middle is Immunoglobulin, close to 55%)
 - Scale training value and run other proteins (plot?)
 - (Pearson's R on y, sec. str. of x)
 - train on alpha/beta subsets (equal alpha and beta fractions)
