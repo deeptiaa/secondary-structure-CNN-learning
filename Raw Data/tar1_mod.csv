@@ -1,7 +1,3 @@
-# Accession: urn:mavedb:00000060-a-1,,,,,
-# Downloaded (UTC): 2022-07-08 20:13:52.282075,,,,,
-# Licence: CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike),,,,,
-# Licence URL: https://creativecommons.org/licenses/by-nc-sa/4.0/,,,,,
 accession,hgvs_nt,hgvs_splice,hgvs_pro,score,se
 urn:mavedb:00000060-a-1#1,NA,NA,p.Gly1Phe,-0.583917761,0.287959671
 urn:mavedb:00000060-a-1#2,NA,NA,p.Gly1Trp,0.05188086,0.224853965

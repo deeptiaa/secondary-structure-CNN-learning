@@ -8,6 +8,7 @@ import Bio.PDB.Polypeptide
 import random
 import itertools
 import more_itertools as mit
+import re
 
 
 # parameters:
