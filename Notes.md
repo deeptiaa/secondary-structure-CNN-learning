@@ -5,6 +5,8 @@
 - Pab1 - domain is [(125, 200)]
 - Bgl3 - no domain because PBD starts as same place as protein sequence (Boolean of PDB lines up with protein without change)
 - Ube4b - domain is [(1071, 1173)], but position in Ube4b
+- avGFP -
+- GB1 -
 
 
 ## STRIDE
@@ -24,22 +26,22 @@ Documentation:
 
 ## Secondary Structure Fractions
 
-| Protein | Source | Protein Length (domain) | Dataset Size (ss) (not ss)| Sec. Str. % | Alpha Hel. % | Beta Sheet % |
-| ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------|
-| Pab1 | Gelman | 577 (75) | 37,710 | 69 | TBD | TBD |
-| Bgl3 | Gelman | (501) | 91,031 |54 | TBD | TBD |
-| Ube4b | Gelman | 1173 (102) |25,737 | 52
-| Thermonuclease | Curated | 231 | 1,068 | 62 |
-| Endolysin | Curated | 164 | 1,376 | 75 |
-| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 53
-| avGFP | Gelman | 237 | 51,714 | 64 |
-| GB1 | Gelman | (56) | | 70 |
-| Human glucokinase | Biorex | |
-| GAL4 | MaveDB | 881 | | 47 |
-| Small ubiquitin-related modifier 1 | MaveDb | 101 | | 46
-| TAR DNA-binding protein 43 | MaveDB | 414 | | 36
+| Protein | Source | Protein Length (domain) | Dataset Size | Scaled (Ideal) | Sec. Str. % | Alpha Hel. % | Beta Sheet % |
+| ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------| ------ |
+| Pab1 | Gelman | 577 (75) | 37,710 | 40 (53.6)| 69 | TBD | TBD |
+| Bgl3 | Gelman | (501) | 91,031 | 360 (357.9)|54 | TBD | TBD |
+| Ube4b | Gelman | 1173 (102) |25,737 | 80 (72.9)| 52
+| Thermonuclease | Curated | 231 | 1,068 | 160 (165) | 62 |
+| Endolysin | Curated | 164 | 1,376 | 120 (117.1) | 75 |
+| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 320  | 53
+| avGFP | Gelman | 237 | 51,714 | 160 (168)| 64 |
+| **GB1** | Gelman | (56) | 536,084 | **40** | 70 |
+| Human glucokinase | Biorex | | |  |
+| GAL4 | MaveDB | 881 | 1,196 | 640 (629.3)| 47 |
+| Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 80 (72.1)  | 46
+| TAR DNA-binding protein 43 | MaveDB | 414 | 1,342 | 280 (295.7)| 36
 
-**CHECK OFFSET**
+**CHECK OFFSET\****
 
 
 
@@ -49,12 +51,25 @@ Meeting Notes (July 12th, July 21st)
 - ~~find the fraction of secondary structure for the proteins we have now (even distribution, if not look for more)~~, and fraction alpha/beta
 - train on differing amounts of data and find protein in middle of distribution that has Pearson's R of ~0.4 (middle is Immunoglobulin, close to 55%)
 - Scale training value and run other proteins (plot?)
-- (Pearson's R on y, sec. str. of x)
+- (Pearson's R on y, sec. str. fraction on x)
 - train on alpha/beta subsets (equal alpha and beta fractions)
+- maybe check that test size doesn't impact pearson's r?
+
+Meeting Notes (July 12th)
+- Keep the test set the same for the same protein in diff. architectures
+- Find number of samples in and out of secondary structure and keep that ratio for the train and test sheet
+- 3 trials
+- Use remaining dataset for test datasets
+- Use Ube4b to scale _test_ datasets
+- change input layer to architecture
+
+
+Tuesday/Wednesday - fix code in order to run and get datasets
+Thursday/Friday - run code
+Monday - extra and plots
 
 
 Questions
-- why is pab1 consistently higher in terms of secondary structure?
 
 
 ## Choosing Other proteins
