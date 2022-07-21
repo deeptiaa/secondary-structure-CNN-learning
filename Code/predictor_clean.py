@@ -63,10 +63,10 @@ def get_train_and_test_splits(dataset, train_size, settings=argparse.Namespace()
         raise RuntimeError('unrecognized encoding: ' + settings.encoding)
 
     # Subdivide into training and testing datasets based on train_size argument and return
-    rng = np.random.default_rng()
+    # rng = np.random.default_rng()
     indices = [ind for ind in range(len(feats))]
     print("indices length:" + str(len(indices)))
-    rng.shuffle(indices)
+    # rng.shuffle(indices)
     test_split = (len(feats) - train_size) / len(feats)
 
 
@@ -299,6 +299,7 @@ def create_model(batch_size, length):
     # model = tf.keras.Sequential([
     #        tf.keras.layers.Input(batch_input_shape=input_shape),
     # #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
+    #           tf.keras.layers.InputLayer(input_shape=input_shape),
     # #       # tf.expand_dims(batch_size, axis=1),
     # #       # tf.keras.layers.Embedding(20, 15),
     # #       # tf.expand_dims(axis=-1),
@@ -324,7 +325,7 @@ def create_model(batch_size, length):
     # bgl3 model
     model = tf.keras.Sequential([
           # tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Input(input_shape=input_shape),
+          tf.keras.layers.Input(batch_input_shape=input_shape),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
@@ -339,6 +340,7 @@ def create_model(batch_size, length):
     # ube4b model
     # model = tf.keras.Sequential([
     #       tf.keras.layers.Input(batch_input_shape=input_shape),
+    #        tf.keras.layers.Input(input_shape=input_shape)
     #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
     #
     #       tf.keras.layers.Flatten(),
@@ -357,7 +359,10 @@ def main(dataset, settings):
     for training_index in range(max(1, settings.repeat_trainings)):
         full_size = len(open(dataset, 'r').readlines()) - 1
         print("full_size:" + str(full_size))
-        train_size = int(0.80 * full_size)
+        # train_size = int(0.80 * full_size) # manually enter train size
+        train_size = input('Enter number of training values: ')
+        train_size = int(train_size)
+
 
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
@@ -448,29 +453,44 @@ def main(dataset, settings):
         #     predicted.append(model(ex).numpy())
 
 
-        examples_first_quart = examples[:int(len(examples)/4)]
-        examples_second_quart = examples[int(len(examples)/4):int(len(examples)/2)]
-        examples_third_quart = examples[int(len(examples)/2):int(len(examples)/(4/3))]
-        examples_fourth_quart = examples[int(len(examples)/(4/3)):]
+        # examples_first_quart = examples[:int(len(examples)/4)]
+        # examples_second_quart = examples[int(len(examples)/4):int(len(examples)/2)]
+        # examples_third_quart = examples[int(len(examples)/2):int(len(examples)/(4/3))]
+        # examples_fourth_quart = examples[int(len(examples)/(4/3)):]
+
+        examples_first_eighth = examples[:int(len(examples) / 8)]
+        examples_second_eighth = examples[int(len(examples) / 8):int(len(examples) / 4)]
+        examples_third_eighth = examples[int(len(examples) / 4):int(len(examples) / (8/3))]
+        examples_fourth_eighth = examples[int(len(examples) / (8/3)):int(len(examples) / 2)]
+        examples_fifth_eighth = examples[int(len(examples) / 2):int(len(examples) / (8/5))]
+        examples_sixth_eighth = examples[int(len(examples) / (8/5)):int(len(examples) / (4/3))]
+        examples_seventh_eighth = examples[int(len(examples) / (4/3)):int(len(examples) / (8/7))]
+        examples_eighth_eighth = examples[int(len(examples) / (8/7)):]
 
         print("reaches first_pred")
-        first_pred = model(examples_first_quart).numpy()
+        first_pred = model(examples_first_eighth).numpy()
 
         print("reaches second pred")
-        second_pred = model(examples_second_quart).numpy()
+        second_pred = model(examples_second_eighth).numpy()
 
         print("reaches third pred")
-        third_pred = model(examples_third_quart).numpy()
+        third_pred = model(examples_third_eighth).numpy()
 
         print("reaches fourth pred")
-        fourth_pred = model(examples_fourth_quart).numpy()
+        fourth_pred = model(examples_fourth_eighth).numpy()
+
+        fifth_pred = model(examples_fifth_eighth).numpy()
+        sixth_pred = model(examples_sixth_eighth).numpy()
+        seventh_pred = model(examples_seventh_eighth).numpy()
+        eigth_pred = model(examples_eighth_eighth).numpy()
 
         print(first_pred)
         print(second_pred)
         print(third_pred)
         print(fourth_pred)
+        ("print eighth section")
 
-        predicted = np.concatenate((first_pred, second_pred, third_pred, fourth_pred), axis=0)
+        predicted = np.concatenate((examples_first_eighth, examples_second_eighth, examples_third_eighth, examples_fourth_eighth, examples_fifth_eighth, examples_sixth_eighth, examples_seventh_eighth, examples_eighth_eighth), axis=0)
         print(predicted)
 
         # predicted = model(examples)
@@ -538,31 +558,6 @@ if __name__ == "__main__":
     settings.repeat_trainings = 1
     settings.model_type = 'cnn'
 
-    # if tf.test.gpu_device_name():
-    #     print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
-    # else:
-    #     print("Please install GPU version of TF")
-    # print("whether gpu is being used")
-    # print(tf.config.list_physical_devices('GPU'))
-
-
-    # print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
-
-    # os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
-
-    # gpu_options = tf.GPUOptions(visible_device_list="/device:GPU:0")
-    # sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-
-    # tf.debugging.set_log_device_placement(True)
-
-    # try:
-    #     # Specify an invalid GPU device
-    #     with tf.device('/device:GPU:0'):
-    #         a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
-    #         b = tf.constant([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])
-    #         c = tf.matmul(a, b)
-    # except RuntimeError as e:
-    #     print(e)
 
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
