@@ -91,14 +91,26 @@ def get_train_and_test_splits(dataset, train_size, settings=argparse.Namespace()
     muts = [muts[ii] for ii in indices]
     feats = [feats[ind] for ind in indices]
     scores = [scores[ind] for ind in indices]
+    print("feats without np array")
+    print("prints first test section")
+    print(scores[300:350])
+    print("prints second test section")
+    print(scores[350:400])
 
     # assert (all([item in indices for item in pre_indices]))
     # assert (all([mut in muts[int(len(feats) * (1 - test_split)):] for mut in to_withold]))
 
     feats_train = np.array(feats[:int(len(feats) * (1 - test_split))])
     scores_train = np.array(scores[:int(len(feats) * (1 - test_split))])
+    # compare scores to make sure test sets are the same
+
     feats_test = np.array(feats[int(len(feats) * (1 - test_split)):])
     scores_test = np.array(scores[int(len(feats) * (1 - test_split)):])
+    print("printing feats and scores to check test set is the same")
+    # print(feats_test[:10])
+    print(scores_test[:10])
+    # print(feats_test[9900:])
+    print(scores_test[9900:])
     #assert all([keras.utils.to_categorical(integer_encoder(mut, settings.seq)) in feats_test for mut in to_withold])
 
     train_dataset = tf.data.Dataset.from_tensor_slices((feats_train, scores_train))
@@ -124,7 +136,7 @@ def integer_encoder(muts, wt_seq):
     # print(type(muts))
     index = 0
     for mut in muts:
-        print(mut)
+        # print(mut)
         # print(int(mut[:-3]) - 1)
         # print(type(mut))
         # index = index + 1
@@ -289,17 +301,16 @@ def run_experiment(model, loss, train_dataset, test_dataset, num_epochs):
     return history
 
 def create_model(batch_size, length):
-    input_shape = (batch_size, length, 20)     # set appropriate input size
+    # input_shape = (batch_size, length, 20)     # set appropriate input size
+    input_shape = (length, 20)
     print("batch size")
     print(batch_size)
     print("length")
     print(length)
 
-    # pab1 model
     # model = tf.keras.Sequential([
     #        tf.keras.layers.Input(batch_input_shape=input_shape),
     # #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
-    #           tf.keras.layers.InputLayer(input_shape=input_shape),
     # #       # tf.expand_dims(batch_size, axis=1),
     # #       # tf.keras.layers.Embedding(20, 15),
     # #       # tf.expand_dims(axis=-1),
@@ -322,10 +333,9 @@ def create_model(batch_size, length):
     #        tf.keras.layers.Dense(1)
     # ])
 
-    # bgl3 model
     model = tf.keras.Sequential([
           # tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Input(batch_input_shape=input_shape),
+          tf.keras.layers.Input(shape=input_shape),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
           tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
@@ -340,7 +350,6 @@ def create_model(batch_size, length):
     # ube4b model
     # model = tf.keras.Sequential([
     #       tf.keras.layers.Input(batch_input_shape=input_shape),
-    #        tf.keras.layers.Input(input_shape=input_shape)
     #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
     #
     #       tf.keras.layers.Flatten(),
@@ -349,8 +358,8 @@ def create_model(batch_size, length):
     #       tf.keras.layers.Dropout(0.2),
     #       tf.keras.layers.Dense(1)
     #   ])
-
-    model.summary()
+    #
+    # model.summary()
 
     return model
 
@@ -359,15 +368,14 @@ def main(dataset, settings):
     for training_index in range(max(1, settings.repeat_trainings)):
         full_size = len(open(dataset, 'r').readlines()) - 1
         print("full_size:" + str(full_size))
-        # train_size = int(0.80 * full_size) # manually enter train size
+        # train_size = int(0.80 * full_size)
         train_size = input('Enter number of training values: ')
         train_size = int(train_size)
-
 
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 32     # 64 ube4b, 128 pab1/bgl3 bgl3 32 for test
+        BATCH_SIZE = 32
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -435,7 +443,7 @@ def main(dataset, settings):
         print("successfully ran experiment!!!")
 
         # Get samples to use in validation
-        sample = full_size - train_size    # number of samples
+        sample = full_size - train_size  # number of samples
 
         print("reached examples and targets line")
         examples, targets = list(test_dataset.unbatch().shuffle(BATCH_SIZE * 10).batch(sample))[0]
@@ -452,7 +460,6 @@ def main(dataset, settings):
         #     print(type(model(ex).numpy()))
         #     predicted.append(model(ex).numpy())
 
-
         # examples_first_quart = examples[:int(len(examples)/4)]
         # examples_second_quart = examples[int(len(examples)/4):int(len(examples)/2)]
         # examples_third_quart = examples[int(len(examples)/2):int(len(examples)/(4/3))]
@@ -460,12 +467,12 @@ def main(dataset, settings):
 
         examples_first_eighth = examples[:int(len(examples) / 8)]
         examples_second_eighth = examples[int(len(examples) / 8):int(len(examples) / 4)]
-        examples_third_eighth = examples[int(len(examples) / 4):int(len(examples) / (8/3))]
-        examples_fourth_eighth = examples[int(len(examples) / (8/3)):int(len(examples) / 2)]
-        examples_fifth_eighth = examples[int(len(examples) / 2):int(len(examples) / (8/5))]
-        examples_sixth_eighth = examples[int(len(examples) / (8/5)):int(len(examples) / (4/3))]
-        examples_seventh_eighth = examples[int(len(examples) / (4/3)):int(len(examples) / (8/7))]
-        examples_eighth_eighth = examples[int(len(examples) / (8/7)):]
+        examples_third_eighth = examples[int(len(examples) / 4):int(len(examples) / (8 / 3))]
+        examples_fourth_eighth = examples[int(len(examples) / (8 / 3)):int(len(examples) / 2)]
+        examples_fifth_eighth = examples[int(len(examples) / 2):int(len(examples) / (8 / 5))]
+        examples_sixth_eighth = examples[int(len(examples) / (8 / 5)):int(len(examples) / (4 / 3))]
+        examples_seventh_eighth = examples[int(len(examples) / (4 / 3)):int(len(examples) / (8 / 7))]
+        examples_eighth_eighth = examples[int(len(examples) / (8 / 7)):]
 
         print("reaches first_pred")
         first_pred = model(examples_first_eighth).numpy()
@@ -490,8 +497,12 @@ def main(dataset, settings):
         print(fourth_pred)
         ("print eighth section")
 
-        predicted = np.concatenate((examples_first_eighth, examples_second_eighth, examples_third_eighth, examples_fourth_eighth, examples_fifth_eighth, examples_sixth_eighth, examples_seventh_eighth, examples_eighth_eighth), axis=0)
-        print(predicted)
+        predicted = np.concatenate((first_pred, second_pred, third_pred,
+                                    fourth_pred, fifth_pred, sixth_pred,
+                                    seventh_pred, eigth_pred), axis=0)
+
+        print("predicted shape" + str(predicted.shape))
+        print(examples_first_eighth.shape)
 
         # predicted = model(examples)
 
@@ -507,7 +518,7 @@ def main(dataset, settings):
 
         print("successfully passed this_r part!!!")
 
-        if best_r == None or this_r > best_r:
+    if best_r == None or this_r > best_r:
             best_r = this_r
             best_model = model
             best_sample = sample
@@ -526,24 +537,26 @@ def main(dataset, settings):
     # plt.ylabel('loss')
     # plt.legend(['train', 'test'], loc='upper left')
     # plt.show()
-    open('last_loss_curve_bgl3_ss_2880_lim.txt','w').write(str(best_history.history['loss']))
-    open('last_val_loss_curve_bgl3_ss_2880_lim.txt', 'w').write(str(best_history.history['val_loss']))
+    last_loss_curve_name = input('Enter last_loss_curve name (add txt): ')
+    last_val_loss_curve_name = input('Enter last_val_loss_curve name (add txt): ')
+    open(last_loss_curve_name,'w').write(str(best_history.history['loss']))
+    open(last_val_loss_curve_name, 'w').write(str(best_history.history['val_loss']))
 
-    predicted = best_model(best_examples).numpy()
+    # predicted = best_model(best_examples).numpy()
+    # for idx in range(best_sample):
+    #     print(f"Predicted: {round(float(predicted[idx][0]), 3)} - Actual: {round(float(targets[idx]), 3)}")
+    #     # if round(float(targets[idx]), 7) in [round(val, 7) for val in [0.246499653, 0.277258577, 0.292320875, 0.246250577, 0.200327526]]:
+    #     #     colors.append('#ff7f0e')
+    #     # else:
+    #     #     colors.append('#1f77b4')
+    # print('Pearson r (p): ' + str(best_r))
 
+    # pred = [predicted[idx][0] for idx in range(best_sample)]
 
-    for idx in range(best_sample):
-        print(f"Predicted: {round(float(predicted[idx][0]), 3)} - Actual: {round(float(targets[idx]), 3)}")
-        # if round(float(targets[idx]), 7) in [round(val, 7) for val in [0.246499653, 0.277258577, 0.292320875, 0.246250577, 0.200327526]]:
-        #     colors.append('#ff7f0e')
-        # else:
-        #     colors.append('#1f77b4')
-    print('Pearson r (p): ' + str(best_r))
-
-    pred = [predicted[idx][0] for idx in range(best_sample)]
-
-    open('pred_ube_ss_2880_lim.txt', 'w').write(str(pred))
-    open('best_targets_bgl3_ss_2880_lim.txt', 'w').write(str(best_targets))
+    pred_name = input('Enter pred name (add txt): ')
+    best_targets_name = input('Enter best_targets name (add txt): ')
+    open(pred_name, 'w').write(str(predicted))
+    open(best_targets_name, 'w').write(str(best_targets)) # replace w/ targets?
 
     # plt.scatter(pred, best_targets, s=3)#, c=colors)
     # plt.plot([0, 1], [0, 1])
@@ -558,31 +571,43 @@ if __name__ == "__main__":
     settings.repeat_trainings = 1
     settings.model_type = 'cnn'
 
+    # if tf.test.gpu_device_name():
+    #     print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
+    # else:
+    #     print("Please install GPU version of TF")
+    # print("whether gpu is being used")
+    # print(tf.config.list_physical_devices('GPU'))
+
+
+    # print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+    # os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
+
+    # gpu_options = tf.GPUOptions(visible_device_list="/device:GPU:0")
+    # sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+
+    # tf.debugging.set_log_device_placement(True)
+
+    # try:
+    #     # Specify an invalid GPU device
+    #     with tf.device('/device:GPU:0'):
+    #         a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+    #         b = tf.constant([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])
+    #         c = tf.matmul(a, b)
+    # except RuntimeError as e:
+    #     print(e)
 
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
     session = tf.compat.v1.Session(config=config)
 
     # this stuff is needed
+    # seq_score_name= input('Enter file name: ')
     seq_and_score = input('Enter file name: ')
-    # seq_and_score = 'ube4b_MLformat_all_90960.txt'  # set the path to the training data file here
-    # seq_and_score = 'ube4b_MLformat_80.txt'
+    # seq_and_score = 'ube4b_MLformat_all.txt'  # set the path to the training data file here
     # seq_and_score = 'bgl_MLformat_all.txt'  # set the path to the training data file here
-
-    # seq_and_score = 'pab1_MLformat_ss_2880_lim.txt' # predictor_clean.py_pab1_ss_2880_lim
-    # seq_and_score = 'pab1_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_pab1_not_ss_2880_lim
-    # seq_and_score = 'bgl3_MLformat_ss_2880_lim.txt' # predictor_clean.py_bgl3_ss_2880_lim
-    # seq_and_score = 'bgl3_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_bgl3_not_ss_2880_lim
-    # seq_and_score = 'ube4b_MLformat_ss_2880_lim.txt' # predictor_clean.py_ube4b_ss_2880_lim
-    # seq_and_score = 'ube4b_MLformat_not_ss_2880_lim.txt' # predictor_clean.py_ube4b_not_ss_2880_lim
-
-    # seq_and_score = 'pab1_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_pab1_ss_v2_2880_lim
-    # seq_and_score = 'pab1_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_pab1_not_ss_v2_2880_lim
-    # seq_and_score = 'bgl3_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_bgl3_ss_v2_2880_lim
-    # seq_and_score = 'bgl3_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_bgl3_not_ss_v2_2880_lim
-    # seq_and_score = 'ube4b_MLformat_ss_v2_2880_lim.txt' # predictor_clean.py_ube4b_ss_v2_2880_lim
-    # seq_and_score = 'ube4b_MLformat_not_ss_v2_2880_lim.txt' # predictor_clean.py_ube4b_not_ss_v2_2880_lim
-
+    # seq_and_score = 'ube4b_MLformat_3200.txt'
+    # seq_and_score = 'pab1_MLformat_ss_3000.txt'
 
     settings.seq = open(seq_and_score, 'r').readlines()[0].replace('\n', '').split(':')[0].split()
 

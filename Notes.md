@@ -28,20 +28,22 @@ Documentation:
 
 | Protein | Source | Protein Length (domain) | Dataset Size | Scaled (Ideal) | Sec. Str. % | Alpha Hel. % | Beta Sheet % |
 | ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------| ------ |
-| Pab1 | Gelman | 577 (75) | 37,710 | 40 (53.6)| 69 | TBD | TBD |
-| Bgl3 | Gelman | (501) | 91,031 | 360 (357.9)|54 | TBD | TBD |
-| Ube4b | Gelman | 1173 (102) |25,737 | 80 (72.9)| 52
-| Thermonuclease | Curated | 231 | 1,068 | 160 (165) | 62 |
-| Endolysin | Curated | 164 | 1,376 | 120 (117.1) | 75 |
-| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 320  | 53
-| avGFP | Gelman | 237 | 51,714 | 160 (168)| 64 |
-| **GB1** | Gelman | (56) | 536,084 | **40** | 70 |
+| Pab1 | Gelman | 577 (75) | 37,710 | 147 | 69 | TBD | TBD |
+| Bgl3 | Gelman | (501) | 91,031 | 982 |54 | TBD | TBD |
+| **Ube4b** | Gelman | 1173 (**102**) |25,737 | **200** | 52
+| Thermonuclease | Curated | 231 | 1,068 | 453 | 62 |
+| Endolysin | Curated | 164 | 1,376 | 322 | 75 |
+| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 878 | 53
+| avGFP | Gelman | 237 | 51,714 | 465| 64 |
+| GB1 | Gelman | (56) | 536,084 | 110 | 70 |
 | Human glucokinase | Biorex | | |  |
-| GAL4 | MaveDB | 881 | 1,196 | 640 (629.3)| 47 |
-| Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 80 (72.1)  | 46
-| TAR DNA-binding protein 43 | MaveDB | 414 | 1,342 | 280 (295.7)| 36
+| ~~GAL4~~ | MaveDB | 881 | 1,196 | 1727 | 47 |
+| Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 198  | 46
+| ~~TAR DNA-binding protein 43~~ | MaveDB | 414 | 1,342 | 812| 36
 
 **CHECK OFFSET\****
+
+ ratio is
 
 
 
@@ -51,7 +53,7 @@ Meeting Notes (July 12th, July 21st)
 - ~~find the fraction of secondary structure for the proteins we have now (even distribution, if not look for more)~~, and fraction alpha/beta
 - train on differing amounts of data and find protein in middle of distribution that has Pearson's R of ~0.4 (middle is Immunoglobulin, close to 55%)
 - Scale training value and run other proteins (plot?)
-- (Pearson's R on y, sec. str. fraction on x)
+- (Pearn x)
 - train on alpha/beta subsets (equal alpha and beta fractions)
 - maybe check that test size doesn't impact pearson's r?
 
@@ -66,8 +68,11 @@ Meeting Notes (July 12th)
 
 Tuesday/Wednesday - fix code in order to run and get datasets
 Thursday/Friday - run code
-Monday - extra and plots
+Monday - run trials
 
+To-Do:
+Fix code to take in train and test sets
+Run ube4b and redo samples
 
 Questions
 
