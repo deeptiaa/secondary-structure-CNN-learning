@@ -65,6 +65,14 @@ Meeting Notes (July 12th)
 - Use Ube4b to scale _test_ datasets
 - change input layer to architecture
 
+Meeting Notes (July 27th)
+- if datasets are too small to make multiple discrete sets, make shuffled training
+  sets with test sets as remainder
+- 3 trials for each
+- add error bars and pearson's r to graph
+- make easy plot with scaled dataset size (x) vs. pearson's r (y)
+- method bullet list with min amount of information needed to recreate procedure
+- next meeting Sept. 6 at 10 am
 
 Tuesday/Wednesday - fix code in order to run and get datasets
 Thursday/Friday - run code
