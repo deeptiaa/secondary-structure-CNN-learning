@@ -29,8 +29,8 @@ Documentation:
 | Protein | Source | Protein Length (domain) | Dataset Size | Scaled (Ideal) | Sec. Str. % | Alpha Hel. % | Beta Sheet % |
 | ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------| ------ |
 | Pab1 | Gelman | 577 (75) | 37,710 | 147 | 69 | TBD | TBD |
-| Bgl3 | Gelman | (501) | 91,031 | 982 |54 | TBD | TBD |
-| **Ube4b** | Gelman | 1173 (**102**) |25,737 | **200** | 52
+| Bgl3 | Gelman | (501) | 25,737 | 982 |54 | TBD | TBD |
+| **Ube4b** | Gelman | 1173 (**102**) | 91,031| **200** | 52
 | Thermonuclease | Curated | 231 | 1,068 | 453 | 62 |
 | Endolysin | Curated | 164 | 1,376 | 322 | 75 |
 | Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 878 | 53
@@ -73,6 +73,15 @@ Meeting Notes (July 27th)
 - make easy plot with scaled dataset size (x) vs. pearson's r (y)
 - method bullet list with min amount of information needed to recreate procedure
 - next meeting Sept. 6 at 10 am
+
+ Meeting Notes (September 7th)
+- go through and clean up code so that you know the function and can get started with this stuff below
+- continue with tasks from above
+- retest some of the values from part 1 (mainly pab1 with more test values)
+- make powerpoint outline with template and picture locations
+- send Tucker positions, types of positions, and updated resume
+
+
 
 Tuesday/Wednesday - fix code in order to run and get datasets
 Thursday/Friday - run code

@@ -91,11 +91,11 @@ def get_train_and_test_splits(dataset, train_size, settings=argparse.Namespace()
     muts = [muts[ii] for ii in indices]
     feats = [feats[ind] for ind in indices]
     scores = [scores[ind] for ind in indices]
-    print("feats without np array")
-    print("prints first test section")
-    print(scores[300:350])
-    print("prints second test section")
-    print(scores[350:400])
+    # print("feats without np array")
+    # print("prints first test section")
+    # print(scores[300:350])
+    # print("prints second test section")
+    # print(scores[350:400])
 
     # assert (all([item in indices for item in pre_indices]))
     # assert (all([mut in muts[int(len(feats) * (1 - test_split)):] for mut in to_withold]))
@@ -136,21 +136,24 @@ def integer_encoder(muts, wt_seq):
     # print(type(muts))
     index = 0
     for mut in muts:
-        # print(mut)
-        # print(int(mut[:-3]) - 1)
+        print("mutant: ")
+        print(mut)
+        print("wild-type position: ")
+        print(values[int(mut[:-3])])
         # print(type(mut))
         # index = index + 1
         # print(index)
         # print(mut)
-        values[int(mut[:-3]) - 1] = mut[-3:]
+        values[int(mut[:-3])] = mut[-3:] # ZERO INDEXING!!!!!! (not convention)
 
 
     int_encoded = []
-    values_index = -1
+    # values_index = -1
     for item in values:
+        # print("item")
 
         int_encoded += [all_resnames.index(item)]
-
+        # print(all_resnames.index(item))
         # values_index += 1
         # if wt_seq[values_index] == item:
         #     int_encoded += [0]
@@ -308,48 +311,50 @@ def create_model(batch_size, length):
     print("length")
     print(length)
 
-    # model = tf.keras.Sequential([
-    #        tf.keras.layers.Input(batch_input_shape=input_shape),
-    # #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
-    # #       # tf.expand_dims(batch_size, axis=1),
-    # #       # tf.keras.layers.Embedding(20, 15),
-    # #       # tf.expand_dims(axis=-1),
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu, input_shape=input_shape),  # relu performs much better than linear
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #
-    # #       # tf.keras.layers.BatchNormalization(1),      # subjectively performing much better than dropout
-    #        tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #
-    # #       # tf.keras.layers.BatchNormalization(1),
-    # #       tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-    # #       # tf.keras.layers.MaxPool1D(2),
-    # #       # tf.keras.layers.GlobalAveragePooling1D(),   # global avg. pooling or flatten --> dense "head" network
-    #        tf.keras.layers.Flatten(),
-    # #
-    #        tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-    #        tf.keras.layers.Dropout(0.2),
-    #        tf.keras.layers.Dense(1)
-    # ])
-
     model = tf.keras.Sequential([
-          # tf.keras.layers.Input(batch_input_shape=input_shape),
-          tf.keras.layers.Input(shape=input_shape),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
-          tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+           tf.keras.layers.Input(shape=input_shape),
 
-          tf.keras.layers.Flatten(),
-
-          tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
-          tf.keras.layers.Dropout(0.2),
-          tf.keras.layers.Dense(1)
+    #       # tf.keras.layers.InputLayer(batch_input_shape=input_shape),
+    #       # tf.expand_dims(batch_size, axis=1),
+    #       # tf.keras.layers.Embedding(20, 15),
+    #       # tf.expand_dims(axis=-1),
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu, input_shape=input_shape),  # relu performs much better than linear
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #
+    #       # tf.keras.layers.BatchNormalization(1),      # subjectively performing much better than dropout
+           tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #
+    #       # tf.keras.layers.BatchNormalization(1),
+    #       tf.keras.layers.Conv1D(128, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       # tf.keras.layers.MaxPool1D(2),
+    #       # tf.keras.layers.GlobalAveragePooling1D(),   # global avg. pooling or flatten --> dense "head" network
+           tf.keras.layers.Flatten(),
+    #
+           tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+           tf.keras.layers.Dropout(0.2),
+           tf.keras.layers.Dense(1)
     ])
+
+    # bgl3 model
+    # model = tf.keras.Sequential([
+    #       # tf.keras.layers.Input(batch_input_shape=input_shape),
+    #       tf.keras.layers.Input(shape=input_shape),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Conv1D(128, 3, strides=1, padding='valid', activation=tf.nn.leaky_relu),
+    #
+    #       tf.keras.layers.Flatten(),
+    #
+    #       tf.keras.layers.Dense(100, activation=tf.nn.leaky_relu),
+    #       tf.keras.layers.Dropout(0.2),
+    #       tf.keras.layers.Dense(1)
+    # ])
 
     # ube4b model
     # model = tf.keras.Sequential([
-    #       tf.keras.layers.Input(batch_input_shape=input_shape),
+    #       tf.keras.layers.Input(shape=input_shape),
     #       tf.keras.layers.Conv1D(32, 17, strides=1, padding='valid', activation=tf.nn.leaky_relu),
     #
     #       tf.keras.layers.Flatten(),
@@ -375,7 +380,7 @@ def main(dataset, settings):
         train_dataset, test_dataset = get_train_and_test_splits(dataset, train_size, settings)
 
         num_epochs = 100    # should choose a number such that the training loss has just leveled out at the end
-        BATCH_SIZE = 32
+        BATCH_SIZE = 128
         # Implement random_forest support (ignore if you're not using random forest)
         if settings.model_type == 'random_forest':
             import tensorflow_decision_forests as tfdf
@@ -426,6 +431,7 @@ def main(dataset, settings):
             print('Pearson r (p): ' + str(r))
 
             sys.exit()
+
 
         # If not random_forest, proceed with CNN
         model = create_model(BATCH_SIZE, len(settings.seq))
@@ -510,13 +516,13 @@ def main(dataset, settings):
 
         # predicted = predicted.numpy()
 
-        print("successfully assigned predictions!!!")
-
-        print("reached this_r part")
+        # print("successfully assigned predictions!!!")
+        #
+        # print("reached this_r part")
 
         this_r = scipy.stats.pearsonr([predicted[ii][0] for ii in range(sample)], [targets[ii] for ii in range(sample)])
 
-        print("successfully passed this_r part!!!")
+        # print("successfully passed this_r part!!!")
 
     if best_r == None or this_r > best_r:
             best_r = this_r
