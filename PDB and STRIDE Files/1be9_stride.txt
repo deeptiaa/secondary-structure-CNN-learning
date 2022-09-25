@@ -1,0 +1,204 @@
+REM  --------------------------------------------------------------------  1BE9
+REM                                                                        1BE9
+REM  STRIDE: Knowledge-based secondary structure assignment                1BE9
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         1BE9
+REM                                                                        1BE9
+REM  Residue accessible surface area calculation                           1BE9
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 1BE9
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       1BE9
+REM                                                                        1BE9
+REM  ------------------------ General information -----------------------  1BE9
+REM                                                                        1BE9
+HDR  PEPTIDE RECOGNITION                     20-MAY-98   1BE9              1BE9
+CMP  MOL_ID: 1;                                                            1BE9
+CMP   MOLECULE: PSD-95;                                                    1BE9
+CMP   CHAIN: A;                                                            1BE9
+CMP   FRAGMENT: THE THIRD PDZ DOMAIN OF PSD-95;                            1BE9
+CMP   ENGINEERED: YES;                                                     1BE9
+CMP   MOL_ID: 2;                                                           1BE9
+CMP   MOLECULE: CRIPT;                                                     1BE9
+CMP   CHAIN: B;                                                            1BE9
+CMP   FRAGMENT: C-TERMINAL PEPTIDE                                         1BE9
+SRC  MOL_ID: 1;                                                            1BE9
+SRC   ORGANISM_SCIENTIFIC: RATTUS NORVEGICUS;                              1BE9
+SRC   ORGANISM_COMMON: NORWAY RAT;                                         1BE9
+SRC   ORGANISM_TAXID: 10116;                                               1BE9
+SRC   EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21;                            1BE9
+SRC   EXPRESSION_SYSTEM_TAXID: 511693;                                     1BE9
+SRC   EXPRESSION_SYSTEM_STRAIN: BL21;                                      1BE9
+SRC   EXPRESSION_SYSTEM_PLASMID: PGEX-4T-1;                                1BE9
+SRC   MOL_ID: 2                                                            1BE9
+AUT  D.A.DOYLE,A.LEE,J.LEWIS,E.KIM,M.SHENG,R.MACKINNON                     1BE9
+REM                                                                        1BE9
+REM  -------------------- Secondary structure summary -------------------  1BE9
+REM                                                                        1BE9
+CHN  /home/proj/stride/tmp/tmp9YMDKXpdb A                                  1BE9
+REM                                                                        1BE9
+REM                .         .         .         .         .               1BE9
+SEQ  1    FLGEEDIPREPRRIVIHRGSTGLGFNIIGGEDGEGIFISFILAGGPADLS   50          1BE9
+STR        GGG       EEEEEETTTT   EEEEETTTTT EEEEEETTTTHHHHH               1BE9
+REM                                                                        1BE9
+REM                .         .         .         .         .               1BE9
+SEQ  51   GELRKGDQILSVNGVDLRNASHEQAAIALKNAGQTVTIIAQYKPEEYSRF  100          1BE9
+STR          TTTEEEEEETTEETTTT HHHHHHHHHH TTEEEEEEEE HHHHHH                1BE9
+REM                                                                        1BE9
+REM                .                                                       1BE9
+SEQ  101  EANSRVNSSGRIVTN                                     115          1BE9
+STR       TTTEEETTTT EEE                                                   1BE9
+REM                                                                        1BE9
+CHN  /home/proj/stride/tmp/tmp9YMDKXpdb B                                  1BE9
+REM                                                                        1BE9
+REM                                                                        1BE9
+SEQ  1    KQTSV                                                 5          1BE9
+STR        EEE                                                             1BE9
+REM                                                                        1BE9
+REM                                                                        1BE9
+REM                                                                        1BE9
+LOC  AlphaHelix   PRO   346 A      SER    350 A                            1BE9
+LOC  AlphaHelix   HIS   372 A      ASN    381 A                            1BE9
+LOC  AlphaHelix   PRO   394 A      ARG    399 A                            1BE9
+LOC  310Helix     LEU   302 A      GLU    304 A                            1BE9
+LOC  Strand       ARG   312 A      HIS    317 A                            1BE9
+LOC  Strand       PHE   325 A      GLY    329 A                            1BE9
+LOC  Strand       ILE   336 A      ILE    341 A                            1BE9
+LOC  Strand       ASP   357 A      VAL    362 A                            1BE9
+LOC  Strand       VAL   365 A      ASP    366 A                            1BE9
+LOC  Strand       THR   385 A      TYR    392 A                            1BE9
+LOC  Strand       SER   404 A      VAL    406 A                            1BE9
+LOC  Strand       ILE   412 A      THR    414 A                            1BE9
+LOC  Strand       GLN     6 B      SER      8 B                            1BE9
+LOC  TurnIV       ARG   318 A      THR    321 A                            1BE9
+LOC  TurnIV       GLY   330 A      GLY    333 A                            1BE9
+LOC  TurnIV       GLU   331 A      GLU    334 A                            1BE9
+LOC  TurnII       LEU   342 A      GLY    345 A                            1BE9
+LOC  TurnII       ARG   354 A      ASP    357 A                            1BE9
+LOC  TurnIV       SER   361 A      GLY    364 A                            1BE9
+LOC  TurnI'       VAL   362 A      VAL    365 A                            1BE9
+LOC  TurnI        LEU   367 A      ALA    370 A                            1BE9
+LOC  TurnVIII     GLY   383 A      VAL    386 A                            1BE9
+LOC  TurnII       GLU   401 A      SER    404 A                            1BE9
+LOC  TurnI        ASN   407 A      GLY    410 A                            1BE9
+REM                                                                        1BE9
+REM  --------------- Detailed secondary structure assignment-------------  1BE9
+REM                                                                        1BE9
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      1BE9
+ASG  PHE A  301    1    C          Coil    360.00    -97.19     108.2      1BE9
+ASG  LEU A  302    2    G      310Helix    -47.15    -46.36     124.9      1BE9
+ASG  GLY A  303    3    G      310Helix    -48.38     -4.54      42.6      1BE9
+ASG  GLU A  304    4    G      310Helix   -109.96     -2.51     159.8      1BE9
+ASG  GLU A  305    5    C          Coil    -89.64    144.25     119.6      1BE9
+ASG  ASP A  306    6    C          Coil    -67.66    139.33     121.6      1BE9
+ASG  ILE A  307    7    C          Coil    -78.33    127.71      14.5      1BE9
+ASG  PRO A  308    8    C          Coil    -52.84    132.44      89.4      1BE9
+ASG  ARG A  309    9    C          Coil   -106.11      1.43     104.0      1BE9
+ASG  GLU A  310   10    C          Coil    -85.45    157.94     144.4      1BE9
+ASG  PRO A  311   11    C          Coil    -62.84    148.57      62.7      1BE9
+ASG  ARG A  312   12    E        Strand   -132.19    149.03      62.0      1BE9
+ASG  ARG A  313   13    E        Strand   -101.75    132.19     167.4      1BE9
+ASG  ILE A  314   14    E        Strand   -127.30    122.29       0.2      1BE9
+ASG  VAL A  315   15    E        Strand   -107.11    114.66      55.4      1BE9
+ASG  ILE A  316   16    E        Strand   -108.67    128.40       3.9      1BE9
+ASG  HIS A  317   17    E        Strand   -104.77    103.70     137.3      1BE9
+ASG  ARG A  318   18    T          Turn   -117.14      5.48      20.5      1BE9
+ASG  GLY A  319   19    T          Turn     51.33   -120.40      31.2      1BE9
+ASG  SER A  320   20    T          Turn   -114.85     42.15     121.7      1BE9
+ASG  THR A  321   21    T          Turn   -124.05    165.11      85.6      1BE9
+ASG  GLY A  322   22    C          Coil    -64.50    159.95      42.8      1BE9
+ASG  LEU A  323   23    C          Coil    -73.63    -26.39       0.0      1BE9
+ASG  GLY A  324   24    C          Coil     85.92     37.67       7.3      1BE9
+ASG  PHE A  325   25    E        Strand   -154.33    159.88       1.7      1BE9
+ASG  ASN A  326   26    E        Strand   -105.39    146.29      39.9      1BE9
+ASG  ILE A  327   27    E        Strand   -124.47    147.18       0.0      1BE9
+ASG  ILE A  328   28    E        Strand   -132.80    161.30       3.8      1BE9
+ASG  GLY A  329   29    E        Strand     99.74   -168.31       7.2      1BE9
+ASG  GLY A  330   30    T          Turn     95.17      9.32       8.5      1BE9
+ASG  GLU A  331   31    T          Turn   -110.09    115.42     126.0      1BE9
+ASG  ASP A  332   32    T          Turn     57.76     51.08     106.0      1BE9
+ASG  GLY A  333   33    T          Turn     96.06    -66.28      41.4      1BE9
+ASG  GLU A  334   34    T          Turn      7.04    -59.02      71.4      1BE9
+ASG  GLY A  335   35    C          Coil    113.22    171.38       0.2      1BE9
+ASG  ILE A  336   36    E        Strand   -106.98    119.30       0.0      1BE9
+ASG  PHE A  337   37    E        Strand   -118.65    150.22       0.6      1BE9
+ASG  ILE A  338   38    E        Strand    -83.07    124.42       0.0      1BE9
+ASG  SER A  339   39    E        Strand   -106.67    -12.98      10.0      1BE9
+ASG  PHE A  340   40    E        Strand   -163.40    138.98     102.9      1BE9
+ASG  ILE A  341   41    E        Strand   -118.54    121.94      38.9      1BE9
+ASG  LEU A  342   42    T          Turn    -74.21    130.27      85.4      1BE9
+ASG  ALA A  343   43    T          Turn    -63.28    126.11      86.1      1BE9
+ASG  GLY A  344   44    T          Turn     89.97    -10.89      51.7      1BE9
+ASG  GLY A  345   45    T          Turn    -76.23    167.35       6.1      1BE9
+ASG  PRO A  346   46    H    AlphaHelix    -54.45    -40.69      29.5      1BE9
+ASG  ALA A  347   47    H    AlphaHelix    -64.50    -39.19       0.2      1BE9
+ASG  ASP A  348   48    H    AlphaHelix    -65.74    -50.38      69.4      1BE9
+ASG  LEU A  349   49    H    AlphaHelix    -62.04    -14.18     134.8      1BE9
+ASG  SER A  350   50    H    AlphaHelix    -80.92    -27.48      27.9      1BE9
+ASG  GLY A  351   51    C          Coil     58.33     16.38      65.1      1BE9
+ASG  GLU A  352   52    C          Coil   -114.76      1.67      96.2      1BE9
+ASG  LEU A  353   53    C          Coil   -122.82    156.35      16.6      1BE9
+ASG  ARG A  354   54    T          Turn   -157.00    162.50     111.1      1BE9
+ASG  LYS A  355   55    T          Turn    -60.16    137.77      56.4      1BE9
+ASG  GLY A  356   56    T          Turn    101.75    -14.46       0.0      1BE9
+ASG  ASP A  357   57    E        Strand    -74.70    136.60       0.8      1BE9
+ASG  GLN A  358   58    E        Strand    -99.96    137.16      22.4      1BE9
+ASG  ILE A  359   59    E        Strand    -89.28    105.24       0.0      1BE9
+ASG  LEU A  360   60    E        Strand    -74.63    -32.34      22.9      1BE9
+ASG  SER A  361   61    E        Strand   -167.46    160.07      16.8      1BE9
+ASG  VAL A  362   62    E        Strand   -130.76    117.71       3.5      1BE9
+ASG  ASN A  363   63    T          Turn     51.54     48.95      64.1      1BE9
+ASG  GLY A  364   64    T          Turn     80.93    -18.15      72.5      1BE9
+ASG  VAL A  365   65    E        Strand    -79.40    115.30      81.8      1BE9
+ASG  ASP A  366   66    E        Strand    -62.62    122.17      79.6      1BE9
+ASG  LEU A  367   67    T          Turn   -113.61      5.92       5.4      1BE9
+ASG  ARG A  368   68    T          Turn    -53.24    -38.45     126.9      1BE9
+ASG  ASN A  369   69    T          Turn   -117.72     31.54     124.1      1BE9
+ASG  ALA A  370   70    T          Turn    -78.38    157.24      19.4      1BE9
+ASG  SER A  371   71    C          Coil    -88.11    165.52      59.1      1BE9
+ASG  HIS A  372   72    H    AlphaHelix    -54.79    -59.88      18.4      1BE9
+ASG  GLU A  373   73    H    AlphaHelix    -60.16    -45.38     137.4      1BE9
+ASG  GLN A  374   74    H    AlphaHelix    -59.43    -40.39     107.0      1BE9
+ASG  ALA A  375   75    H    AlphaHelix    -62.52    -43.66       0.0      1BE9
+ASG  ALA A  376   76    H    AlphaHelix    -61.76    -49.00       5.2      1BE9
+ASG  ILE A  377   77    H    AlphaHelix    -56.98    -43.31      57.1      1BE9
+ASG  ALA A  378   78    H    AlphaHelix    -59.38    -45.29      25.8      1BE9
+ASG  LEU A  379   79    H    AlphaHelix    -68.43    -47.91       0.0      1BE9
+ASG  LYS A  380   80    H    AlphaHelix    -62.31    -33.47     115.9      1BE9
+ASG  ASN A  381   81    H    AlphaHelix   -104.18     17.88     120.5      1BE9
+ASG  ALA A  382   82    C          Coil    -64.56    -24.37      16.4      1BE9
+ASG  GLY A  383   83    T          Turn    109.79    179.44      38.6      1BE9
+ASG  GLN A  384   84    T          Turn    -68.83    -39.57     130.5      1BE9
+ASG  THR A  385   85    E        Strand   -105.49    114.87      70.5      1BE9
+ASG  VAL A  386   86    E        Strand   -107.94    121.40       0.0      1BE9
+ASG  THR A  387   87    E        Strand   -106.15    109.03      39.4      1BE9
+ASG  ILE A  388   88    E        Strand   -107.38    140.33       0.0      1BE9
+ASG  ILE A  389   89    E        Strand   -109.19    115.63      42.7      1BE9
+ASG  ALA A  390   90    E        Strand   -119.51    155.59       0.0      1BE9
+ASG  GLN A  391   91    E        Strand   -146.08    123.70      36.3      1BE9
+ASG  TYR A  392   92    E        Strand    -66.15    117.58       3.2      1BE9
+ASG  LYS A  393   93    C          Coil   -134.83     70.62      59.1      1BE9
+ASG  PRO A  394   94    H    AlphaHelix    -58.78    -38.07       0.0      1BE9
+ASG  GLU A  395   95    H    AlphaHelix    -64.11    -46.45      82.9      1BE9
+ASG  GLU A  396   96    H    AlphaHelix    -65.05    -44.37      68.2      1BE9
+ASG  TYR A  397   97    H    AlphaHelix    -63.15    -43.92       4.4      1BE9
+ASG  SER A  398   98    H    AlphaHelix    -50.63    -21.91      26.5      1BE9
+ASG  ARG A  399   99    H    AlphaHelix    -65.86    -25.70     162.5      1BE9
+ASG  PHE A  400  100    C          Coil    -81.71    -45.11      70.8      1BE9
+ASG  GLU A  401  101    T          Turn    -87.89    131.04      64.5      1BE9
+ASG  ALA A  402  102    T          Turn    -59.46    144.54      73.3      1BE9
+ASG  ASN A  403  103    T          Turn     52.74     31.03     119.3      1BE9
+ASG  SER A  404  104    E        Strand   -110.58    145.90      18.5      1BE9
+ASG  ARG A  405  105    E        Strand   -147.66    179.66     118.0      1BE9
+ASG  VAL A  406  106    E        Strand   -116.23    135.21      36.4      1BE9
+ASG  ASN A  407  107    T          Turn    -93.43    178.10      54.1      1BE9
+ASG  SER A  408  108    T          Turn    -55.70    -23.19     127.8      1BE9
+ASG  SER A  409  109    T          Turn    -95.02     -1.52      10.4      1BE9
+ASG  GLY A  410  110    T          Turn     95.90     -1.05       2.0      1BE9
+ASG  ARG A  411  111    C          Coil    -70.30    137.23      47.1      1BE9
+ASG  ILE A  412  112    E        Strand    -81.67    114.86      29.5      1BE9
+ASG  VAL A  413  113    E        Strand   -110.28    136.71      40.0      1BE9
+ASG  THR A  414  114    E        Strand   -117.54    129.98      64.3      1BE9
+ASG  ASN A  415  115    C          Coil    -98.18    360.00     137.6      1BE9
+ASG  LYS B    5    1    C          Coil    360.00    148.52      79.7      1BE9
+ASG  GLN B    6    2    E        Strand   -139.50    129.73     113.7      1BE9
+ASG  THR B    7    3    E        Strand   -129.13    135.26      32.6      1BE9
+ASG  SER B    8    4    E        Strand    -89.55    132.75      78.9      1BE9
+ASG  VAL B    9    5    C          Coil   -128.47    360.00      14.3      1BE9

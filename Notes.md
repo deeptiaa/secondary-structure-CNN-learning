@@ -40,6 +40,11 @@ Documentation:
 | ~~GAL4~~ | MaveDB | 881 | 1,196 | 1727 | 47 |
 | Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 198  | 46
 | ~~TAR DNA-binding protein 43~~ | MaveDB | 414 | 1,342 | 812| 36
+| 1be9 |
+| 1d5r |
+| 1nd4 |
+| 3dqw |
+| 4bz3 |
 
 **CHECK OFFSET\****
 

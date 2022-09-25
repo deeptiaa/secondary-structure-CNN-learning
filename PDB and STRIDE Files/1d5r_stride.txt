@@ -1,0 +1,431 @@
+REM  --------------------------------------------------------------------  1D5R
+REM                                                                        1D5R
+REM  STRIDE: Knowledge-based secondary structure assignment                1D5R
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         1D5R
+REM                                                                        1D5R
+REM  Residue accessible surface area calculation                           1D5R
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 1D5R
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       1D5R
+REM                                                                        1D5R
+REM  ------------------------ General information -----------------------  1D5R
+REM                                                                        1D5R
+HDR  HYDROLASE                               11-OCT-99   1D5R              1D5R
+CMP  MOL_ID: 1;                                                            1D5R
+CMP   MOLECULE: PHOSPHOINOSITIDE PHOSPHATASE PTEN;                         1D5R
+CMP   CHAIN: A;                                                            1D5R
+CMP   FRAGMENT: RESIDUES 7-353;                                            1D5R
+CMP   EC: 3.1.3.48;                                                        1D5R
+CMP   ENGINEERED: YES;                                                     1D5R
+CMP   MUTATION: YES                                                        1D5R
+SRC  MOL_ID: 1;                                                            1D5R
+SRC   ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   1D5R
+SRC   ORGANISM_COMMON: HUMAN;                                              1D5R
+SRC   ORGANISM_TAXID: 9606;                                                1D5R
+SRC   EXPRESSION_SYSTEM: TRICHOPLUSIA NI;                                  1D5R
+SRC   EXPRESSION_SYSTEM_COMMON: CABBAGE LOOPER;                            1D5R
+SRC   EXPRESSION_SYSTEM_TAXID: 7111;                                       1D5R
+SRC   EXPRESSION_SYSTEM_CELL_LINE: HIGH FIVE;                              1D5R
+SRC   EXPRESSION_SYSTEM_VECTOR: BACULOVIRUS;                               1D5R
+SRC   EXPRESSION_SYSTEM_PLASMID: PVL1393                                   1D5R
+AUT  J.O.LEE,H.YANG,M.-M.GEORGESCU,A.DI CRISTOFANO,N.P.PAVLETICH           1D5R
+REM                                                                        1D5R
+REM  -------------------- Secondary structure summary -------------------  1D5R
+REM                                                                        1D5R
+CHN  /home/proj/stride/tmp/tmpg8DoHUpdb A                                  1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  1    RRYQEDGFDLDLTYIYPNIIAMGFPAERLEGVYRNNIDDVVRFLDSKHKN   50          1D5R
+STR           BTTTTBTEEEEETTEEEE TTBTTTBTTB  BHHHHHHHHHHHTTT               1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  51   HYKIYNLCAERHYDTAKFNCRVAQYPFEDHNPPQLELIKPFCEDLDQWLS  100          1D5R
+STR       TEEEEEEETTT   TTTT  EEEEEEETTTT   GGGHHHHHHHHHHHHH               1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  101  EDDNHVAAIHCKAGKGRTGVMICAYLLHRGKFLKAQEALDFYGEVRTRDK  150          1D5R
+STR       TTTT EEEEETTTT HHHHHHHHHHHHHHTTTT HHHHHHHHHHHHTTTT               1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  151  KGVTIPSQRRYVYYYSYLLKNHLDYRPVALLFHKMMFETIPMFSGGTCNP  200          1D5R
+STR       TTTT HHHHHHHHHHHHHHHH       EEEEEEEEETTT TTBTTB  E               1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  201  QFVVCQLKVKIYSSNSGPTRREDKFMYFEFPQPLPVCGDIKVEFFHKQNK  250          1D5R
+STR       EEEEEETTEEEEE    TTEEETTEEEEEEEEEEEEE EEEEEEEE TTT               1D5R
+REM                                                                        1D5R
+REM                .         .         .         .         .               1D5R
+SEQ  251  MLKKDKMFHFWVNTFFIPKEYLVLTLTKNDLDKANKDKANRYFSPNFKVK  300          1D5R
+STR       T   EEEEEEEEEGGG     EEEEEEGGGTTTGGGTTTTTTTTTTTEEE               1D5R
+REM                                                                        1D5R
+REM                                                                        1D5R
+SEQ  301  LYFTKTV                                             307          1D5R
+STR       EEEEE                                                            1D5R
+REM                                                                        1D5R
+REM                                                                        1D5R
+REM                                                                        1D5R
+LOC  AlphaHelix   ILE    50 A      LYS     60 A                            1D5R
+LOC  AlphaHelix   ILE   101 A      SER    113 A                            1D5R
+LOC  AlphaHelix   GLY   129 A      ARG    142 A                            1D5R
+LOC  AlphaHelix   ALA   148 A      ARG    159 A                            1D5R
+LOC  AlphaHelix   PRO   169 A      ASN    184 A                            1D5R
+LOC  310Helix     LEU    98 A      LEU    100 A                            1D5R
+LOC  310Helix     THR   277 A      PHE    279 A                            1D5R
+LOC  310Helix     LYS   322 A      ASP    324 A                            1D5R
+LOC  310Helix     ALA   328 A      LYS    330 A                            1D5R
+LOC  Strand       LEU    25 A      TYR     29 A                            1D5R
+LOC  Strand       ILE    32 A      MET     35 A                            1D5R
+LOC  Strand       TYR    65 A      CYS     71 A                            1D5R
+LOC  Strand       ARG    84 A      PHE     90 A                            1D5R
+LOC  Strand       VAL   119 A      HIS    123 A                            1D5R
+LOC  Strand       ALA   192 A      PHE    200 A                            1D5R
+LOC  Strand       PRO   213 A      GLN    219 A                            1D5R
+LOC  Strand       VAL   222 A      SER    226 A                            1D5R
+LOC  Strand       ARG   233 A      GLU    235 A                            1D5R
+LOC  Strand       PHE   238 A      CYS    250 A                            1D5R
+LOC  Strand       ASP   252 A      HIS    259 A                            1D5R
+LOC  Strand       ASP   268 A      ASN    276 A                            1D5R
+LOC  Strand       LEU   316 A      THR    321 A                            1D5R
+LOC  Strand       LYS   342 A      LYS    349 A                            1D5R
+LOC  TurnIV       GLU    18 A      PHE     21 A                            1D5R
+LOC  TurnIV       ASP    19 A      ASP     22 A                            1D5R
+LOC  TurnVIII     TYR    27 A      PRO     30 A                            1D5R
+LOC  TurnI        TYR    29 A      ILE     32 A                            1D5R
+LOC  TurnVIII     ALA    39 A      LEU     42 A                            1D5R
+LOC  TurnII'      GLU    43 A      TYR     46 A                            1D5R
+LOC  TurnIV       HIS    61 A      HIS     64 A                            1D5R
+LOC  TurnIV       CYS    71 A      ARG     74 A                            1D5R
+LOC  TurnI        THR    78 A      PHE     81 A                            1D5R
+LOC  TurnII       GLU    91 A      ASN     94 A                            1D5R
+LOC  TurnIV       GLU   114 A      ASN    117 A                            1D5R
+LOC  TurnI        CYS   124 A      GLY    127 A                            1D5R
+LOC  TurnIV       GLY   143 A      LEU    146 A                            1D5R
+LOC  TurnI        THR   160 A      LYS    163 A                            1D5R
+LOC  TurnIV       LYS   164 A      THR    167 A                            1D5R
+LOC  TurnIV       PHE   200 A      ILE    203 A                            1D5R
+LOC  TurnIV       MET   205 A      GLY    208 A                            1D5R
+LOC  TurnIV       PHE   206 A      GLY    209 A                            1D5R
+LOC  TurnI'       SER   207 A      THR    210 A                            1D5R
+LOC  TurnIV       CYS   218 A      LYS    221 A                            1D5R
+LOC  TurnII'      GLN   219 A      VAL    222 A                            1D5R
+LOC  TurnVIII     PRO   231 A      ARG    234 A                            1D5R
+LOC  TurnIV       GLU   235 A      PHE    238 A                            1D5R
+LOC  TurnVIII     PHE   243 A      PRO    246 A                            1D5R
+LOC  TurnII       GLN   261 A      MET    264 A                            1D5R
+LOC  TurnI        LEU   325 A      ALA    328 A                            1D5R
+LOC  TurnI        ASP   331 A      ASN    334 A                            1D5R
+LOC  TurnI        ASN   334 A      PHE    337 A                            1D5R
+LOC  TurnIV       ARG   335 A      SER    338 A                            1D5R
+LOC  TurnII       SER   338 A      PHE    341 A                            1D5R
+LOC  GammaInv     LEU    23 A      LEU     25 A                            1D5R
+LOC  GammaInv     PHE    37 A      ALA     39 A                            1D5R
+REM                                                                        1D5R
+REM  --------------- Detailed secondary structure assignment-------------  1D5R
+REM                                                                        1D5R
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      1D5R
+ASG  ARG A   14    1    C          Coil    360.00    -19.42     240.5      1D5R
+ASG  ARG A   15    2    C          Coil   -104.22   -173.93     118.5      1D5R
+ASG  TYR A   16    3    C          Coil    171.13    -21.68     108.0      1D5R
+ASG  GLN A   17    4    C          Coil   -175.89    137.04      76.8      1D5R
+ASG  GLU A   18    5    B        Bridge    -72.14    118.48      33.3      1D5R
+ASG  ASP A   19    6    T          Turn   -120.94     40.66     102.0      1D5R
+ASG  GLY A   20    7    T          Turn    -89.72    -29.24      63.8      1D5R
+ASG  PHE A   21    8    T          Turn   -117.07   -105.38      85.6      1D5R
+ASG  ASP A   22    9    T          Turn    173.58     61.30     102.3      1D5R
+ASG  LEU A   23   10    B        Bridge   -117.27    148.80      10.3      1D5R
+ASG  ASP A   24   11    T          Turn    -80.33     79.37      35.7      1D5R
+ASG  LEU A   25   12    E        Strand   -152.87    155.40       1.1      1D5R
+ASG  THR A   26   13    E        Strand   -146.27    125.21       2.5      1D5R
+ASG  TYR A   27   14    E        Strand    -73.70    116.70      34.0      1D5R
+ASG  ILE A   28   15    E        Strand    -80.66    -30.11       7.8      1D5R
+ASG  TYR A   29   16    E        Strand   -147.62    162.37      42.1      1D5R
+ASG  PRO A   30   17    T          Turn    -53.68    -34.82     104.6      1D5R
+ASG  ASN A   31   18    T          Turn   -100.88      0.63      50.3      1D5R
+ASG  ILE A   32   19    E        Strand   -125.76    114.23       4.4      1D5R
+ASG  ILE A   33   20    E        Strand   -111.58    134.12       0.2      1D5R
+ASG  ALA A   34   21    E        Strand   -109.41    125.54       0.0      1D5R
+ASG  MET A   35   22    E        Strand   -137.07    177.99       0.2      1D5R
+ASG  GLY A   36   23    C          Coil    -95.25   -178.70       0.4      1D5R
+ASG  PHE A   37   24    T          Turn    -69.69    121.45       7.4      1D5R
+ASG  PRO A   38   25    T          Turn    -74.57     85.97       0.0      1D5R
+ASG  ALA A   39   26    B        Bridge    -75.18    133.65       0.8      1D5R
+ASG  GLU A   40   27    T          Turn    -72.71    -45.08      98.2      1D5R
+ASG  ARG A   41   28    T          Turn   -130.87     78.80     197.8      1D5R
+ASG  LEU A   42   29    T          Turn    -42.42    154.21      71.1      1D5R
+ASG  GLU A   43   30    B        Bridge    174.12    152.98     125.7      1D5R
+ASG  GLY A   44   31    T          Turn     52.37   -107.17      66.5      1D5R
+ASG  VAL A   45   32    T          Turn    -81.14    -20.79      87.9      1D5R
+ASG  TYR A   46   33    B        Bridge    -69.77    134.86      28.1      1D5R
+ASG  ARG A   47   34    C          Coil   -134.51    -45.04     193.1      1D5R
+ASG  ASN A   48   35    C          Coil    -69.84    126.42       6.5      1D5R
+ASG  ASN A   49   36    B        Bridge    -82.53    126.00      68.2      1D5R
+ASG  ILE A   50   37    H    AlphaHelix    -55.81    -29.08       2.0      1D5R
+ASG  ASP A   51   38    H    AlphaHelix    -68.04    -43.98      71.9      1D5R
+ASG  ASP A   52   39    H    AlphaHelix    -64.50    -39.31      53.5      1D5R
+ASG  VAL A   53   40    H    AlphaHelix    -62.86    -40.29       0.0      1D5R
+ASG  VAL A   54   41    H    AlphaHelix    -63.52    -54.94      18.8      1D5R
+ASG  ARG A   55   42    H    AlphaHelix    -48.28    -54.56     140.5      1D5R
+ASG  PHE A   56   43    H    AlphaHelix    -49.94    -58.26       0.0      1D5R
+ASG  LEU A   57   44    H    AlphaHelix    -61.64    -40.77       0.4      1D5R
+ASG  ASP A   58   45    H    AlphaHelix    -70.85    -40.51      52.3      1D5R
+ASG  SER A   59   46    H    AlphaHelix    -70.85    -30.84      79.6      1D5R
+ASG  LYS A   60   47    H    AlphaHelix   -105.37    -14.35      94.1      1D5R
+ASG  HIS A   61   48    T          Turn   -146.01     88.17      24.8      1D5R
+ASG  LYS A   62   49    T          Turn    -40.31    -90.35     147.8      1D5R
+ASG  ASN A   63   50    T          Turn   -126.75     55.80     100.3      1D5R
+ASG  HIS A   64   51    T          Turn   -137.38     27.11      64.9      1D5R
+ASG  TYR A   65   52    E        Strand   -130.65    144.43       3.2      1D5R
+ASG  LYS A   66   53    E        Strand   -131.67    134.31      24.9      1D5R
+ASG  ILE A   67   54    E        Strand   -100.35    147.86       0.0      1D5R
+ASG  TYR A   68   55    E        Strand   -124.30    113.54       0.0      1D5R
+ASG  ASN A   69   56    E        Strand    -98.52    116.20       1.2      1D5R
+ASG  LEU A   70   57    E        Strand    -96.25      3.68       0.0      1D5R
+ASG  CYS A   71   58    E        Strand    -75.99    103.11       4.0      1D5R
+ASG  ALA A   72   59    T          Turn    -69.35    -35.44      37.3      1D5R
+ASG  GLU A   73   60    T          Turn    -63.00   -116.07      81.1      1D5R
+ASG  ARG A   74   61    T          Turn    -65.73    176.91     132.4      1D5R
+ASG  HIS A   75   62    C          Coil   -163.72    172.16      69.4      1D5R
+ASG  TYR A   76   63    C          Coil   -141.42    153.43       4.1      1D5R
+ASG  ASP A   77   64    C          Coil    -76.13    106.76     124.9      1D5R
+ASG  THR A   78   65    T          Turn    -58.52     30.40      58.2      1D5R
+ASG  ALA A   79   66    T          Turn    -68.90    -56.03      82.1      1D5R
+ASG  LYS A   80   67    T          Turn    -49.80    -27.12      96.2      1D5R
+ASG  PHE A   81   68    T          Turn    -91.58    114.11       5.4      1D5R
+ASG  ASN A   82   69    C          Coil    -79.88     56.52      96.2      1D5R
+ASG  CYS A   83   70    C          Coil   -159.31   -168.61      38.2      1D5R
+ASG  ARG A   84   71    E        Strand    -93.10    141.11     155.6      1D5R
+ASG  VAL A   85   72    E        Strand   -122.31     93.84       5.9      1D5R
+ASG  ALA A   86   73    E        Strand    -77.45    136.69       6.0      1D5R
+ASG  GLN A   87   74    E        Strand   -106.11    122.38     107.3      1D5R
+ASG  TYR A   88   75    E        Strand   -135.46     65.80      36.3      1D5R
+ASG  PRO A   89   76    E        Strand    -73.41    143.08      66.6      1D5R
+ASG  PHE A   90   77    E        Strand   -154.49    164.51      12.6      1D5R
+ASG  GLU A   91   78    T          Turn    -67.16    140.03      83.5      1D5R
+ASG  ASP A   92   79    T          Turn    -49.69    119.74      59.6      1D5R
+ASG  HIS A   93   80    T          Turn     70.78     11.66     113.0      1D5R
+ASG  ASN A   94   81    T          Turn   -114.03    165.06      26.5      1D5R
+ASG  PRO A   95   82    C          Coil    -83.93    165.01       8.5      1D5R
+ASG  PRO A   96   83    C          Coil    -86.29    172.25       2.4      1D5R
+ASG  GLN A   97   84    C          Coil    -64.81    140.55     117.2      1D5R
+ASG  LEU A   98   85    G      310Helix    -49.99    -48.76       6.2      1D5R
+ASG  GLU A   99   86    G      310Helix    -67.46     -3.52     122.8      1D5R
+ASG  LEU A  100   87    G      310Helix    -76.81    -33.55      40.9      1D5R
+ASG  ILE A  101   88    H    AlphaHelix    -60.26    -61.17       0.0      1D5R
+ASG  LYS A  102   89    H    AlphaHelix    -52.54    -55.45      94.7      1D5R
+ASG  PRO A  103   90    H    AlphaHelix    -56.70    -35.39      57.2      1D5R
+ASG  PHE A  104   91    H    AlphaHelix    -61.26    -44.04       0.0      1D5R
+ASG  CYS A  105   92    H    AlphaHelix    -63.84    -36.01       0.0      1D5R
+ASG  GLU A  106   93    H    AlphaHelix    -73.82    -39.26      87.8      1D5R
+ASG  ASP A  107   94    H    AlphaHelix    -57.61    -59.81      34.8      1D5R
+ASG  LEU A  108   95    H    AlphaHelix    -56.63    -45.78       0.0      1D5R
+ASG  ASP A  109   96    H    AlphaHelix    -66.03    -26.59      48.5      1D5R
+ASG  GLN A  110   97    H    AlphaHelix    -66.23    -56.90      97.4      1D5R
+ASG  TRP A  111   98    H    AlphaHelix    -61.24    -40.22      19.4      1D5R
+ASG  LEU A  112   99    H    AlphaHelix    -73.64    -22.24      14.7      1D5R
+ASG  SER A  113  100    H    AlphaHelix    -80.95     36.82      66.2      1D5R
+ASG  GLU A  114  101    T          Turn     42.75     45.62     116.7      1D5R
+ASG  ASP A  115  102    T          Turn    -84.64    -25.76      59.2      1D5R
+ASG  ASP A  116  103    T          Turn   -141.69    -47.85     102.6      1D5R
+ASG  ASN A  117  104    T          Turn   -153.28   -154.78      34.3      1D5R
+ASG  HIS A  118  105    C          Coil   -146.88     16.81      65.4      1D5R
+ASG  VAL A  119  106    E        Strand   -138.16    141.27       5.8      1D5R
+ASG  ALA A  120  107    E        Strand   -133.00    131.76       0.0      1D5R
+ASG  ALA A  121  108    E        Strand   -111.82    107.89       1.0      1D5R
+ASG  ILE A  122  109    E        Strand    -97.97    136.41       0.0      1D5R
+ASG  HIS A  123  110    E        Strand   -148.54    157.05       0.0      1D5R
+ASG  CYS A  124  111    T          Turn   -129.29   -126.31       4.0      1D5R
+ASG  LYS A  125  112    T          Turn    -88.55    -66.30      36.1      1D5R
+ASG  ALA A  126  113    T          Turn   -108.65      8.66      44.9      1D5R
+ASG  GLY A  127  114    T          Turn     62.14     51.30       0.8      1D5R
+ASG  LYS A  128  115    C          Coil   -121.10   -102.44      82.8      1D5R
+ASG  GLY A  129  116    H    AlphaHelix    -56.47    -50.49       8.5      1D5R
+ASG  ARG A  130  117    H    AlphaHelix    -64.95    -49.10       7.6      1D5R
+ASG  THR A  131  118    H    AlphaHelix    -59.27    -37.72       0.0      1D5R
+ASG  GLY A  132  119    H    AlphaHelix    -63.12    -40.80       0.0      1D5R
+ASG  VAL A  133  120    H    AlphaHelix    -59.92    -50.51       0.2      1D5R
+ASG  MET A  134  121    H    AlphaHelix    -65.49    -43.02       0.0      1D5R
+ASG  ILE A  135  122    H    AlphaHelix    -66.46    -47.43       0.0      1D5R
+ASG  CYS A  136  123    H    AlphaHelix    -62.51    -34.89       0.0      1D5R
+ASG  ALA A  137  124    H    AlphaHelix    -60.41    -42.15       0.0      1D5R
+ASG  TYR A  138  125    H    AlphaHelix    -65.61    -46.31       9.8      1D5R
+ASG  LEU A  139  126    H    AlphaHelix    -51.45    -36.26       3.0      1D5R
+ASG  LEU A  140  127    H    AlphaHelix    -77.18    -39.83      12.5      1D5R
+ASG  HIS A  141  128    H    AlphaHelix    -67.93    -44.39      46.8      1D5R
+ASG  ARG A  142  129    H    AlphaHelix    -66.48    -35.97     158.1      1D5R
+ASG  GLY A  143  130    T          Turn    107.66     16.17      43.2      1D5R
+ASG  LYS A  144  131    T          Turn    -67.76    -44.06     121.9      1D5R
+ASG  PHE A  145  132    T          Turn   -121.66    166.53      36.9      1D5R
+ASG  LEU A  146  133    T          Turn   -115.93    -21.41     127.9      1D5R
+ASG  LYS A  147  134    C          Coil   -119.15    134.65     126.1      1D5R
+ASG  ALA A  148  135    H    AlphaHelix    -46.42    -52.47       3.1      1D5R
+ASG  GLN A  149  136    H    AlphaHelix    -59.61    -27.13     111.0      1D5R
+ASG  GLU A  150  137    H    AlphaHelix    -71.00    -43.79      78.5      1D5R
+ASG  ALA A  151  138    H    AlphaHelix    -67.36    -43.45       0.0      1D5R
+ASG  LEU A  152  139    H    AlphaHelix    -60.97    -47.16       3.6      1D5R
+ASG  ASP A  153  140    H    AlphaHelix    -65.65    -37.23      78.1      1D5R
+ASG  PHE A  154  141    H    AlphaHelix    -59.98    -57.03      56.6      1D5R
+ASG  TYR A  155  142    H    AlphaHelix    -50.23    -51.23       0.0      1D5R
+ASG  GLY A  156  143    H    AlphaHelix    -54.68    -50.46       2.5      1D5R
+ASG  GLU A  157  144    H    AlphaHelix    -62.97    -41.41      98.8      1D5R
+ASG  VAL A  158  145    H    AlphaHelix    -80.87    -36.48      26.9      1D5R
+ASG  ARG A  159  146    H    AlphaHelix    -81.13    -39.32      12.0      1D5R
+ASG  THR A  160  147    T          Turn   -113.52    166.61      11.7      1D5R
+ASG  ARG A  161  148    T          Turn    -94.76    -10.25     145.1      1D5R
+ASG  ASP A  162  149    T          Turn   -119.33     20.70      77.4      1D5R
+ASG  LYS A  163  150    T          Turn     51.07     39.42     147.7      1D5R
+ASG  LYS A  164  151    T          Turn   -121.05     77.45     115.4      1D5R
+ASG  GLY A  165  152    T          Turn    -91.19    -97.30       3.7      1D5R
+ASG  VAL A  166  153    T          Turn    -82.62    108.64       2.3      1D5R
+ASG  THR A  167  154    T          Turn   -114.51    -24.56      37.5      1D5R
+ASG  ILE A  168  155    C          Coil    -67.77    117.92      26.5      1D5R
+ASG  PRO A  169  156    H    AlphaHelix    -51.15    -36.29      11.9      1D5R
+ASG  SER A  170  157    H    AlphaHelix    -62.07    -38.75       0.0      1D5R
+ASG  GLN A  171  158    H    AlphaHelix    -70.12    -46.82       2.4      1D5R
+ASG  ARG A  172  159    H    AlphaHelix    -58.01    -38.25      61.5      1D5R
+ASG  ARG A  173  160    H    AlphaHelix    -55.56    -43.85      31.7      1D5R
+ASG  TYR A  174  161    H    AlphaHelix    -67.74    -20.03       0.4      1D5R
+ASG  VAL A  175  162    H    AlphaHelix    -75.23    -32.59       0.0      1D5R
+ASG  TYR A  176  163    H    AlphaHelix    -74.18    -35.25      97.9      1D5R
+ASG  TYR A  177  164    H    AlphaHelix    -57.04    -48.53      25.5      1D5R
+ASG  TYR A  178  165    H    AlphaHelix    -65.77    -46.91       6.8      1D5R
+ASG  SER A  179  166    H    AlphaHelix    -53.36    -35.83       6.5      1D5R
+ASG  TYR A  180  167    H    AlphaHelix    -63.29    -46.57     103.0      1D5R
+ASG  LEU A  181  168    H    AlphaHelix    -63.25    -42.11      14.3      1D5R
+ASG  LEU A  182  169    H    AlphaHelix    -59.05    -62.76      51.9      1D5R
+ASG  LYS A  183  170    H    AlphaHelix    -55.36    -35.86     119.1      1D5R
+ASG  ASN A  184  171    H    AlphaHelix    -87.10     -6.14      71.5      1D5R
+ASG  HIS A  185  172    C          Coil     53.17     53.22     162.0      1D5R
+ASG  LEU A  186  173    C          Coil   -108.63    155.24      66.7      1D5R
+ASG  ASP A  187  174    C          Coil   -113.22    137.45     124.3      1D5R
+ASG  TYR A  188  175    C          Coil    -64.33    154.11      36.1      1D5R
+ASG  ARG A  189  176    C          Coil   -158.28    127.92     186.9      1D5R
+ASG  PRO A  190  177    C          Coil    -58.17    125.66      87.6      1D5R
+ASG  VAL A  191  178    C          Coil   -111.99    115.56      41.2      1D5R
+ASG  ALA A  192  179    E        Strand    -83.25    138.31      43.8      1D5R
+ASG  LEU A  193  180    E        Strand   -141.91    173.20       1.0      1D5R
+ASG  LEU A  194  181    E        Strand   -116.66    128.82      50.3      1D5R
+ASG  PHE A  195  182    E        Strand    -95.21    111.42       0.8      1D5R
+ASG  HIS A  196  183    E        Strand    -88.38    -41.23      50.2      1D5R
+ASG  LYS A  197  184    E        Strand   -176.82    170.55      28.7      1D5R
+ASG  MET A  198  185    E        Strand   -133.31    148.38       0.0      1D5R
+ASG  MET A  199  186    E        Strand   -132.77    129.37      13.8      1D5R
+ASG  PHE A  200  187    E        Strand    -86.92    133.56       0.0      1D5R
+ASG  GLU A  201  188    T          Turn    -73.87    -61.81      51.9      1D5R
+ASG  THR A  202  189    T          Turn   -107.59   -175.85      29.7      1D5R
+ASG  ILE A  203  190    T          Turn   -104.96    118.56      22.2      1D5R
+ASG  PRO A  204  191    C          Coil    -59.03    143.44       0.0      1D5R
+ASG  MET A  205  192    T          Turn   -108.67     91.32      64.7      1D5R
+ASG  PHE A  206  193    T          Turn   -120.22    -15.25      38.5      1D5R
+ASG  SER A  207  194    B        Bridge   -154.81    109.19      37.4      1D5R
+ASG  GLY A  208  195    T          Turn     49.25     56.27      83.9      1D5R
+ASG  GLY A  209  196    T          Turn     76.99    -18.79      47.8      1D5R
+ASG  THR A  210  197    B        Bridge   -128.54   -167.71      50.1      1D5R
+ASG  CYS A  211  198    C          Coil   -148.15    168.58       5.7      1D5R
+ASG  ASN A  212  199    C          Coil   -122.93     71.22      70.6      1D5R
+ASG  PRO A  213  200    E        Strand    -58.17    148.56       0.4      1D5R
+ASG  GLN A  214  201    E        Strand   -152.01    143.05      10.6      1D5R
+ASG  PHE A  215  202    E        Strand   -141.21    161.34       5.6      1D5R
+ASG  VAL A  216  203    E        Strand   -129.95    139.09      27.2      1D5R
+ASG  VAL A  217  204    E        Strand   -114.60    127.95       0.0      1D5R
+ASG  CYS A  218  205    E        Strand   -122.22    148.15      25.9      1D5R
+ASG  GLN A  219  206    E        Strand   -117.61    109.73      56.2      1D5R
+ASG  LEU A  220  207    T          Turn     61.37   -135.42      77.6      1D5R
+ASG  LYS A  221  208    T          Turn    -91.82     12.84     179.8      1D5R
+ASG  VAL A  222  209    E        Strand   -107.46    121.95      92.5      1D5R
+ASG  LYS A  223  210    E        Strand    -80.59    109.34     162.9      1D5R
+ASG  ILE A  224  211    E        Strand    -88.81    -16.08      61.4      1D5R
+ASG  TYR A  225  212    E        Strand   -155.55    139.88      57.7      1D5R
+ASG  SER A  226  213    E        Strand   -136.62    119.89      78.2      1D5R
+ASG  SER A  227  214    C          Coil    -92.27    159.00      10.3      1D5R
+ASG  ASN A  228  215    C          Coil    -79.39    170.79     120.8      1D5R
+ASG  SER A  229  216    C          Coil    -69.82    141.48      52.5      1D5R
+ASG  GLY A  230  217    C          Coil     85.83    152.49      18.1      1D5R
+ASG  PRO A  231  218    T          Turn    -73.55    155.05      38.3      1D5R
+ASG  THR A  232  219    T          Turn    -69.13    -25.57      72.4      1D5R
+ASG  ARG A  233  220    E        Strand   -156.98    126.72      98.6      1D5R
+ASG  ARG A  234  221    E        Strand   -104.46    124.83     125.4      1D5R
+ASG  GLU A  235  222    E        Strand   -134.06     68.37      83.6      1D5R
+ASG  ASP A  236  223    T          Turn     29.63    106.83     111.6      1D5R
+ASG  LYS A  237  224    T          Turn     77.38    -23.01     127.8      1D5R
+ASG  PHE A  238  225    E        Strand   -112.90    140.05      54.7      1D5R
+ASG  MET A  239  226    E        Strand   -130.49    139.24       3.8      1D5R
+ASG  TYR A  240  227    E        Strand   -121.59    146.80      23.5      1D5R
+ASG  PHE A  241  228    E        Strand   -132.92    100.69       2.8      1D5R
+ASG  GLU A  242  229    E        Strand   -109.19    130.96      74.5      1D5R
+ASG  PHE A  243  230    E        Strand    -70.97    141.47      14.9      1D5R
+ASG  PRO A  244  231    E        Strand    -57.55    -44.63      83.4      1D5R
+ASG  GLN A  245  232    E        Strand   -126.94    143.42     143.0      1D5R
+ASG  PRO A  246  233    E        Strand    -51.36    127.73      63.6      1D5R
+ASG  LEU A  247  234    E        Strand    -84.48    115.61      14.7      1D5R
+ASG  PRO A  248  235    E        Strand    -65.98    131.00      90.1      1D5R
+ASG  VAL A  249  236    E        Strand   -140.93    145.16       2.6      1D5R
+ASG  CYS A  250  237    E        Strand   -159.48    130.37      40.0      1D5R
+ASG  GLY A  251  238    C          Coil     91.27   -137.34       9.2      1D5R
+ASG  ASP A  252  239    E        Strand    -87.20    123.72      12.5      1D5R
+ASG  ILE A  253  240    E        Strand   -128.78    143.85       7.3      1D5R
+ASG  LYS A  254  241    E        Strand   -116.81    139.80      42.4      1D5R
+ASG  VAL A  255  242    E        Strand   -129.87    125.73       1.2      1D5R
+ASG  GLU A  256  243    E        Strand   -128.96    126.97      35.9      1D5R
+ASG  PHE A  257  244    E        Strand   -105.24    146.76       0.2      1D5R
+ASG  PHE A  258  245    E        Strand   -133.87    162.04      19.0      1D5R
+ASG  HIS A  259  246    E        Strand   -109.00    122.34       0.0      1D5R
+ASG  LYS A  260  247    C          Coil    -84.23    107.25      67.0      1D5R
+ASG  GLN A  261  248    T          Turn    -91.74    131.24      45.7      1D5R
+ASG  ASN A  262  249    T          Turn    -48.93    136.70      88.8      1D5R
+ASG  LYS A  263  250    T          Turn     51.78     36.29     197.0      1D5R
+ASG  MET A  264  251    T          Turn   -151.86    122.19     103.8      1D5R
+ASG  LEU A  265  252    C          Coil    -52.00    -60.69     179.5      1D5R
+ASG  LYS A  266  253    C          Coil    -61.22    129.06     134.1      1D5R
+ASG  LYS A  267  254    C          Coil    -97.94    161.42      91.4      1D5R
+ASG  ASP A  268  255    E        Strand    -91.95    130.76      67.5      1D5R
+ASG  LYS A  269  256    E        Strand    -73.10    126.64      91.0      1D5R
+ASG  MET A  270  257    E        Strand    -92.91    -64.17       1.4      1D5R
+ASG  PHE A  271  258    E        Strand   -168.82    175.71       0.9      1D5R
+ASG  HIS A  272  259    E        Strand   -159.54    163.11      31.1      1D5R
+ASG  PHE A  273  260    E        Strand   -160.31    145.97       2.2      1D5R
+ASG  TRP A  274  261    E        Strand   -109.63    143.09      26.5      1D5R
+ASG  VAL A  275  262    E        Strand   -146.68    159.89       4.2      1D5R
+ASG  ASN A  276  263    E        Strand   -120.65    128.19       0.0      1D5R
+ASG  THR A  277  264    G      310Helix    -53.99    -26.80       1.0      1D5R
+ASG  PHE A  278  265    G      310Helix    -59.53    -39.55      36.2      1D5R
+ASG  PHE A  279  266    G      310Helix    -87.28      3.17      30.8      1D5R
+ASG  ILE A  280  267    C          Coil    -78.69    -48.34      20.3      1D5R
+ASG  PRO A  281  268    C          Coil    -54.47    360.00      82.3      1D5R
+ASG  LYS A  313  269    C          Coil    360.00     22.38     251.1      1D5R
+ASG  GLU A  314  270    C          Coil   -142.54    -44.84     161.2      1D5R
+ASG  TYR A  315  271    C          Coil    -92.09    168.07      61.2      1D5R
+ASG  LEU A  316  272    E        Strand    -84.09    132.14      30.2      1D5R
+ASG  VAL A  317  273    E        Strand   -117.21    138.04      70.2      1D5R
+ASG  LEU A  318  274    E        Strand   -126.25    122.29      41.3      1D5R
+ASG  THR A  319  275    E        Strand   -109.87    126.91      59.8      1D5R
+ASG  LEU A  320  276    E        Strand   -111.20    121.56       6.0      1D5R
+ASG  THR A  321  277    E        Strand    -84.98    167.37      41.1      1D5R
+ASG  LYS A  322  278    G      310Helix    -51.76    -38.97      13.2      1D5R
+ASG  ASN A  323  279    G      310Helix    -66.50    -23.10     112.4      1D5R
+ASG  ASP A  324  280    G      310Helix    -87.02     -0.88      61.0      1D5R
+ASG  LEU A  325  281    T          Turn   -103.50    133.50       0.0      1D5R
+ASG  ASP A  326  282    T          Turn    -45.17    -48.11      10.6      1D5R
+ASG  LYS A  327  283    T          Turn   -105.57    -32.33      99.7      1D5R
+ASG  ALA A  328  284    G      310Helix    -62.22    -34.70       1.5      1D5R
+ASG  ASN A  329  285    G      310Helix    -56.41    -22.50      14.4      1D5R
+ASG  LYS A  330  286    G      310Helix    -83.25     -3.44     121.6      1D5R
+ASG  ASP A  331  287    T          Turn    -87.31     57.65      19.5      1D5R
+ASG  LYS A  332  288    T          Turn    -53.18    -39.09     137.4      1D5R
+ASG  ALA A  333  289    T          Turn    -74.27     15.64      73.5      1D5R
+ASG  ASN A  334  290    T          Turn     36.04     49.48      69.9      1D5R
+ASG  ARG A  335  291    T          Turn    -98.37    -27.56     183.9      1D5R
+ASG  TYR A  336  292    T          Turn   -105.36    -27.12     115.5      1D5R
+ASG  PHE A  337  293    T          Turn   -139.62    136.83       3.2      1D5R
+ASG  SER A  338  294    T          Turn    -80.57    159.65      31.9      1D5R
+ASG  PRO A  339  295    T          Turn    -66.99    164.18      61.1      1D5R
+ASG  ASN A  340  296    T          Turn     82.76    -18.07     124.7      1D5R
+ASG  PHE A  341  297    T          Turn    -52.59    136.79       0.9      1D5R
+ASG  LYS A  342  298    E        Strand   -148.28    154.82      70.2      1D5R
+ASG  VAL A  343  299    E        Strand   -127.56    113.98       0.0      1D5R
+ASG  LYS A  344  300    E        Strand    -98.18    136.28      44.1      1D5R
+ASG  LEU A  345  301    E        Strand   -112.61    137.36       2.4      1D5R
+ASG  TYR A  346  302    E        Strand   -117.45    124.74      26.5      1D5R
+ASG  PHE A  347  303    E        Strand   -129.72    166.79       4.6      1D5R
+ASG  THR A  348  304    E        Strand   -138.68    157.47      29.5      1D5R
+ASG  LYS A  349  305    E        Strand    -86.13    119.91     123.5      1D5R
+ASG  THR A  350  306    C          Coil    -46.07    -53.99      70.2      1D5R
+ASG  VAL A  351  307    C          Coil    -69.20    360.00     158.6      1D5R

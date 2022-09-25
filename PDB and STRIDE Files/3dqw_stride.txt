@@ -1,0 +1,1437 @@
+REM  --------------------------------------------------------------------  3DQW
+REM                                                                        3DQW
+REM  STRIDE: Knowledge-based secondary structure assignment                3DQW
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         3DQW
+REM                                                                        3DQW
+REM  Residue accessible surface area calculation                           3DQW
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 3DQW
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       3DQW
+REM                                                                        3DQW
+REM  ------------------------ General information -----------------------  3DQW
+REM                                                                        3DQW
+HDR  TRANSFERASE                             09-JUL-08   3DQW              3DQW
+CMP  MOL_ID: 1;                                                            3DQW
+CMP   MOLECULE: PROTO-ONCOGENE TYROSINE-PROTEIN KINASE SRC;                3DQW
+CMP   CHAIN: A, B, C, D;                                                   3DQW
+CMP   FRAGMENT: CHICKEN C-SRC KINASE DOMAIN 251-533;                       3DQW
+CMP   SYNONYM: PP60C-SRC, P60-SRC, C-SRC;                                  3DQW
+CMP   EC: 2.7.10.2;                                                        3DQW
+CMP   ENGINEERED: YES;                                                     3DQW
+CMP   MUTATION: YES                                                        3DQW
+SRC  MOL_ID: 1;                                                            3DQW
+SRC   ORGANISM_SCIENTIFIC: GALLUS GALLUS;                                  3DQW
+SRC   ORGANISM_COMMON: CHICKEN;                                            3DQW
+SRC   ORGANISM_TAXID: 9031;                                                3DQW
+SRC   GENE: SRC;                                                           3DQW
+SRC   EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 3DQW
+SRC   EXPRESSION_SYSTEM_TAXID: 562;                                        3DQW
+SRC   EXPRESSION_SYSTEM_STRAIN: BL21DE3;                                   3DQW
+SRC   EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              3DQW
+SRC   EXPRESSION_SYSTEM_PLASMID: PET28A                                    3DQW
+AUT  M.AZAM,M.A.SEELIGER,N.GRAY,J.KURIYAN,G.Q.DALEY                        3DQW
+REM                                                                        3DQW
+REM  -------------------- Secondary structure summary -------------------  3DQW
+REM                                                                        3DQW
+CHN  /home/proj/stride/tmp/tmpQ5_y2Apdb A                                  3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  1    LAKDAWEIPRESLRLEVKLGQGCFGEVWMGTWNGTTRVAIKTLKPGTMSP   50          3DQW
+STR          TTTB  GGGEEEEEEEEEETTEEEEEEEETTTEEEEEEEETTTT  H               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  51   EAFLQEAQVMKKLRHEKLVQLYAVVSEEPIYIVIEYMSKGSLLDFLKGEM  100          3DQW
+STR       HHHHHHHHHHHH  TTTB  EEEEE TTTTEEEEE TTTEEHHHHHH HH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  101  GKYLRLPQLVDMAAQIASGMAYVERMNYVHRDLRAANILVGENLVCKVAD  150          3DQW
+STR       HHH  HHHHHHHHHHHHHHHHHHHHH EETTTT GGGEEETTTTTEEE                 3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  151  FGLARLIEDNETARQGAKFPIKWTAPEAALYGRFTIKSDVWSFGILLTEL  200          3DQW
+STR       TTTTEETTTTT  TTTT   GGG  HHHHHH    HHHHHHHHHHHHHHH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  201  TTKGRVPYPGMVNREVLDQVERGYRMPCPPECPESLHDLMCQCWRKDPEE  250          3DQW
+STR       HHTTTTTTTTT HHHHHHHHHH      TTTT HHHHHHHHHHHTTTGGG               3DQW
+REM                                                                        3DQW
+REM                .         .                                             3DQW
+SEQ  251  RPTFEYLQAFLEDYFTSTEPQYQPGENL                        278          3DQW
+STR          HHHHHHHHHHHHHHHTTTT                                           3DQW
+REM                                                                        3DQW
+CHN  /home/proj/stride/tmp/tmpQ5_y2Apdb B                                  3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  1    LAKDAWEIPRESLRLEVKLGQGCFGEVWMGTWNGTTRVAIKTLKPGTMSP   50          3DQW
+STR          TTTB  GGGEEEEEEEEEETTEEEEEEEETTTEEEEEEEETTTT  H               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  51   EAFLQEAQVMKKLRHEKLVQLYAVVSEEPIYIVIEYMSKGSLLDFLKGEM  100          3DQW
+STR       HHHHHHHHHHHH  TTTB  EEEEE TTTTEEEEE TTTEEHHHHHH GG               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  101  GKYLRLPQLVDMAAQIASGMAYVERMNYVHRDLRAANILVGENLVCKVAD  150          3DQW
+STR       GGG  HHHHHHHHHHHHHHHHHHHHH EETTTT GGGEEETTTTTEEE                 3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  151  FGLARLIEDNETARQGAKFPIKWTAPEAALYGRFTIKSDVWSFGILLTEL  200          3DQW
+STR       TTTTEETBTTB  TTTT   GGG  HHHHHH    HHHHHHHHHHHHHHH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  201  TTKGRVPYPGMVNREVLDQVERGYRMPCPPECPESLHDLMCQCWRKDPEE  250          3DQW
+STR       HHTTTTTTTTT HHHHHHHHHH      TTTT HHHHHHHHHHHTTTGGG               3DQW
+REM                                                                        3DQW
+REM                .         .                                             3DQW
+SEQ  251  RPTFEYLQAFLEDYFTSTEPQYQPGENL                        278          3DQW
+STR          HHHHHHHHHHHHHHHTTTT                                           3DQW
+REM                                                                        3DQW
+CHN  /home/proj/stride/tmp/tmpQ5_y2Apdb C                                  3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  1    DAWEIPRESLRLEVKLGQGCFGEVWMGTWNGTTRVAIKTLKPGTMSPEAF   50          3DQW
+STR       TTTB  GGGEEEEEEEEEETTEEEEEEEETTTEEEEEEEETTTTTTHHHH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  51   LQEAQVMKKLRHEKLVQLYAVVSEEPIYIVIEYMSKGSLLDFLKGEMGKY  100          3DQW
+STR       HHHHHHHHH  TTTB  EEEEE TTTTEEEEE TTTEEHHHHHHTTTGGG               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  101  LRLPQLVDMAAQIASGMAYVERMNYVHRDLRAANILVGENLVCKVADFGL  150          3DQW
+STR         HHHHHHHHHHHHHHHHHHHHH EETTTT GGGEEETTTTTEEE  TTT               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  151  ARLIEDNETARQGAKFPIKWTAPEAALYGRFTIKSDVWSFGILLTELTTK  200          3DQW
+STR       TEETTTTT  TTTT   GGG  HHHHHH    HHHHHHHHHHHHHHHHHT               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  201  GRVPYPGMVNREVLDQVERGYRMPCPPECPESLHDLMCQCWRKDPEERPT  250          3DQW
+STR       TTTTTTTT HHHHHHHHHH      TTTT HHHHHHHHHHHTTTGGG                  3DQW
+REM                                                                        3DQW
+REM                .         .                                             3DQW
+SEQ  251  FEYLQAFLEDYFTSTEPQYQPGENL                           275          3DQW
+STR       HHHHHHHHHHHHHHHTTTT                                              3DQW
+REM                                                                        3DQW
+CHN  /home/proj/stride/tmp/tmpQ5_y2Apdb D                                  3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  1    KDAWEIPRESLRLEVKLGQGCFGEVWMGTWNGTTRVAIKTLKPGTMSPEA   50          3DQW
+STR        TTTB  GGGEEEEEEEEEETTEEEEEEEETTTEEEEEEEETTTTTTHHH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  51   FLQEAQVMKKLRHEKLVQLYAVVSEEPIYIVIEYMSKGSLLDFLKGEMGK  100          3DQW
+STR       HHHHHHHHHH  BTTB  EEEEE TTTTEEEEE TTTEEHHHHHHTTTGG               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  101  YLRLPQLVDMAAQIASGMAYVERMNYVHRDLRAANILVGENLVCKVADFG  150          3DQW
+STR       G  HHHHHHHHHHHHHHHHHHHHH EETTTT GGGEEETTTTTEEE  TT               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  151  LARLIEDNETARQGAKFPIKWTAPEAALYGRFTIKSDVWSFGILLTELTT  200          3DQW
+STR       TTEETBTTB  TTTT   GGG  HHHHHH    HHHHHHHHHHHHHHHHH               3DQW
+REM                                                                        3DQW
+REM                .         .         .         .         .               3DQW
+SEQ  201  KGRVPYPGMVNREVLDQVERGYRMPCPPECPESLHDLMCQCWRKDPEERP  250          3DQW
+STR       TTTTTTTTT HHHHHHHHHH      TTTT HHHHHHHHHHHTTTGGG                 3DQW
+REM                                                                        3DQW
+REM                .         .                                             3DQW
+SEQ  251  TFEYLQAFLEDYFTSTEPQYQPGENL                          276          3DQW
+STR        HHHHHHHHHHHHHHHTTTT                                             3DQW
+REM                                                                        3DQW
+REM                                                                        3DQW
+REM                                                                        3DQW
+LOC  AlphaHelix   PRO   304 A      LYS    316 A                            3DQW
+LOC  AlphaHelix   LEU   346 A      LYS    351 A                            3DQW
+LOC  AlphaHelix   GLU   353 A      TYR    357 A                            3DQW
+LOC  AlphaHelix   LEU   360 A      MET    380 A                            3DQW
+LOC  AlphaHelix   PRO   431 A      TYR    436 A                            3DQW
+LOC  AlphaHelix   ILE   441 A      THR    457 A                            3DQW
+LOC  AlphaHelix   ASN   468 A      ARG    477 A                            3DQW
+LOC  AlphaHelix   GLU   489 A      TRP    499 A                            3DQW
+LOC  AlphaHelix   PHE   509 A      THR    523 A                            3DQW
+LOC  AlphaHelix   PRO   304 B      LYS    316 B                            3DQW
+LOC  AlphaHelix   LEU   346 B      LYS    351 B                            3DQW
+LOC  AlphaHelix   LEU   360 B      MET    380 B                            3DQW
+LOC  AlphaHelix   PRO   431 B      TYR    436 B                            3DQW
+LOC  AlphaHelix   ILE   441 B      THR    457 B                            3DQW
+LOC  AlphaHelix   ASN   468 B      ARG    477 B                            3DQW
+LOC  AlphaHelix   GLU   489 B      TRP    499 B                            3DQW
+LOC  AlphaHelix   PHE   509 B      THR    523 B                            3DQW
+LOC  AlphaHelix   PRO   304 C      LYS    316 C                            3DQW
+LOC  AlphaHelix   LEU   346 C      LYS    351 C                            3DQW
+LOC  AlphaHelix   LEU   360 C      MET    380 C                            3DQW
+LOC  AlphaHelix   PRO   431 C      TYR    436 C                            3DQW
+LOC  AlphaHelix   ILE   441 C      THR    457 C                            3DQW
+LOC  AlphaHelix   ASN   468 C      ARG    477 C                            3DQW
+LOC  AlphaHelix   GLU   489 C      TRP    499 C                            3DQW
+LOC  AlphaHelix   PHE   509 C      THR    523 C                            3DQW
+LOC  AlphaHelix   PRO   304 D      LYS    316 D                            3DQW
+LOC  AlphaHelix   LEU   346 D      LYS    351 D                            3DQW
+LOC  AlphaHelix   LEU   360 D      MET    380 D                            3DQW
+LOC  AlphaHelix   PRO   431 D      TYR    436 D                            3DQW
+LOC  AlphaHelix   ILE   441 D      THR    457 D                            3DQW
+LOC  AlphaHelix   ASN   468 D      ARG    477 D                            3DQW
+LOC  AlphaHelix   GLU   489 D      TRP    499 D                            3DQW
+LOC  AlphaHelix   PHE   509 D      THR    523 D                            3DQW
+LOC  310Helix     ARG   264 A      SER    266 A                            3DQW
+LOC  310Helix     ALA   389 A      ASN    391 A                            3DQW
+LOC  310Helix     ILE   426 A      TRP    428 A                            3DQW
+LOC  310Helix     PRO   503 A      GLU    505 A                            3DQW
+LOC  310Helix     ARG   264 B      SER    266 B                            3DQW
+LOC  310Helix     GLU   353 B      TYR    357 B                            3DQW
+LOC  310Helix     ALA   389 B      ASN    391 B                            3DQW
+LOC  310Helix     ILE   426 B      TRP    428 B                            3DQW
+LOC  310Helix     PRO   503 B      GLU    505 B                            3DQW
+LOC  310Helix     ARG   264 C      SER    266 C                            3DQW
+LOC  310Helix     GLY   355 C      TYR    357 C                            3DQW
+LOC  310Helix     ALA   389 C      ASN    391 C                            3DQW
+LOC  310Helix     ILE   426 C      TRP    428 C                            3DQW
+LOC  310Helix     PRO   503 C      GLU    505 C                            3DQW
+LOC  310Helix     ARG   264 D      SER    266 D                            3DQW
+LOC  310Helix     GLY   355 D      TYR    357 D                            3DQW
+LOC  310Helix     ALA   389 D      ASN    391 D                            3DQW
+LOC  310Helix     ILE   426 D      TRP    428 D                            3DQW
+LOC  310Helix     PRO   503 D      GLU    505 D                            3DQW
+LOC  Strand       LEU   267 A      GLY    276 A                            3DQW
+LOC  Strand       GLY   279 A      TRP    286 A                            3DQW
+LOC  Strand       THR   290 A      LEU    297 A                            3DQW
+LOC  Strand       LEU   325 A      VAL    329 A                            3DQW
+LOC  Strand       TYR   335 A      GLU    339 A                            3DQW
+LOC  Strand       GLY   344 A      SER    345 A                            3DQW
+LOC  Strand       TYR   382 A      VAL    383 A                            3DQW
+LOC  Strand       ILE   392 A      VAL    394 A                            3DQW
+LOC  Strand       CYS   400 A      VAL    402 A                            3DQW
+LOC  Strand       ARG   409 A      LEU    410 A                            3DQW
+LOC  Strand       LEU   267 B      GLY    276 B                            3DQW
+LOC  Strand       GLY   279 B      TRP    286 B                            3DQW
+LOC  Strand       THR   290 B      LEU    297 B                            3DQW
+LOC  Strand       LEU   325 B      VAL    329 B                            3DQW
+LOC  Strand       TYR   335 B      GLU    339 B                            3DQW
+LOC  Strand       GLY   344 B      SER    345 B                            3DQW
+LOC  Strand       TYR   382 B      VAL    383 B                            3DQW
+LOC  Strand       ILE   392 B      VAL    394 B                            3DQW
+LOC  Strand       CYS   400 B      VAL    402 B                            3DQW
+LOC  Strand       ARG   409 B      LEU    410 B                            3DQW
+LOC  Strand       LEU   267 C      GLY    276 C                            3DQW
+LOC  Strand       GLY   279 C      TRP    286 C                            3DQW
+LOC  Strand       THR   290 C      LEU    297 C                            3DQW
+LOC  Strand       LEU   325 C      VAL    329 C                            3DQW
+LOC  Strand       TYR   335 C      GLU    339 C                            3DQW
+LOC  Strand       GLY   344 C      SER    345 C                            3DQW
+LOC  Strand       TYR   382 C      VAL    383 C                            3DQW
+LOC  Strand       ILE   392 C      VAL    394 C                            3DQW
+LOC  Strand       CYS   400 C      VAL    402 C                            3DQW
+LOC  Strand       ARG   409 C      LEU    410 C                            3DQW
+LOC  Strand       LEU   267 D      GLY    276 D                            3DQW
+LOC  Strand       GLY   279 D      TRP    286 D                            3DQW
+LOC  Strand       THR   290 D      LEU    297 D                            3DQW
+LOC  Strand       LEU   325 D      VAL    329 D                            3DQW
+LOC  Strand       TYR   335 D      GLU    339 D                            3DQW
+LOC  Strand       GLY   344 D      SER    345 D                            3DQW
+LOC  Strand       TYR   382 D      VAL    383 D                            3DQW
+LOC  Strand       ILE   392 D      VAL    394 D                            3DQW
+LOC  Strand       CYS   400 D      VAL    402 D                            3DQW
+LOC  Strand       ARG   409 D      LEU    410 D                            3DQW
+LOC  TurnI        ASP   258 A      GLU    261 A                            3DQW
+LOC  TurnI        GLY   276 A      GLY    279 A                            3DQW
+LOC  TurnIV       THR   285 A      GLY    288 A                            3DQW
+LOC  TurnI'       TRP   286 A      THR    289 A                            3DQW
+LOC  TurnIV       ASN   287 A      THR    290 A                            3DQW
+LOC  TurnIV       LYS   298 A      THR    301 A                            3DQW
+LOC  TurnI        HIS   319 A      LEU    322 A                            3DQW
+LOC  TurnIV       GLU   331 A      ILE    334 A                            3DQW
+LOC  TurnI        MET   341 A      GLY    344 A                            3DQW
+LOC  TurnIV       HIS   384 A      LEU    387 A                            3DQW
+LOC  TurnIV       GLY   395 A      LEU    398 A                            3DQW
+LOC  TurnI'       GLU   396 A      VAL    399 A                            3DQW
+LOC  TurnI        PHE   405 A      ALA    408 A                            3DQW
+LOC  TurnIV       ILE   411 A      ASN    414 A                            3DQW
+LOC  TurnI'       GLU   412 A      GLU    415 A                            3DQW
+LOC  TurnII       ARG   419 A      ALA    422 A                            3DQW
+LOC  TurnI'       THR   457 A      ARG    460 A                            3DQW
+LOC  TurnIV       VAL   461 A      PRO    464 A                            3DQW
+LOC  TurnII       TYR   463 A      MET    466 A                            3DQW
+LOC  TurnII       PRO   484 A      CYS    487 A                            3DQW
+LOC  TurnVIII     ARG   500 A      PRO    503 A                            3DQW
+LOC  TurnI        GLU   524 A      TYR    527 A                            3DQW
+LOC  TurnI        ASP   258 B      GLU    261 B                            3DQW
+LOC  TurnI        GLY   276 B      GLY    279 B                            3DQW
+LOC  TurnIV       THR   285 B      GLY    288 B                            3DQW
+LOC  TurnI'       TRP   286 B      THR    289 B                            3DQW
+LOC  TurnIV       ASN   287 B      THR    290 B                            3DQW
+LOC  TurnIV       LYS   298 B      THR    301 B                            3DQW
+LOC  TurnI        HIS   319 B      LEU    322 B                            3DQW
+LOC  TurnIV       GLU   331 B      ILE    334 B                            3DQW
+LOC  TurnI        MET   341 B      GLY    344 B                            3DQW
+LOC  TurnIV       HIS   384 B      LEU    387 B                            3DQW
+LOC  TurnIV       GLY   395 B      LEU    398 B                            3DQW
+LOC  TurnI'       GLU   396 B      VAL    399 B                            3DQW
+LOC  TurnI        PHE   405 B      ALA    408 B                            3DQW
+LOC  TurnIV       ILE   411 B      ASN    414 B                            3DQW
+LOC  TurnI'       GLU   412 B      GLU    415 B                            3DQW
+LOC  TurnII       ARG   419 B      ALA    422 B                            3DQW
+LOC  TurnI'       THR   457 B      ARG    460 B                            3DQW
+LOC  TurnIV       VAL   461 B      PRO    464 B                            3DQW
+LOC  TurnII       TYR   463 B      MET    466 B                            3DQW
+LOC  TurnII       PRO   484 B      CYS    487 B                            3DQW
+LOC  TurnVIII     ARG   500 B      PRO    503 B                            3DQW
+LOC  TurnI        GLU   524 B      TYR    527 B                            3DQW
+LOC  TurnI        ASP   258 C      GLU    261 C                            3DQW
+LOC  TurnI        GLY   276 C      GLY    279 C                            3DQW
+LOC  TurnIV       THR   285 C      GLY    288 C                            3DQW
+LOC  TurnI'       TRP   286 C      THR    289 C                            3DQW
+LOC  TurnIV       ASN   287 C      THR    290 C                            3DQW
+LOC  TurnII       LYS   298 C      THR    301 C                            3DQW
+LOC  TurnIV       PRO   299 C      MET    302 C                            3DQW
+LOC  TurnIV       GLY   300 C      SER    303 C                            3DQW
+LOC  TurnI        HIS   319 C      LEU    322 C                            3DQW
+LOC  TurnIV       GLU   331 C      ILE    334 C                            3DQW
+LOC  TurnI        MET   341 C      GLY    344 C                            3DQW
+LOC  TurnI        GLY   352 C      GLY    355 C                            3DQW
+LOC  TurnIV       HIS   384 C      LEU    387 C                            3DQW
+LOC  TurnIV       GLY   395 C      LEU    398 C                            3DQW
+LOC  TurnI'       GLU   396 C      VAL    399 C                            3DQW
+LOC  TurnI        PHE   405 C      ALA    408 C                            3DQW
+LOC  TurnIV       ILE   411 C      ASN    414 C                            3DQW
+LOC  TurnIV       GLU   412 C      GLU    415 C                            3DQW
+LOC  TurnII       ARG   419 C      ALA    422 C                            3DQW
+LOC  TurnI'       THR   457 C      ARG    460 C                            3DQW
+LOC  TurnIV       VAL   461 C      PRO    464 C                            3DQW
+LOC  TurnII       TYR   463 C      MET    466 C                            3DQW
+LOC  TurnII       PRO   484 C      CYS    487 C                            3DQW
+LOC  TurnVIII     ARG   500 C      PRO    503 C                            3DQW
+LOC  TurnI        GLU   524 C      TYR    527 C                            3DQW
+LOC  TurnI        ASP   258 D      GLU    261 D                            3DQW
+LOC  TurnI        GLY   276 D      GLY    279 D                            3DQW
+LOC  TurnIV       THR   285 D      GLY    288 D                            3DQW
+LOC  TurnI'       TRP   286 D      THR    289 D                            3DQW
+LOC  TurnIV       ASN   287 D      THR    290 D                            3DQW
+LOC  TurnII       LYS   298 D      THR    301 D                            3DQW
+LOC  TurnIV       PRO   299 D      MET    302 D                            3DQW
+LOC  TurnVIII     GLY   300 D      SER    303 D                            3DQW
+LOC  TurnI        HIS   319 D      LEU    322 D                            3DQW
+LOC  TurnIV       GLU   331 D      ILE    334 D                            3DQW
+LOC  TurnI        MET   341 D      GLY    344 D                            3DQW
+LOC  TurnI        GLY   352 D      GLY    355 D                            3DQW
+LOC  TurnIV       HIS   384 D      LEU    387 D                            3DQW
+LOC  TurnIV       GLY   395 D      LEU    398 D                            3DQW
+LOC  TurnIV       GLU   396 D      VAL    399 D                            3DQW
+LOC  TurnI        PHE   405 D      ALA    408 D                            3DQW
+LOC  TurnIV       ILE   411 D      ASN    414 D                            3DQW
+LOC  TurnI'       GLU   412 D      GLU    415 D                            3DQW
+LOC  TurnII       ARG   419 D      ALA    422 D                            3DQW
+LOC  TurnI'       THR   457 D      ARG    460 D                            3DQW
+LOC  TurnIV       VAL   461 D      PRO    464 D                            3DQW
+LOC  TurnIV       TYR   463 D      MET    466 D                            3DQW
+LOC  TurnII       PRO   484 D      CYS    487 D                            3DQW
+LOC  TurnVIII     ARG   500 D      PRO    503 D                            3DQW
+LOC  TurnIV       GLU   524 D      TYR    527 D                            3DQW
+REM                                                                        3DQW
+REM  --------------- Detailed secondary structure assignment-------------  3DQW
+REM                                                                        3DQW
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      3DQW
+ASG  LEU A  255    1    C          Coil    360.00    -42.14     205.5      3DQW
+ASG  ALA A  256    2    C          Coil    -75.70    133.55     100.5      3DQW
+ASG  LYS A  257    3    C          Coil   -103.42    151.54     116.9      3DQW
+ASG  ASP A  258    4    T          Turn   -131.16   -162.14      75.6      3DQW
+ASG  ALA A  259    5    T          Turn    -81.66     10.29     106.8      3DQW
+ASG  TRP A  260    6    T          Turn    -87.20    -12.60      60.5      3DQW
+ASG  GLU A  261    7    B        Bridge    -67.59    136.17      51.2      3DQW
+ASG  ILE A  262    8    C          Coil   -131.43    159.57      26.1      3DQW
+ASG  PRO A  263    9    C          Coil    -72.49    133.04      81.0      3DQW
+ASG  ARG A  264   10    G      310Helix    -57.46    -30.05      64.4      3DQW
+ASG  GLU A  265   11    G      310Helix    -63.37    -17.15     155.1      3DQW
+ASG  SER A  266   12    G      310Helix    -82.59     -1.86      24.4      3DQW
+ASG  LEU A  267   13    E        Strand   -112.77    147.46      19.2      3DQW
+ASG  ARG A  268   14    E        Strand   -131.67    117.68     137.9      3DQW
+ASG  LEU A  269   15    E        Strand    -81.68    123.10      53.5      3DQW
+ASG  GLU A  270   16    E        Strand   -112.94    -43.72      56.0      3DQW
+ASG  VAL A  271   17    E        Strand   -139.61    133.71      71.3      3DQW
+ASG  LYS A  272   18    E        Strand    -79.92    123.31      89.2      3DQW
+ASG  LEU A  273   19    E        Strand   -102.25    -21.43      90.0      3DQW
+ASG  GLY A  274   20    E        Strand   -175.03    165.54      28.8      3DQW
+ASG  GLN A  275   21    E        Strand   -147.99    143.60     106.5      3DQW
+ASG  GLY A  276   22    E        Strand   -142.33   -174.30      39.4      3DQW
+ASG  CYS A  277   23    T          Turn    -67.33    -20.23      28.7      3DQW
+ASG  PHE A  278   24    T          Turn   -106.82     -6.65      54.8      3DQW
+ASG  GLY A  279   25    E        Strand    157.36   -156.89      11.4      3DQW
+ASG  GLU A  280   26    E        Strand   -130.19    165.45      59.4      3DQW
+ASG  VAL A  281   27    E        Strand   -124.99    127.00      44.9      3DQW
+ASG  TRP A  282   28    E        Strand   -121.29    147.10      55.9      3DQW
+ASG  MET A  283   29    E        Strand    -87.36    143.88      22.8      3DQW
+ASG  GLY A  284   30    E        Strand   -159.16   -169.79       0.0      3DQW
+ASG  THR A  285   31    E        Strand   -125.99    132.99       8.2      3DQW
+ASG  TRP A  286   32    E        Strand   -111.92    130.62      47.3      3DQW
+ASG  ASN A  287   33    T          Turn     56.44     32.35      94.2      3DQW
+ASG  GLY A  288   34    T          Turn     54.72     11.03      51.3      3DQW
+ASG  THR A  289   35    T          Turn   -135.12    -26.36      60.1      3DQW
+ASG  THR A  290   36    E        Strand   -109.90    129.95      50.8      3DQW
+ASG  ARG A  291   37    E        Strand    -76.77    132.58     127.5      3DQW
+ASG  VAL A  292   38    E        Strand   -141.86    165.23       0.0      3DQW
+ASG  ALA A  293   39    E        Strand   -102.96    145.96       7.2      3DQW
+ASG  ILE A  294   40    E        Strand   -131.54    115.06       0.0      3DQW
+ASG  LYS A  295   41    E        Strand    -90.40    127.25      41.5      3DQW
+ASG  THR A  296   42    E        Strand   -106.16    155.63      16.9      3DQW
+ASG  LEU A  297   43    E        Strand   -105.55    117.44      14.2      3DQW
+ASG  LYS A  298   44    T          Turn    -68.23    124.02     106.4      3DQW
+ASG  PRO A  299   45    T          Turn    -52.30    134.59      89.5      3DQW
+ASG  GLY A  300   46    T          Turn     54.38     52.43      84.4      3DQW
+ASG  THR A  301   47    T          Turn   -130.49    -39.70      30.8      3DQW
+ASG  MET A  302   48    C          Coil   -139.38    150.71      46.0      3DQW
+ASG  SER A  303   49    C          Coil    -60.21    135.19      66.2      3DQW
+ASG  PRO A  304   50    H    AlphaHelix    -49.74    -41.45      63.3      3DQW
+ASG  GLU A  305   51    H    AlphaHelix    -67.75    -34.18     142.6      3DQW
+ASG  ALA A  306   52    H    AlphaHelix    -69.58    -43.47      51.0      3DQW
+ASG  PHE A  307   53    H    AlphaHelix    -60.79    -38.57      10.0      3DQW
+ASG  LEU A  308   54    H    AlphaHelix    -83.36    -12.87      24.7      3DQW
+ASG  GLN A  309   55    H    AlphaHelix    -52.36    -37.79      76.1      3DQW
+ASG  GLU A  310   56    H    AlphaHelix    -61.04    -39.93      18.0      3DQW
+ASG  ALA A  311   57    H    AlphaHelix    -67.45    -39.36       0.8      3DQW
+ASG  GLN A  312   58    H    AlphaHelix    -57.94    -48.15      77.5      3DQW
+ASG  VAL A  313   59    H    AlphaHelix    -57.05    -46.32       4.1      3DQW
+ASG  MET A  314   60    H    AlphaHelix    -65.42    -31.37       5.7      3DQW
+ASG  LYS A  315   61    H    AlphaHelix    -53.92    -35.43      29.4      3DQW
+ASG  LYS A  316   62    H    AlphaHelix    -90.54    -36.67     127.5      3DQW
+ASG  LEU A  317   63    C          Coil    -97.03    103.55       7.3      3DQW
+ASG  ARG A  318   64    C          Coil   -121.25    121.14     102.0      3DQW
+ASG  HIS A  319   65    T          Turn   -166.68    146.93      40.2      3DQW
+ASG  GLU A  320   66    T          Turn    -58.45    -23.20     130.9      3DQW
+ASG  LYS A  321   67    T          Turn   -107.60     16.53      32.1      3DQW
+ASG  LEU A  322   68    B        Bridge   -118.91    139.89       1.9      3DQW
+ASG  VAL A  323   69    C          Coil    -56.63    127.97       4.2      3DQW
+ASG  GLN A  324   70    C          Coil    -88.53    133.29      78.2      3DQW
+ASG  LEU A  325   71    E        Strand    -76.16    140.48       1.6      3DQW
+ASG  TYR A  326   72    E        Strand   -108.97    -44.80      56.0      3DQW
+ASG  ALA A  327   73    E        Strand   -172.25    166.05       1.2      3DQW
+ASG  VAL A  328   74    E        Strand   -133.58    144.91       4.2      3DQW
+ASG  VAL A  329   75    E        Strand   -113.62    106.22       3.4      3DQW
+ASG  SER A  330   76    C          Coil    -87.79      5.80      37.4      3DQW
+ASG  GLU A  331   77    T          Turn   -108.84    142.29     122.8      3DQW
+ASG  GLU A  332   78    T          Turn    -58.70    129.72     138.1      3DQW
+ASG  PRO A  333   79    T          Turn    -74.79    132.64      58.2      3DQW
+ASG  ILE A  334   80    T          Turn    -68.99    132.01       5.8      3DQW
+ASG  TYR A  335   81    E        Strand   -122.30    138.39      37.3      3DQW
+ASG  ILE A  336   82    E        Strand   -113.67    119.82       0.0      3DQW
+ASG  VAL A  337   83    E        Strand   -102.97    120.46       0.0      3DQW
+ASG  ILE A  338   84    E        Strand   -135.45    167.09      14.4      3DQW
+ASG  GLU A  339   85    E        Strand    -54.20    129.25      29.5      3DQW
+ASG  TYR A  340   86    C          Coil    -82.93    123.24      63.1      3DQW
+ASG  MET A  341   87    T          Turn   -104.71    106.01      16.5      3DQW
+ASG  SER A  342   88    T          Turn    -63.81    -25.46      38.0      3DQW
+ASG  LYS A  343   89    T          Turn    -99.14      2.01      53.5      3DQW
+ASG  GLY A  344   90    E        Strand     71.17   -152.82      28.8      3DQW
+ASG  SER A  345   91    E        Strand    -69.43    136.03      21.1      3DQW
+ASG  LEU A  346   92    H    AlphaHelix    -56.35    -41.61       0.0      3DQW
+ASG  LEU A  347   93    H    AlphaHelix    -56.50    -49.63      21.0      3DQW
+ASG  ASP A  348   94    H    AlphaHelix    -67.38    -39.27     106.1      3DQW
+ASG  PHE A  349   95    H    AlphaHelix    -55.68    -49.47      13.9      3DQW
+ASG  LEU A  350   96    H    AlphaHelix    -60.28    -36.62       3.4      3DQW
+ASG  LYS A  351   97    H    AlphaHelix    -89.14    -12.70      88.7      3DQW
+ASG  GLY A  352   98    C          Coil    -83.80   -172.69      31.1      3DQW
+ASG  GLU A  353   99    H    AlphaHelix    -55.62    -44.10      55.2      3DQW
+ASG  MET A  354  100    H    AlphaHelix    -56.73    -35.16      23.9      3DQW
+ASG  GLY A  355  101    H    AlphaHelix    -60.86    -42.05       0.0      3DQW
+ASG  LYS A  356  102    H    AlphaHelix    -46.36    -38.05      84.6      3DQW
+ASG  TYR A  357  103    H    AlphaHelix    -87.66     -9.35       2.4      3DQW
+ASG  LEU A  358  104    C          Coil    -75.59    146.88       0.0      3DQW
+ASG  ARG A  359  105    C          Coil   -125.87   -179.55      33.7      3DQW
+ASG  LEU A  360  106    H    AlphaHelix    -56.60    -44.62       0.6      3DQW
+ASG  PRO A  361  107    H    AlphaHelix    -58.41    -41.95      25.1      3DQW
+ASG  GLN A  362  108    H    AlphaHelix    -64.89    -47.75      10.9      3DQW
+ASG  LEU A  363  109    H    AlphaHelix    -61.26    -38.72       2.6      3DQW
+ASG  VAL A  364  110    H    AlphaHelix    -67.52    -37.99       4.6      3DQW
+ASG  ASP A  365  111    H    AlphaHelix    -63.80    -39.00      85.3      3DQW
+ASG  MET A  366  112    H    AlphaHelix    -64.71    -41.42       0.2      3DQW
+ASG  ALA A  367  113    H    AlphaHelix    -61.22    -38.22       1.2      3DQW
+ASG  ALA A  368  114    H    AlphaHelix    -67.92    -37.45       6.5      3DQW
+ASG  GLN A  369  115    H    AlphaHelix    -66.07    -44.17      14.9      3DQW
+ASG  ILE A  370  116    H    AlphaHelix    -62.03    -46.66       0.0      3DQW
+ASG  ALA A  371  117    H    AlphaHelix    -57.06    -39.72       0.0      3DQW
+ASG  SER A  372  118    H    AlphaHelix    -59.54    -47.76      12.6      3DQW
+ASG  GLY A  373  119    H    AlphaHelix    -59.21    -44.48       0.0      3DQW
+ASG  MET A  374  120    H    AlphaHelix    -70.05    -31.20       0.0      3DQW
+ASG  ALA A  375  121    H    AlphaHelix    -65.69    -34.13       0.2      3DQW
+ASG  TYR A  376  122    H    AlphaHelix    -64.02    -49.69      27.5      3DQW
+ASG  VAL A  377  123    H    AlphaHelix    -54.41    -41.91       1.8      3DQW
+ASG  GLU A  378  124    H    AlphaHelix    -60.15    -47.70      33.3      3DQW
+ASG  ARG A  379  125    H    AlphaHelix    -62.87    -35.64     146.3      3DQW
+ASG  MET A  380  126    H    AlphaHelix    -79.48     -2.58      68.1      3DQW
+ASG  ASN A  381  127    C          Coil     71.23     26.49     106.3      3DQW
+ASG  TYR A  382  128    E        Strand   -101.15    164.32      26.5      3DQW
+ASG  VAL A  383  129    E        Strand   -126.68    140.13       4.6      3DQW
+ASG  HIS A  384  130    T          Turn    -86.31    -48.96       2.6      3DQW
+ASG  ARG A  385  131    T          Turn     78.42     -4.92      28.1      3DQW
+ASG  ASP A  386  132    T          Turn   -138.83     34.79      32.4      3DQW
+ASG  LEU A  387  133    T          Turn    -81.04    123.52       2.7      3DQW
+ASG  ARG A  388  134    C          Coil   -178.54    162.91      35.5      3DQW
+ASG  ALA A  389  135    G      310Helix    -58.41    -32.33       0.0      3DQW
+ASG  ALA A  390  136    G      310Helix    -67.65    -18.88      35.2      3DQW
+ASG  ASN A  391  137    G      310Helix   -108.64     19.28      24.4      3DQW
+ASG  ILE A  392  138    E        Strand   -110.52    138.57       0.2      3DQW
+ASG  LEU A  393  139    E        Strand   -114.77    145.27      41.7      3DQW
+ASG  VAL A  394  140    E        Strand   -115.10    134.11       0.0      3DQW
+ASG  GLY A  395  141    T          Turn   -111.53   -154.68       6.5      3DQW
+ASG  GLU A  396  142    T          Turn    -73.48    150.66      81.0      3DQW
+ASG  ASN A  397  143    T          Turn     57.69     36.39     115.1      3DQW
+ASG  LEU A  398  144    T          Turn     67.01     22.70       6.4      3DQW
+ASG  VAL A  399  145    T          Turn    -72.28    126.31      43.5      3DQW
+ASG  CYS A  400  146    E        Strand   -116.14    138.27       0.0      3DQW
+ASG  LYS A  401  147    E        Strand   -136.52    141.99      27.1      3DQW
+ASG  VAL A  402  148    E        Strand    -73.15    140.81       0.0      3DQW
+ASG  ALA A  403  149    C          Coil   -133.72   -176.80       7.2      3DQW
+ASG  ASP A  404  150    C          Coil     56.69     80.14      47.8      3DQW
+ASG  PHE A  405  151    T          Turn    -98.42     17.02       2.8      3DQW
+ASG  GLY A  406  152    T          Turn    -49.14    -41.19      20.2      3DQW
+ASG  LEU A  407  153    T          Turn    -93.34     -6.09      56.5      3DQW
+ASG  ALA A  408  154    T          Turn    -66.25    143.29       1.2      3DQW
+ASG  ARG A  409  155    E        Strand   -141.22    147.32      92.9      3DQW
+ASG  LEU A  410  156    E        Strand    -76.72    130.85      82.2      3DQW
+ASG  ILE A  411  157    T          Turn    -85.54    120.90      33.2      3DQW
+ASG  GLU A  412  158    T          Turn   -109.92    142.59     120.6      3DQW
+ASG  ASP A  413  159    T          Turn     63.89     31.85     149.3      3DQW
+ASG  ASN A  414  160    T          Turn     71.28     -6.80     147.6      3DQW
+ASG  GLU A  415  161    T          Turn   -151.00    360.00      72.9      3DQW
+ASG  THR A  417  162    C          Coil    360.00    121.30     114.7      3DQW
+ASG  ALA A  418  163    C          Coil    -68.47    146.39      24.2      3DQW
+ASG  ARG A  419  164    T          Turn    -72.23    155.41     198.9      3DQW
+ASG  GLN A  420  165    T          Turn    -55.62    143.47     190.6      3DQW
+ASG  GLY A  421  166    T          Turn     90.73    -27.49      62.2      3DQW
+ASG  ALA A  422  167    T          Turn    -56.46    135.13      33.1      3DQW
+ASG  LYS A  423  168    C          Coil   -125.37    137.46     159.9      3DQW
+ASG  PHE A  424  169    C          Coil   -129.59    150.85      27.9      3DQW
+ASG  PRO A  425  170    C          Coil    -68.35    111.94      12.4      3DQW
+ASG  ILE A  426  171    G      310Helix    -54.33    -47.45      39.0      3DQW
+ASG  LYS A  427  172    G      310Helix    -63.37    -24.29       2.3      3DQW
+ASG  TRP A  428  173    G      310Helix   -106.62     -0.82      16.2      3DQW
+ASG  THR A  429  174    C          Coil   -115.64    143.39       8.5      3DQW
+ASG  ALA A  430  175    C          Coil    -63.94    142.98       0.5      3DQW
+ASG  PRO A  431  176    H    AlphaHelix    -52.67    -45.65      34.6      3DQW
+ASG  GLU A  432  177    H    AlphaHelix    -66.41    -25.20      17.4      3DQW
+ASG  ALA A  433  178    H    AlphaHelix    -82.51    -42.43       0.9      3DQW
+ASG  ALA A  434  179    H    AlphaHelix    -66.69    -36.95      32.6      3DQW
+ASG  LEU A  435  180    H    AlphaHelix    -92.24    -42.64      91.6      3DQW
+ASG  TYR A  436  181    H    AlphaHelix   -114.64     -3.21     149.5      3DQW
+ASG  GLY A  437  182    C          Coil     75.21     19.16      10.1      3DQW
+ASG  ARG A  438  183    C          Coil    -87.69     96.59     114.0      3DQW
+ASG  PHE A  439  184    C          Coil    -99.06    125.32       8.9      3DQW
+ASG  THR A  440  185    C          Coil   -140.87    174.64      19.0      3DQW
+ASG  ILE A  441  186    H    AlphaHelix    -60.61    -29.39      28.9      3DQW
+ASG  LYS A  442  187    H    AlphaHelix    -67.91    -29.60      16.6      3DQW
+ASG  SER A  443  188    H    AlphaHelix    -73.21    -28.03       2.9      3DQW
+ASG  ASP A  444  189    H    AlphaHelix    -66.40    -38.58       0.8      3DQW
+ASG  VAL A  445  190    H    AlphaHelix    -60.50    -41.29       0.0      3DQW
+ASG  TRP A  446  191    H    AlphaHelix    -56.12    -48.22       3.2      3DQW
+ASG  SER A  447  192    H    AlphaHelix    -60.40    -38.61       6.9      3DQW
+ASG  PHE A  448  193    H    AlphaHelix    -59.38    -41.17       0.2      3DQW
+ASG  GLY A  449  194    H    AlphaHelix    -56.84    -45.82       0.0      3DQW
+ASG  ILE A  450  195    H    AlphaHelix    -58.30    -42.92       0.4      3DQW
+ASG  LEU A  451  196    H    AlphaHelix    -60.13    -36.03       0.2      3DQW
+ASG  LEU A  452  197    H    AlphaHelix    -59.65    -37.91       3.6      3DQW
+ASG  THR A  453  198    H    AlphaHelix    -67.73    -37.66       5.8      3DQW
+ASG  GLU A  454  199    H    AlphaHelix    -60.76    -42.63       3.2      3DQW
+ASG  LEU A  455  200    H    AlphaHelix    -62.15    -52.22       3.6      3DQW
+ASG  THR A  456  201    H    AlphaHelix    -72.78    -16.43       8.9      3DQW
+ASG  THR A  457  202    H    AlphaHelix   -102.50      0.53      42.3      3DQW
+ASG  LYS A  458  203    T          Turn     54.83     47.25      30.9      3DQW
+ASG  GLY A  459  204    T          Turn    103.63     14.18       6.9      3DQW
+ASG  ARG A  460  205    T          Turn    -75.62    152.22     108.5      3DQW
+ASG  VAL A  461  206    T          Turn    -70.07    142.36      15.0      3DQW
+ASG  PRO A  462  207    T          Turn    -67.99    159.63       1.0      3DQW
+ASG  TYR A  463  208    T          Turn     42.48     50.83       3.9      3DQW
+ASG  PRO A  464  209    T          Turn    -51.54    131.59      41.5      3DQW
+ASG  GLY A  465  210    T          Turn     86.96    -22.50      10.5      3DQW
+ASG  MET A  466  211    T          Turn    -86.68    148.91      18.6      3DQW
+ASG  VAL A  467  212    C          Coil    -98.88    164.03      33.1      3DQW
+ASG  ASN A  468  213    H    AlphaHelix    -50.05    -48.56      22.0      3DQW
+ASG  ARG A  469  214    H    AlphaHelix    -66.47    -34.62     157.6      3DQW
+ASG  GLU A  470  215    H    AlphaHelix    -66.94    -41.11      64.9      3DQW
+ASG  VAL A  471  216    H    AlphaHelix    -61.15    -47.37       4.2      3DQW
+ASG  LEU A  472  217    H    AlphaHelix    -55.54    -49.12      50.8      3DQW
+ASG  ASP A  473  218    H    AlphaHelix    -66.84    -54.21      42.6      3DQW
+ASG  GLN A  474  219    H    AlphaHelix    -63.12    -41.56      68.7      3DQW
+ASG  VAL A  475  220    H    AlphaHelix    -59.62    -44.66      10.7      3DQW
+ASG  GLU A  476  221    H    AlphaHelix    -56.32    -38.95     147.9      3DQW
+ASG  ARG A  477  222    H    AlphaHelix    -73.51     -4.27     176.0      3DQW
+ASG  GLY A  478  223    C          Coil    105.75      2.04      48.4      3DQW
+ASG  TYR A  479  224    C          Coil    -65.45    139.37      83.5      3DQW
+ASG  ARG A  480  225    C          Coil   -138.21    148.16      54.0      3DQW
+ASG  MET A  481  226    C          Coil    -55.00    138.22      13.2      3DQW
+ASG  PRO A  482  227    C          Coil    -76.82    169.01      88.4      3DQW
+ASG  CYS A  483  228    C          Coil    -57.52    121.95      40.7      3DQW
+ASG  PRO A  484  229    T          Turn    -61.45    152.89      12.8      3DQW
+ASG  PRO A  485  230    T          Turn    -53.69    132.83     100.6      3DQW
+ASG  GLU A  486  231    T          Turn     71.95     -1.06      83.5      3DQW
+ASG  CYS A  487  232    T          Turn    -86.54    132.02      10.4      3DQW
+ASG  PRO A  488  233    C          Coil    -61.61    143.38      23.4      3DQW
+ASG  GLU A  489  234    H    AlphaHelix    -59.75    -29.09     101.8      3DQW
+ASG  SER A  490  235    H    AlphaHelix    -64.58    -30.57      22.8      3DQW
+ASG  LEU A  491  236    H    AlphaHelix    -76.95    -41.53       2.8      3DQW
+ASG  HIS A  492  237    H    AlphaHelix    -62.60    -35.14      17.8      3DQW
+ASG  ASP A  493  238    H    AlphaHelix    -60.47    -37.02      83.2      3DQW
+ASG  LEU A  494  239    H    AlphaHelix    -65.70    -42.52       0.0      3DQW
+ASG  MET A  495  240    H    AlphaHelix    -59.64    -42.88       0.2      3DQW
+ASG  CYS A  496  241    H    AlphaHelix    -65.18    -35.20      42.2      3DQW
+ASG  GLN A  497  242    H    AlphaHelix    -61.16    -43.42      32.8      3DQW
+ASG  CYS A  498  243    H    AlphaHelix    -61.49    -24.44       0.0      3DQW
+ASG  TRP A  499  244    H    AlphaHelix   -103.69     23.93       0.8      3DQW
+ASG  ARG A  500  245    T          Turn    -64.70    143.48      98.2      3DQW
+ASG  LYS A  501  246    T          Turn    -62.14    -46.75     170.0      3DQW
+ASG  ASP A  502  247    T          Turn    -77.10    112.95      70.2      3DQW
+ASG  PRO A  503  248    G      310Helix    -55.72    -39.28      33.3      3DQW
+ASG  GLU A  504  249    G      310Helix    -67.25    -16.95     136.0      3DQW
+ASG  GLU A  505  250    G      310Helix    -86.80     -7.03     114.8      3DQW
+ASG  ARG A  506  251    C          Coil    -75.65    144.15       3.8      3DQW
+ASG  PRO A  507  252    C          Coil    -64.22    161.83      14.5      3DQW
+ASG  THR A  508  253    C          Coil    -80.27    159.32      54.2      3DQW
+ASG  PHE A  509  254    H    AlphaHelix    -68.37    -26.60       0.0      3DQW
+ASG  GLU A  510  255    H    AlphaHelix    -59.01    -48.08     140.6      3DQW
+ASG  TYR A  511  256    H    AlphaHelix    -63.67    -45.38     103.0      3DQW
+ASG  LEU A  512  257    H    AlphaHelix    -57.96    -46.51       0.0      3DQW
+ASG  GLN A  513  258    H    AlphaHelix    -57.18    -49.32      37.5      3DQW
+ASG  ALA A  514  259    H    AlphaHelix    -62.49    -44.66      40.8      3DQW
+ASG  PHE A  515  260    H    AlphaHelix    -59.85    -40.65      32.6      3DQW
+ASG  LEU A  516  261    H    AlphaHelix    -78.57    -33.99       3.6      3DQW
+ASG  GLU A  517  262    H    AlphaHelix    -61.60    -41.34     109.0      3DQW
+ASG  ASP A  518  263    H    AlphaHelix    -96.07      6.81      81.2      3DQW
+ASG  TYR A  519  264    H    AlphaHelix    -49.53    -47.00       0.0      3DQW
+ASG  PHE A  520  265    H    AlphaHelix    -84.08     -4.46      22.3      3DQW
+ASG  THR A  521  266    H    AlphaHelix   -103.91    -50.10     101.5      3DQW
+ASG  SER A  522  267    H    AlphaHelix    -83.34    -34.44      89.8      3DQW
+ASG  THR A  523  268    H    AlphaHelix   -109.28    -43.27      41.3      3DQW
+ASG  GLU A  524  269    T          Turn   -131.36     67.95      55.2      3DQW
+ASG  PRO A  525  270    T          Turn    -64.96    -27.88      80.4      3DQW
+ASG  GLN A  526  271    T          Turn   -106.74     25.27     178.1      3DQW
+ASG  TYR A  527  272    T          Turn    -68.56    140.78      51.8      3DQW
+ASG  GLN A  528  273    C          Coil   -132.93    140.79     114.3      3DQW
+ASG  PRO A  529  274    C          Coil    -62.10    132.72      42.1      3DQW
+ASG  GLY A  530  275    C          Coil    -98.36   -154.53      38.9      3DQW
+ASG  GLU A  531  276    C          Coil    -67.71    -31.16     161.1      3DQW
+ASG  ASN A  532  277    C          Coil   -127.22    -36.67      78.4      3DQW
+ASG  LEU A  533  278    C          Coil   -123.08    360.00       8.0      3DQW
+ASG  LEU B  255    1    C          Coil    360.00    -33.18     185.1      3DQW
+ASG  ALA B  256    2    C          Coil    -67.52    113.63      96.1      3DQW
+ASG  LYS B  257    3    C          Coil    -89.45    150.56     104.2      3DQW
+ASG  ASP B  258    4    T          Turn   -143.99   -166.37      67.1      3DQW
+ASG  ALA B  259    5    T          Turn    -79.82      7.76     106.7      3DQW
+ASG  TRP B  260    6    T          Turn    -84.22    -11.76      62.1      3DQW
+ASG  GLU B  261    7    B        Bridge    -68.44    134.25      53.9      3DQW
+ASG  ILE B  262    8    C          Coil   -128.87    158.31      26.1      3DQW
+ASG  PRO B  263    9    C          Coil    -71.31    130.76      78.4      3DQW
+ASG  ARG B  264   10    G      310Helix    -54.49    -28.93      73.6      3DQW
+ASG  GLU B  265   11    G      310Helix    -62.60    -18.95     154.7      3DQW
+ASG  SER B  266   12    G      310Helix    -85.58      9.50      22.8      3DQW
+ASG  LEU B  267   13    E        Strand   -122.66    139.74      22.2      3DQW
+ASG  ARG B  268   14    E        Strand   -125.98    118.69     129.4      3DQW
+ASG  LEU B  269   15    E        Strand    -85.24    122.08      51.9      3DQW
+ASG  GLU B  270   16    E        Strand   -109.77    -47.27      56.6      3DQW
+ASG  VAL B  271   17    E        Strand   -135.15    128.53      71.1      3DQW
+ASG  LYS B  272   18    E        Strand    -72.83    125.23      89.1      3DQW
+ASG  LEU B  273   19    E        Strand   -102.11    -21.93      81.0      3DQW
+ASG  GLY B  274   20    E        Strand    176.62    164.27      31.2      3DQW
+ASG  GLN B  275   21    E        Strand   -143.77    141.43     107.4      3DQW
+ASG  GLY B  276   22    E        Strand   -131.41   -171.75      41.8      3DQW
+ASG  CYS B  277   23    T          Turn    -73.63    -12.40      33.8      3DQW
+ASG  PHE B  278   24    T          Turn   -111.08     -6.66      55.0      3DQW
+ASG  GLY B  279   25    E        Strand    153.65   -161.81      10.9      3DQW
+ASG  GLU B  280   26    E        Strand   -123.95    166.71      58.5      3DQW
+ASG  VAL B  281   27    E        Strand   -125.87    126.87      46.9      3DQW
+ASG  TRP B  282   28    E        Strand   -123.37    147.51      55.3      3DQW
+ASG  MET B  283   29    E        Strand    -89.92    139.62      22.2      3DQW
+ASG  GLY B  284   30    E        Strand   -160.28   -172.48       0.0      3DQW
+ASG  THR B  285   31    E        Strand   -120.85    138.47       9.0      3DQW
+ASG  TRP B  286   32    E        Strand   -117.97    133.26      45.7      3DQW
+ASG  ASN B  287   33    T          Turn     52.54     26.57      98.2      3DQW
+ASG  GLY B  288   34    T          Turn     62.74     10.80      47.0      3DQW
+ASG  THR B  289   35    T          Turn   -134.31    -33.31      64.7      3DQW
+ASG  THR B  290   36    E        Strand   -105.32    131.40      50.6      3DQW
+ASG  ARG B  291   37    E        Strand    -80.20    131.28     116.6      3DQW
+ASG  VAL B  292   38    E        Strand   -140.19    164.56       0.0      3DQW
+ASG  ALA B  293   39    E        Strand   -105.41    148.19       7.6      3DQW
+ASG  ILE B  294   40    E        Strand   -131.88    117.53       0.0      3DQW
+ASG  LYS B  295   41    E        Strand    -94.97    123.31      38.9      3DQW
+ASG  THR B  296   42    E        Strand   -105.24    159.06      16.9      3DQW
+ASG  LEU B  297   43    E        Strand   -109.61    115.76       7.8      3DQW
+ASG  LYS B  298   44    T          Turn    -65.12    117.16     121.0      3DQW
+ASG  PRO B  299   45    T          Turn    -56.11    146.70      65.9      3DQW
+ASG  GLY B  300   46    T          Turn     57.18     50.29      83.9      3DQW
+ASG  THR B  301   47    T          Turn   -133.21    -59.24      34.8      3DQW
+ASG  MET B  302   48    C          Coil   -119.13    154.94      43.5      3DQW
+ASG  SER B  303   49    C          Coil    -65.68    134.32      59.2      3DQW
+ASG  PRO B  304   50    H    AlphaHelix    -53.61    -40.04      52.5      3DQW
+ASG  GLU B  305   51    H    AlphaHelix    -58.73    -44.99      99.8      3DQW
+ASG  ALA B  306   52    H    AlphaHelix    -63.92    -50.04      51.5      3DQW
+ASG  PHE B  307   53    H    AlphaHelix    -55.62    -42.74       9.3      3DQW
+ASG  LEU B  308   54    H    AlphaHelix    -77.60    -12.96      29.3      3DQW
+ASG  GLN B  309   55    H    AlphaHelix    -57.78    -32.54      85.8      3DQW
+ASG  GLU B  310   56    H    AlphaHelix    -63.13    -41.18      17.8      3DQW
+ASG  ALA B  311   57    H    AlphaHelix    -67.18    -39.28       1.0      3DQW
+ASG  GLN B  312   58    H    AlphaHelix    -58.98    -44.22      74.6      3DQW
+ASG  VAL B  313   59    H    AlphaHelix    -61.50    -42.65       4.5      3DQW
+ASG  MET B  314   60    H    AlphaHelix    -66.57    -28.19       5.7      3DQW
+ASG  LYS B  315   61    H    AlphaHelix    -60.30    -32.07      25.0      3DQW
+ASG  LYS B  316   62    H    AlphaHelix    -90.91    -34.95     128.6      3DQW
+ASG  LEU B  317   63    C          Coil    -99.39     96.35       6.9      3DQW
+ASG  ARG B  318   64    C          Coil   -119.14    117.37     100.4      3DQW
+ASG  HIS B  319   65    T          Turn   -164.95    150.82      50.7      3DQW
+ASG  GLU B  320   66    T          Turn    -64.22    -23.39     159.0      3DQW
+ASG  LYS B  321   67    T          Turn   -104.50     12.44      43.9      3DQW
+ASG  LEU B  322   68    B        Bridge   -114.41    137.27       1.3      3DQW
+ASG  VAL B  323   69    C          Coil    -55.94    129.85       3.5      3DQW
+ASG  GLN B  324   70    C          Coil    -89.48    135.07      73.5      3DQW
+ASG  LEU B  325   71    E        Strand    -76.68    136.35       2.1      3DQW
+ASG  TYR B  326   72    E        Strand   -105.36    -44.45      58.6      3DQW
+ASG  ALA B  327   73    E        Strand   -170.15    171.03       1.0      3DQW
+ASG  VAL B  328   74    E        Strand   -138.53    146.36       5.8      3DQW
+ASG  VAL B  329   75    E        Strand   -113.42    104.58       3.8      3DQW
+ASG  SER B  330   76    C          Coil    -96.04     26.02      20.4      3DQW
+ASG  GLU B  331   77    T          Turn   -120.22    135.65     115.1      3DQW
+ASG  GLU B  332   78    T          Turn    -49.65    128.43     140.8      3DQW
+ASG  PRO B  333   79    T          Turn    -79.68    132.52      46.7      3DQW
+ASG  ILE B  334   80    T          Turn    -64.73    135.23       8.6      3DQW
+ASG  TYR B  335   81    E        Strand   -125.00    138.14      35.5      3DQW
+ASG  ILE B  336   82    E        Strand   -112.09    120.55       0.0      3DQW
+ASG  VAL B  337   83    E        Strand   -100.66    120.61       0.0      3DQW
+ASG  ILE B  338   84    E        Strand   -134.74    168.75      14.6      3DQW
+ASG  GLU B  339   85    E        Strand    -57.50    129.02      28.3      3DQW
+ASG  TYR B  340   86    C          Coil    -82.24    125.96      63.8      3DQW
+ASG  MET B  341   87    T          Turn   -109.31    108.96      17.1      3DQW
+ASG  SER B  342   88    T          Turn    -65.20    -27.92      36.2      3DQW
+ASG  LYS B  343   89    T          Turn    -98.39     -0.84      53.2      3DQW
+ASG  GLY B  344   90    E        Strand     79.09   -160.81      29.6      3DQW
+ASG  SER B  345   91    E        Strand    -70.79    141.16      20.4      3DQW
+ASG  LEU B  346   92    H    AlphaHelix    -53.60    -40.76       0.0      3DQW
+ASG  LEU B  347   93    H    AlphaHelix    -56.19    -52.80      22.4      3DQW
+ASG  ASP B  348   94    H    AlphaHelix    -63.42    -37.31     107.2      3DQW
+ASG  PHE B  349   95    H    AlphaHelix    -62.46    -45.12      12.4      3DQW
+ASG  LEU B  350   96    H    AlphaHelix    -63.58    -36.51       3.4      3DQW
+ASG  LYS B  351   97    H    AlphaHelix    -89.18     -9.04      94.5      3DQW
+ASG  GLY B  352   98    C          Coil    -87.59   -172.22      32.2      3DQW
+ASG  GLU B  353   99    G      310Helix    -58.26    -44.86      63.0      3DQW
+ASG  MET B  354  100    G      310Helix    -54.37    -37.13      31.5      3DQW
+ASG  GLY B  355  101    G      310Helix    -60.18    -36.79       0.0      3DQW
+ASG  LYS B  356  102    G      310Helix    -65.95    -18.32      77.0      3DQW
+ASG  TYR B  357  103    G      310Helix    -91.28    -14.33       1.2      3DQW
+ASG  LEU B  358  104    C          Coil    -70.52    142.35       0.0      3DQW
+ASG  ARG B  359  105    C          Coil   -121.18    178.39      33.3      3DQW
+ASG  LEU B  360  106    H    AlphaHelix    -52.12    -46.32       0.4      3DQW
+ASG  PRO B  361  107    H    AlphaHelix    -59.78    -39.23      21.7      3DQW
+ASG  GLN B  362  108    H    AlphaHelix    -69.64    -41.09      10.5      3DQW
+ASG  LEU B  363  109    H    AlphaHelix    -64.58    -39.21       2.7      3DQW
+ASG  VAL B  364  110    H    AlphaHelix    -68.31    -37.94       4.7      3DQW
+ASG  ASP B  365  111    H    AlphaHelix    -65.86    -39.96      83.9      3DQW
+ASG  MET B  366  112    H    AlphaHelix    -60.59    -45.65       0.2      3DQW
+ASG  ALA B  367  113    H    AlphaHelix    -56.86    -42.06       1.6      3DQW
+ASG  ALA B  368  114    H    AlphaHelix    -63.71    -39.06       4.3      3DQW
+ASG  GLN B  369  115    H    AlphaHelix    -63.32    -45.22      14.5      3DQW
+ASG  ILE B  370  116    H    AlphaHelix    -62.70    -45.61       0.0      3DQW
+ASG  ALA B  371  117    H    AlphaHelix    -58.62    -34.68       0.0      3DQW
+ASG  SER B  372  118    H    AlphaHelix    -64.97    -45.83      16.2      3DQW
+ASG  GLY B  373  119    H    AlphaHelix    -58.19    -46.83       0.0      3DQW
+ASG  MET B  374  120    H    AlphaHelix    -70.09    -24.27       0.0      3DQW
+ASG  ALA B  375  121    H    AlphaHelix    -71.60    -35.00       0.4      3DQW
+ASG  TYR B  376  122    H    AlphaHelix    -64.25    -47.65      27.5      3DQW
+ASG  VAL B  377  123    H    AlphaHelix    -54.55    -44.69       1.4      3DQW
+ASG  GLU B  378  124    H    AlphaHelix    -57.31    -47.37      39.9      3DQW
+ASG  ARG B  379  125    H    AlphaHelix    -63.12    -36.52     154.6      3DQW
+ASG  MET B  380  126    H    AlphaHelix    -80.68      4.97      70.8      3DQW
+ASG  ASN B  381  127    C          Coil     59.93     37.73      78.4      3DQW
+ASG  TYR B  382  128    E        Strand   -108.29    163.09      26.5      3DQW
+ASG  VAL B  383  129    E        Strand   -125.78    142.59       5.0      3DQW
+ASG  HIS B  384  130    T          Turn    -92.73    -49.37       2.2      3DQW
+ASG  ARG B  385  131    T          Turn     74.20     -0.09      27.7      3DQW
+ASG  ASP B  386  132    T          Turn   -138.88     37.10      32.0      3DQW
+ASG  LEU B  387  133    T          Turn    -83.54    126.97       2.3      3DQW
+ASG  ARG B  388  134    C          Coil    176.67    165.23      30.7      3DQW
+ASG  ALA B  389  135    G      310Helix    -59.03    -34.12       0.0      3DQW
+ASG  ALA B  390  136    G      310Helix    -65.70    -18.85      34.1      3DQW
+ASG  ASN B  391  137    G      310Helix   -110.77     23.63      23.3      3DQW
+ASG  ILE B  392  138    E        Strand   -111.24    131.93       0.0      3DQW
+ASG  LEU B  393  139    E        Strand   -106.50    147.23      42.3      3DQW
+ASG  VAL B  394  140    E        Strand   -113.79    140.07       0.0      3DQW
+ASG  GLY B  395  141    T          Turn   -113.76   -152.84       7.1      3DQW
+ASG  GLU B  396  142    T          Turn    -75.76    150.06      88.5      3DQW
+ASG  ASN B  397  143    T          Turn     57.44     41.65     112.9      3DQW
+ASG  LEU B  398  144    T          Turn     60.45     25.87       7.4      3DQW
+ASG  VAL B  399  145    T          Turn    -75.65    129.70      44.3      3DQW
+ASG  CYS B  400  146    E        Strand   -119.21    137.83       0.0      3DQW
+ASG  LYS B  401  147    E        Strand   -139.04    142.29      27.5      3DQW
+ASG  VAL B  402  148    E        Strand    -69.55    134.91       0.2      3DQW
+ASG  ALA B  403  149    C          Coil   -130.32   -179.28       7.4      3DQW
+ASG  ASP B  404  150    C          Coil     59.57     78.46      49.8      3DQW
+ASG  PHE B  405  151    T          Turn    -98.37     14.52       3.8      3DQW
+ASG  GLY B  406  152    T          Turn    -51.47    -39.24      20.7      3DQW
+ASG  LEU B  407  153    T          Turn    -91.79     -1.90      55.1      3DQW
+ASG  ALA B  408  154    T          Turn    -69.46    146.38       1.7      3DQW
+ASG  ARG B  409  155    E        Strand   -144.34    145.87      96.5      3DQW
+ASG  LEU B  410  156    E        Strand    -74.40    128.91      84.6      3DQW
+ASG  ILE B  411  157    T          Turn    -82.59    129.84      11.5      3DQW
+ASG  GLU B  412  158    B        Bridge   -117.13    136.48     125.8      3DQW
+ASG  ASP B  413  159    T          Turn     62.56     34.04     148.6      3DQW
+ASG  ASN B  414  160    T          Turn     73.59     -7.18     145.5      3DQW
+ASG  GLU B  415  161    B        Bridge   -149.40    360.00      72.1      3DQW
+ASG  THR B  417  162    C          Coil    360.00    119.52     117.2      3DQW
+ASG  ALA B  418  163    C          Coil    -71.18    147.45      19.0      3DQW
+ASG  ARG B  419  164    T          Turn    -73.98    158.91     190.9      3DQW
+ASG  GLN B  420  165    T          Turn    -58.39    144.32     179.0      3DQW
+ASG  GLY B  421  166    T          Turn     82.76     -2.73      72.8      3DQW
+ASG  ALA B  422  167    T          Turn    -75.66    134.13      32.9      3DQW
+ASG  LYS B  423  168    C          Coil   -118.73    138.44     161.7      3DQW
+ASG  PHE B  424  169    C          Coil   -131.19    150.20      28.5      3DQW
+ASG  PRO B  425  170    C          Coil    -68.24    113.76      14.6      3DQW
+ASG  ILE B  426  171    G      310Helix    -58.05    -42.12      40.0      3DQW
+ASG  LYS B  427  172    G      310Helix    -68.02    -21.16       2.4      3DQW
+ASG  TRP B  428  173    G      310Helix   -110.08     -4.10      19.9      3DQW
+ASG  THR B  429  174    C          Coil   -110.98    145.79       8.9      3DQW
+ASG  ALA B  430  175    C          Coil    -64.16    144.94       0.2      3DQW
+ASG  PRO B  431  176    H    AlphaHelix    -55.01    -46.50      31.2      3DQW
+ASG  GLU B  432  177    H    AlphaHelix    -63.53    -27.98      16.6      3DQW
+ASG  ALA B  433  178    H    AlphaHelix    -81.04    -42.03       0.9      3DQW
+ASG  ALA B  434  179    H    AlphaHelix    -68.74    -38.38      31.2      3DQW
+ASG  LEU B  435  180    H    AlphaHelix    -89.35    -41.55      92.8      3DQW
+ASG  TYR B  436  181    H    AlphaHelix   -115.91     -4.44     149.8      3DQW
+ASG  GLY B  437  182    C          Coil     75.51     18.12      10.0      3DQW
+ASG  ARG B  438  183    C          Coil    -82.59     94.44     115.2      3DQW
+ASG  PHE B  439  184    C          Coil    -94.07    128.58       7.9      3DQW
+ASG  THR B  440  185    C          Coil   -143.71    170.24      18.6      3DQW
+ASG  ILE B  441  186    H    AlphaHelix    -55.60    -29.42      29.4      3DQW
+ASG  LYS B  442  187    H    AlphaHelix    -67.79    -29.77      19.4      3DQW
+ASG  SER B  443  188    H    AlphaHelix    -72.36    -26.93       2.9      3DQW
+ASG  ASP B  444  189    H    AlphaHelix    -69.54    -37.23       0.4      3DQW
+ASG  VAL B  445  190    H    AlphaHelix    -61.39    -41.38       0.0      3DQW
+ASG  TRP B  446  191    H    AlphaHelix    -56.06    -47.79       3.6      3DQW
+ASG  SER B  447  192    H    AlphaHelix    -60.56    -34.89       6.8      3DQW
+ASG  PHE B  448  193    H    AlphaHelix    -63.89    -40.87       0.6      3DQW
+ASG  GLY B  449  194    H    AlphaHelix    -56.82    -45.00       0.0      3DQW
+ASG  ILE B  450  195    H    AlphaHelix    -60.11    -43.07       0.0      3DQW
+ASG  LEU B  451  196    H    AlphaHelix    -60.55    -37.49       0.2      3DQW
+ASG  LEU B  452  197    H    AlphaHelix    -56.34    -41.08       3.0      3DQW
+ASG  THR B  453  198    H    AlphaHelix    -65.14    -38.81       5.2      3DQW
+ASG  GLU B  454  199    H    AlphaHelix    -60.81    -41.85       2.8      3DQW
+ASG  LEU B  455  200    H    AlphaHelix    -62.43    -51.13       2.6      3DQW
+ASG  THR B  456  201    H    AlphaHelix    -77.76    -14.82       8.9      3DQW
+ASG  THR B  457  202    H    AlphaHelix   -103.28      1.88      44.4      3DQW
+ASG  LYS B  458  203    T          Turn     56.33     47.36      32.2      3DQW
+ASG  GLY B  459  204    T          Turn    100.56      8.98       6.3      3DQW
+ASG  ARG B  460  205    T          Turn    -67.09    146.79     115.9      3DQW
+ASG  VAL B  461  206    T          Turn    -66.62    141.19      16.1      3DQW
+ASG  PRO B  462  207    T          Turn    -68.44    159.42       1.3      3DQW
+ASG  TYR B  463  208    T          Turn     43.69     50.42       4.3      3DQW
+ASG  PRO B  464  209    T          Turn    -53.48    135.00      41.5      3DQW
+ASG  GLY B  465  210    T          Turn     82.86    -20.75       7.8      3DQW
+ASG  MET B  466  211    T          Turn    -84.99    149.56      18.4      3DQW
+ASG  VAL B  467  212    C          Coil    -97.52    154.44      37.5      3DQW
+ASG  ASN B  468  213    H    AlphaHelix    -47.59    -52.87      24.5      3DQW
+ASG  ARG B  469  214    H    AlphaHelix    -60.90    -36.85     155.1      3DQW
+ASG  GLU B  470  215    H    AlphaHelix    -66.71    -40.63      74.6      3DQW
+ASG  VAL B  471  216    H    AlphaHelix    -61.62    -47.54       3.2      3DQW
+ASG  LEU B  472  217    H    AlphaHelix    -56.77    -45.22      46.2      3DQW
+ASG  ASP B  473  218    H    AlphaHelix    -66.90    -50.66      37.9      3DQW
+ASG  GLN B  474  219    H    AlphaHelix    -65.60    -44.44      66.7      3DQW
+ASG  VAL B  475  220    H    AlphaHelix    -67.68    -30.19      10.9      3DQW
+ASG  GLU B  476  221    H    AlphaHelix    -58.80    -41.03     144.6      3DQW
+ASG  ARG B  477  222    H    AlphaHelix    -74.08     -3.51     173.0      3DQW
+ASG  GLY B  478  223    C          Coil    105.80      6.32      49.2      3DQW
+ASG  TYR B  479  224    C          Coil    -70.80    139.24      82.1      3DQW
+ASG  ARG B  480  225    C          Coil   -136.87    148.76      55.4      3DQW
+ASG  MET B  481  226    C          Coil    -52.86    138.46      14.0      3DQW
+ASG  PRO B  482  227    C          Coil    -75.13    168.24      87.6      3DQW
+ASG  CYS B  483  228    C          Coil    -58.89    124.06      38.9      3DQW
+ASG  PRO B  484  229    T          Turn    -65.82    154.16      12.3      3DQW
+ASG  PRO B  485  230    T          Turn    -53.71    129.83     106.3      3DQW
+ASG  GLU B  486  231    T          Turn     76.12     -4.41      76.2      3DQW
+ASG  CYS B  487  232    T          Turn    -82.63    128.58      10.1      3DQW
+ASG  PRO B  488  233    C          Coil    -58.92    145.37      21.3      3DQW
+ASG  GLU B  489  234    H    AlphaHelix    -60.99    -29.43      99.2      3DQW
+ASG  SER B  490  235    H    AlphaHelix    -66.06    -32.84      20.9      3DQW
+ASG  LEU B  491  236    H    AlphaHelix    -73.12    -40.89       2.2      3DQW
+ASG  HIS B  492  237    H    AlphaHelix    -62.78    -36.30      18.2      3DQW
+ASG  ASP B  493  238    H    AlphaHelix    -60.67    -39.13      75.7      3DQW
+ASG  LEU B  494  239    H    AlphaHelix    -59.69    -42.60       0.2      3DQW
+ASG  MET B  495  240    H    AlphaHelix    -60.11    -43.23       0.4      3DQW
+ASG  CYS B  496  241    H    AlphaHelix    -68.02    -31.01      40.2      3DQW
+ASG  GLN B  497  242    H    AlphaHelix    -65.31    -39.42      44.3      3DQW
+ASG  CYS B  498  243    H    AlphaHelix    -65.21    -25.15       0.0      3DQW
+ASG  TRP B  499  244    H    AlphaHelix   -103.95     23.01       0.2      3DQW
+ASG  ARG B  500  245    T          Turn    -60.85    140.43     100.6      3DQW
+ASG  LYS B  501  246    T          Turn    -57.06    -48.00     173.2      3DQW
+ASG  ASP B  502  247    T          Turn    -79.80    115.63      58.8      3DQW
+ASG  PRO B  503  248    G      310Helix    -58.68    -35.70      30.9      3DQW
+ASG  GLU B  504  249    G      310Helix    -66.77    -20.57     140.2      3DQW
+ASG  GLU B  505  250    G      310Helix    -86.85     -6.70     113.4      3DQW
+ASG  ARG B  506  251    C          Coil    -74.28    146.97       4.2      3DQW
+ASG  PRO B  507  252    C          Coil    -65.53    160.88      15.2      3DQW
+ASG  THR B  508  253    C          Coil    -81.44    162.00      50.0      3DQW
+ASG  PHE B  509  254    H    AlphaHelix    -69.24    -31.37       0.0      3DQW
+ASG  GLU B  510  255    H    AlphaHelix    -55.59    -50.87     141.8      3DQW
+ASG  TYR B  511  256    H    AlphaHelix    -60.64    -43.01     109.2      3DQW
+ASG  LEU B  512  257    H    AlphaHelix    -63.76    -42.98       0.0      3DQW
+ASG  GLN B  513  258    H    AlphaHelix    -57.45    -53.37      37.9      3DQW
+ASG  ALA B  514  259    H    AlphaHelix    -62.31    -40.43      43.4      3DQW
+ASG  PHE B  515  260    H    AlphaHelix    -59.88    -43.53      30.1      3DQW
+ASG  LEU B  516  261    H    AlphaHelix    -76.03    -34.15       5.1      3DQW
+ASG  GLU B  517  262    H    AlphaHelix    -67.30    -38.47     109.4      3DQW
+ASG  ASP B  518  263    H    AlphaHelix    -93.94      4.79      80.9      3DQW
+ASG  TYR B  519  264    H    AlphaHelix    -47.43    -50.42       0.2      3DQW
+ASG  PHE B  520  265    H    AlphaHelix    -81.31     -1.42      36.1      3DQW
+ASG  THR B  521  266    H    AlphaHelix   -107.95    -52.25      92.7      3DQW
+ASG  SER B  522  267    H    AlphaHelix    -77.77    -27.25      91.1      3DQW
+ASG  THR B  523  268    H    AlphaHelix   -117.25    -49.82      43.8      3DQW
+ASG  GLU B  524  269    T          Turn   -126.27     64.74      48.5      3DQW
+ASG  PRO B  525  270    T          Turn    -66.44    -19.39      77.5      3DQW
+ASG  GLN B  526  271    T          Turn    -96.28     -5.61     159.0      3DQW
+ASG  TYR B  527  272    T          Turn    -46.13    138.92      43.0      3DQW
+ASG  GLN B  528  273    C          Coil   -132.35    130.47      91.8      3DQW
+ASG  PRO B  529  274    C          Coil    -57.33    147.79      44.5      3DQW
+ASG  GLY B  530  275    C          Coil   -123.44   -157.84      38.6      3DQW
+ASG  GLU B  531  276    C          Coil    -74.18    -31.20     157.9      3DQW
+ASG  ASN B  532  277    C          Coil   -122.87    -35.49      83.0      3DQW
+ASG  LEU B  533  278    C          Coil   -125.34    360.00       5.8      3DQW
+ASG  ASP C  258    1    T          Turn    360.00   -155.54     123.6      3DQW
+ASG  ALA C  259    2    T          Turn    -73.54    -10.83     104.0      3DQW
+ASG  TRP C  260    3    T          Turn    -82.27    -16.87      60.4      3DQW
+ASG  GLU C  261    4    B        Bridge    -68.21    141.22      75.8      3DQW
+ASG  ILE C  262    5    C          Coil   -135.51    158.04      22.0      3DQW
+ASG  PRO C  263    6    C          Coil    -68.86    142.47      69.3      3DQW
+ASG  ARG C  264    7    G      310Helix    -64.42    -28.35      92.6      3DQW
+ASG  GLU C  265    8    G      310Helix    -66.08    -19.66     147.4      3DQW
+ASG  SER C  266    9    G      310Helix    -83.87      0.40      18.1      3DQW
+ASG  LEU C  267   10    E        Strand   -118.11    135.14      17.4      3DQW
+ASG  ARG C  268   11    E        Strand   -126.61    129.42     169.0      3DQW
+ASG  LEU C  269   12    E        Strand    -94.81    118.04      64.6      3DQW
+ASG  GLU C  270   13    E        Strand   -104.44    -59.18      99.5      3DQW
+ASG  VAL C  271   14    E        Strand   -128.06    129.66      76.1      3DQW
+ASG  LYS C  272   15    E        Strand    -73.69    121.23      95.2      3DQW
+ASG  LEU C  273   16    E        Strand    -92.93    -44.52      87.4      3DQW
+ASG  GLY C  274   17    E        Strand   -151.24    171.52      28.0      3DQW
+ASG  GLN C  275   18    E        Strand   -153.21    118.11     113.1      3DQW
+ASG  GLY C  276   19    E        Strand   -103.99   -164.33      51.7      3DQW
+ASG  CYS C  277   20    T          Turn    -81.37    -18.11      88.6      3DQW
+ASG  PHE C  278   21    T          Turn   -107.27     -0.39      97.7      3DQW
+ASG  GLY C  279   22    E        Strand    159.29   -167.42      11.2      3DQW
+ASG  GLU C  280   23    E        Strand   -122.65    173.42      57.0      3DQW
+ASG  VAL C  281   24    E        Strand   -132.21    128.38      41.3      3DQW
+ASG  TRP C  282   25    E        Strand   -121.04    139.59      57.3      3DQW
+ASG  MET C  283   26    E        Strand    -77.47    134.10      27.3      3DQW
+ASG  GLY C  284   27    E        Strand   -154.29   -171.54       0.0      3DQW
+ASG  THR C  285   28    E        Strand   -127.03    137.05      21.8      3DQW
+ASG  TRP C  286   29    E        Strand   -116.99    126.00      46.1      3DQW
+ASG  ASN C  287   30    T          Turn     60.87     26.00      97.9      3DQW
+ASG  GLY C  288   31    T          Turn     73.48    -11.86      66.5      3DQW
+ASG  THR C  289   32    T          Turn   -117.45    -46.00     110.8      3DQW
+ASG  THR C  290   33    E        Strand    -86.12    121.71      50.3      3DQW
+ASG  ARG C  291   34    E        Strand    -72.70    138.29     143.9      3DQW
+ASG  VAL C  292   35    E        Strand   -147.70    167.29       0.0      3DQW
+ASG  ALA C  293   36    E        Strand   -105.94    136.86       7.0      3DQW
+ASG  ILE C  294   37    E        Strand   -125.17    119.05       0.0      3DQW
+ASG  LYS C  295   38    E        Strand    -92.41    132.77      26.3      3DQW
+ASG  THR C  296   39    E        Strand   -116.21    167.69      21.9      3DQW
+ASG  LEU C  297   40    E        Strand   -119.16    125.16      26.2      3DQW
+ASG  LYS C  298   41    T          Turn    -75.55    113.09     115.2      3DQW
+ASG  PRO C  299   42    T          Turn    -53.94    137.74     115.7      3DQW
+ASG  GLY C  300   43    T          Turn     84.83    -17.26      83.9      3DQW
+ASG  THR C  301   44    T          Turn    -82.81    -16.22      48.8      3DQW
+ASG  MET C  302   45    T          Turn   -167.87    151.66      49.0      3DQW
+ASG  SER C  303   46    T          Turn    -64.90    144.66      56.6      3DQW
+ASG  PRO C  304   47    H    AlphaHelix    -52.89    -45.69      31.7      3DQW
+ASG  GLU C  305   48    H    AlphaHelix    -62.73    -44.16     138.6      3DQW
+ASG  ALA C  306   49    H    AlphaHelix    -60.10    -41.29      47.2      3DQW
+ASG  PHE C  307   50    H    AlphaHelix    -66.75    -42.72       9.9      3DQW
+ASG  LEU C  308   51    H    AlphaHelix    -77.32    -11.15      16.2      3DQW
+ASG  GLN C  309   52    H    AlphaHelix    -54.92    -40.85      68.5      3DQW
+ASG  GLU C  310   53    H    AlphaHelix    -56.23    -40.76      15.6      3DQW
+ASG  ALA C  311   54    H    AlphaHelix    -68.89    -37.23       1.2      3DQW
+ASG  GLN C  312   55    H    AlphaHelix    -61.69    -48.64      77.8      3DQW
+ASG  VAL C  313   56    H    AlphaHelix    -56.36    -47.06       1.6      3DQW
+ASG  MET C  314   57    H    AlphaHelix    -64.67    -21.49       8.5      3DQW
+ASG  LYS C  315   58    H    AlphaHelix    -71.91    -21.81      43.6      3DQW
+ASG  LYS C  316   59    H    AlphaHelix   -102.13    -34.03     116.8      3DQW
+ASG  LEU C  317   60    C          Coil   -100.59    110.73       6.9      3DQW
+ASG  ARG C  318   61    C          Coil   -129.81    130.70     116.5      3DQW
+ASG  HIS C  319   62    T          Turn   -173.31    149.31      46.8      3DQW
+ASG  GLU C  320   63    T          Turn    -63.27    -21.29     119.2      3DQW
+ASG  LYS C  321   64    T          Turn   -105.85     20.26      29.5      3DQW
+ASG  LEU C  322   65    B        Bridge   -119.54    136.10       4.5      3DQW
+ASG  VAL C  323   66    C          Coil    -55.86    138.46       6.3      3DQW
+ASG  GLN C  324   67    C          Coil    -95.26    133.63      77.1      3DQW
+ASG  LEU C  325   68    E        Strand    -76.51    136.72       1.9      3DQW
+ASG  TYR C  326   69    E        Strand   -109.40    -44.43      67.4      3DQW
+ASG  ALA C  327   70    E        Strand   -164.56    164.93       0.4      3DQW
+ASG  VAL C  328   71    E        Strand   -142.92    146.16       2.2      3DQW
+ASG  VAL C  329   72    E        Strand   -119.82    107.96       2.0      3DQW
+ASG  SER C  330   73    C          Coil    -95.10      7.63      46.5      3DQW
+ASG  GLU C  331   74    T          Turn   -132.29    153.99     139.3      3DQW
+ASG  GLU C  332   75    T          Turn    -58.27    139.23     127.4      3DQW
+ASG  PRO C  333   76    T          Turn    -69.11    131.51      76.9      3DQW
+ASG  ILE C  334   77    T          Turn    -90.07    144.25       7.1      3DQW
+ASG  TYR C  335   78    E        Strand   -140.00    145.49      50.5      3DQW
+ASG  ILE C  336   79    E        Strand   -116.74    121.30       0.0      3DQW
+ASG  VAL C  337   80    E        Strand   -104.78    121.25       0.0      3DQW
+ASG  ILE C  338   81    E        Strand   -130.86    163.98      11.0      3DQW
+ASG  GLU C  339   82    E        Strand    -42.61    128.45      27.3      3DQW
+ASG  TYR C  340   83    C          Coil    -79.85    123.16      59.5      3DQW
+ASG  MET C  341   84    T          Turn   -108.16    105.98      15.6      3DQW
+ASG  SER C  342   85    T          Turn    -61.07    -13.57      41.6      3DQW
+ASG  LYS C  343   86    T          Turn   -104.95     -3.35      77.6      3DQW
+ASG  GLY C  344   87    E        Strand     73.50   -155.20      30.9      3DQW
+ASG  SER C  345   88    E        Strand    -74.13    151.03      18.5      3DQW
+ASG  LEU C  346   89    H    AlphaHelix    -50.61    -44.16       0.0      3DQW
+ASG  LEU C  347   90    H    AlphaHelix    -56.56    -51.27      31.3      3DQW
+ASG  ASP C  348   91    H    AlphaHelix    -63.01    -41.02     103.3      3DQW
+ASG  PHE C  349   92    H    AlphaHelix    -61.42    -44.26      24.6      3DQW
+ASG  LEU C  350   93    H    AlphaHelix    -63.28    -39.00       4.1      3DQW
+ASG  LYS C  351   94    H    AlphaHelix    -83.31    -17.68     137.0      3DQW
+ASG  GLY C  352   95    T          Turn    -90.45   -153.76      37.6      3DQW
+ASG  GLU C  353   96    T          Turn    -57.92    -58.14     176.9      3DQW
+ASG  MET C  354   97    T          Turn    -64.44    -29.38      90.1      3DQW
+ASG  GLY C  355   98    G      310Helix    -46.59    -37.99       0.8      3DQW
+ASG  LYS C  356   99    G      310Helix    -70.11    -23.96     127.7      3DQW
+ASG  TYR C  357  100    G      310Helix    -93.83     -3.58     166.6      3DQW
+ASG  LEU C  358  101    C          Coil    -76.31    137.01       1.6      3DQW
+ASG  ARG C  359  102    C          Coil   -117.34    176.23      65.1      3DQW
+ASG  LEU C  360  103    H    AlphaHelix    -48.49    -46.64       0.2      3DQW
+ASG  PRO C  361  104    H    AlphaHelix    -59.67    -43.27      49.8      3DQW
+ASG  GLN C  362  105    H    AlphaHelix    -66.95    -40.14      66.7      3DQW
+ASG  LEU C  363  106    H    AlphaHelix    -67.29    -39.19       2.6      3DQW
+ASG  VAL C  364  107    H    AlphaHelix    -70.78    -35.60       4.8      3DQW
+ASG  ASP C  365  108    H    AlphaHelix    -65.20    -38.02      85.5      3DQW
+ASG  MET C  366  109    H    AlphaHelix    -64.02    -44.28       0.0      3DQW
+ASG  ALA C  367  110    H    AlphaHelix    -58.74    -38.89       1.4      3DQW
+ASG  ALA C  368  111    H    AlphaHelix    -68.26    -36.49       8.4      3DQW
+ASG  GLN C  369  112    H    AlphaHelix    -63.98    -44.80      15.1      3DQW
+ASG  ILE C  370  113    H    AlphaHelix    -63.74    -38.39       0.0      3DQW
+ASG  ALA C  371  114    H    AlphaHelix    -67.72    -35.03       0.0      3DQW
+ASG  SER C  372  115    H    AlphaHelix    -66.34    -39.35       3.8      3DQW
+ASG  GLY C  373  116    H    AlphaHelix    -63.21    -48.84       0.0      3DQW
+ASG  MET C  374  117    H    AlphaHelix    -68.30    -25.47       0.0      3DQW
+ASG  ALA C  375  118    H    AlphaHelix    -70.05    -32.02       0.0      3DQW
+ASG  TYR C  376  119    H    AlphaHelix    -67.77    -51.07      22.4      3DQW
+ASG  VAL C  377  120    H    AlphaHelix    -49.49    -46.15       0.4      3DQW
+ASG  GLU C  378  121    H    AlphaHelix    -53.38    -57.10      29.6      3DQW
+ASG  ARG C  379  122    H    AlphaHelix    -60.54    -28.13     101.4      3DQW
+ASG  MET C  380  123    H    AlphaHelix    -86.24      6.32      71.3      3DQW
+ASG  ASN C  381  124    C          Coil     62.65     33.99     103.5      3DQW
+ASG  TYR C  382  125    E        Strand   -107.58    164.21      15.0      3DQW
+ASG  VAL C  383  126    E        Strand   -127.20    138.61       6.0      3DQW
+ASG  HIS C  384  127    T          Turn    -87.18    -49.68       0.2      3DQW
+ASG  ARG C  385  128    T          Turn     80.05    -15.46      26.9      3DQW
+ASG  ASP C  386  129    T          Turn   -128.08     34.61      35.3      3DQW
+ASG  LEU C  387  130    T          Turn    -70.09    124.36       0.7      3DQW
+ASG  ARG C  388  131    C          Coil   -173.14    146.30      64.1      3DQW
+ASG  ALA C  389  132    G      310Helix    -59.57    -31.93       0.0      3DQW
+ASG  ALA C  390  133    G      310Helix    -60.56    -24.54      28.9      3DQW
+ASG  ASN C  391  134    G      310Helix   -105.67     17.02      16.5      3DQW
+ASG  ILE C  392  135    E        Strand   -108.37    135.00       0.0      3DQW
+ASG  LEU C  393  136    E        Strand   -108.99    143.90      30.5      3DQW
+ASG  VAL C  394  137    E        Strand   -119.70    133.88       0.0      3DQW
+ASG  GLY C  395  138    T          Turn   -113.14   -147.41       7.1      3DQW
+ASG  GLU C  396  139    T          Turn    -76.65    150.72     109.1      3DQW
+ASG  ASN C  397  140    T          Turn     60.30     36.16     150.6      3DQW
+ASG  LEU C  398  141    T          Turn     60.78     21.43      37.7      3DQW
+ASG  VAL C  399  142    T          Turn    -66.63    131.28      42.5      3DQW
+ASG  CYS C  400  143    E        Strand   -122.11    134.22       0.0      3DQW
+ASG  LYS C  401  144    E        Strand   -135.18    138.80      26.3      3DQW
+ASG  VAL C  402  145    E        Strand    -68.82    138.71       0.2      3DQW
+ASG  ALA C  403  146    C          Coil   -138.39   -169.49       4.1      3DQW
+ASG  ASP C  404  147    C          Coil     49.44     64.48      50.4      3DQW
+ASG  PHE C  405  148    T          Turn    -88.87     22.55       3.6      3DQW
+ASG  GLY C  406  149    T          Turn    -59.44    -34.10      24.2      3DQW
+ASG  LEU C  407  150    T          Turn    -98.25      4.99      54.9      3DQW
+ASG  ALA C  408  151    T          Turn    -74.27    141.18       0.4      3DQW
+ASG  ARG C  409  152    E        Strand   -136.47    142.30      88.7      3DQW
+ASG  LEU C  410  153    E        Strand    -74.81    120.00      95.0      3DQW
+ASG  ILE C  411  154    T          Turn    -69.31    134.16      34.8      3DQW
+ASG  GLU C  412  155    T          Turn   -100.34    -81.36     137.6      3DQW
+ASG  ASP C  413  156    T          Turn    -91.43     53.93     142.5      3DQW
+ASG  ASN C  414  157    T          Turn     54.40     24.63     146.5      3DQW
+ASG  GLU C  415  158    T          Turn   -176.32    360.00      64.9      3DQW
+ASG  THR C  417  159    C          Coil    360.00    116.48     117.5      3DQW
+ASG  ALA C  418  160    C          Coil    -77.80    150.20      23.9      3DQW
+ASG  ARG C  419  161    T          Turn    -77.31    154.64     207.2      3DQW
+ASG  GLN C  420  162    T          Turn    -64.01    117.51     204.0      3DQW
+ASG  GLY C  421  163    T          Turn    120.27      6.92      71.1      3DQW
+ASG  ALA C  422  164    T          Turn    -71.91    146.53      48.7      3DQW
+ASG  LYS C  423  165    C          Coil   -114.69    105.75     194.2      3DQW
+ASG  PHE C  424  166    C          Coil   -126.06    131.23      37.8      3DQW
+ASG  PRO C  425  167    C          Coil    -49.28    106.82      39.0      3DQW
+ASG  ILE C  426  168    G      310Helix    -52.29    -42.49      58.2      3DQW
+ASG  LYS C  427  169    G      310Helix    -71.67    -16.03      17.9      3DQW
+ASG  TRP C  428  170    G      310Helix   -109.21     -9.21      17.8      3DQW
+ASG  THR C  429  171    C          Coil    -94.07    136.82      12.3      3DQW
+ASG  ALA C  430  172    C          Coil    -66.55    144.51       0.4      3DQW
+ASG  PRO C  431  173    H    AlphaHelix    -46.58    -54.25      18.5      3DQW
+ASG  GLU C  432  174    H    AlphaHelix    -64.01    -21.07      17.9      3DQW
+ASG  ALA C  433  175    H    AlphaHelix    -80.60    -43.09       3.5      3DQW
+ASG  ALA C  434  176    H    AlphaHelix    -75.81    -29.32      48.1      3DQW
+ASG  LEU C  435  177    H    AlphaHelix    -82.79    -57.41      67.0      3DQW
+ASG  TYR C  436  178    H    AlphaHelix   -111.68     14.21      68.7      3DQW
+ASG  GLY C  437  179    C          Coil     57.67     29.11      13.0      3DQW
+ASG  ARG C  438  180    C          Coil    -90.96     90.59      88.0      3DQW
+ASG  PHE C  439  181    C          Coil    -93.16    123.04      10.2      3DQW
+ASG  THR C  440  182    C          Coil   -139.58    173.14      20.6      3DQW
+ASG  ILE C  441  183    H    AlphaHelix    -51.57    -34.00      27.4      3DQW
+ASG  LYS C  442  184    H    AlphaHelix    -65.86    -27.52      18.8      3DQW
+ASG  SER C  443  185    H    AlphaHelix    -77.59    -28.84       2.7      3DQW
+ASG  ASP C  444  186    H    AlphaHelix    -64.29    -35.25       0.6      3DQW
+ASG  VAL C  445  187    H    AlphaHelix    -64.95    -41.21       0.0      3DQW
+ASG  TRP C  446  188    H    AlphaHelix    -55.71    -48.10       2.2      3DQW
+ASG  SER C  447  189    H    AlphaHelix    -59.78    -41.01       6.2      3DQW
+ASG  PHE C  448  190    H    AlphaHelix    -55.72    -40.58       1.0      3DQW
+ASG  GLY C  449  191    H    AlphaHelix    -58.74    -43.59       0.0      3DQW
+ASG  ILE C  450  192    H    AlphaHelix    -64.93    -40.47       0.0      3DQW
+ASG  LEU C  451  193    H    AlphaHelix    -59.32    -36.36       0.8      3DQW
+ASG  LEU C  452  194    H    AlphaHelix    -58.52    -38.39       3.4      3DQW
+ASG  THR C  453  195    H    AlphaHelix    -67.35    -36.46       6.4      3DQW
+ASG  GLU C  454  196    H    AlphaHelix    -58.91    -43.26       2.2      3DQW
+ASG  LEU C  455  197    H    AlphaHelix    -64.87    -46.97       3.0      3DQW
+ASG  THR C  456  198    H    AlphaHelix    -77.51    -11.61       8.8      3DQW
+ASG  THR C  457  199    H    AlphaHelix   -109.99      6.90      48.9      3DQW
+ASG  LYS C  458  200    T          Turn     52.77     50.14      26.2      3DQW
+ASG  GLY C  459  201    T          Turn    102.40      4.42       5.1      3DQW
+ASG  ARG C  460  202    T          Turn    -78.11    153.06     171.6      3DQW
+ASG  VAL C  461  203    T          Turn    -67.37    137.38      85.1      3DQW
+ASG  PRO C  462  204    T          Turn    -68.02    155.65       2.1      3DQW
+ASG  TYR C  463  205    T          Turn     50.82     56.79       2.8      3DQW
+ASG  PRO C  464  206    T          Turn    -57.15    128.96     108.0      3DQW
+ASG  GLY C  465  207    T          Turn     95.26    -31.51      84.9      3DQW
+ASG  MET C  466  208    T          Turn    -76.05    135.03      31.2      3DQW
+ASG  VAL C  467  209    C          Coil    -85.91    155.61      65.0      3DQW
+ASG  ASN C  468  210    H    AlphaHelix    -41.58    -55.66      82.7      3DQW
+ASG  ARG C  469  211    H    AlphaHelix    -64.81    -10.83     200.6      3DQW
+ASG  GLU C  470  212    H    AlphaHelix    -88.12    -29.60      92.8      3DQW
+ASG  VAL C  471  213    H    AlphaHelix    -57.52    -57.46       3.6      3DQW
+ASG  LEU C  472  214    H    AlphaHelix    -53.96    -40.63      39.7      3DQW
+ASG  ASP C  473  215    H    AlphaHelix    -65.31    -49.54      78.4      3DQW
+ASG  GLN C  474  216    H    AlphaHelix    -61.96    -45.02      68.1      3DQW
+ASG  VAL C  475  217    H    AlphaHelix    -65.27    -34.06       9.2      3DQW
+ASG  GLU C  476  218    H    AlphaHelix    -60.53    -39.03     101.0      3DQW
+ASG  ARG C  477  219    H    AlphaHelix    -78.49     -0.09     174.9      3DQW
+ASG  GLY C  478  220    C          Coil    100.76      9.36      47.0      3DQW
+ASG  TYR C  479  221    C          Coil    -67.85    137.50      83.7      3DQW
+ASG  ARG C  480  222    C          Coil   -139.95    140.73      54.5      3DQW
+ASG  MET C  481  223    C          Coil    -54.02    141.61      13.2      3DQW
+ASG  PRO C  482  224    C          Coil    -76.31    173.34      85.9      3DQW
+ASG  CYS C  483  225    C          Coil    -69.91    128.46      38.6      3DQW
+ASG  PRO C  484  226    T          Turn    -62.09    152.28      12.3      3DQW
+ASG  PRO C  485  227    T          Turn    -60.82    132.85     112.9      3DQW
+ASG  GLU C  486  228    T          Turn     69.86      8.15      75.7      3DQW
+ASG  CYS C  487  229    T          Turn    -93.77    130.19      10.0      3DQW
+ASG  PRO C  488  230    C          Coil    -62.47    137.75      19.8      3DQW
+ASG  GLU C  489  231    H    AlphaHelix    -56.43    -26.63      86.3      3DQW
+ASG  SER C  490  232    H    AlphaHelix    -63.64    -34.58      25.8      3DQW
+ASG  LEU C  491  233    H    AlphaHelix    -74.91    -36.83       2.0      3DQW
+ASG  HIS C  492  234    H    AlphaHelix    -67.23    -33.23      19.0      3DQW
+ASG  ASP C  493  235    H    AlphaHelix    -61.44    -41.13      81.6      3DQW
+ASG  LEU C  494  236    H    AlphaHelix    -60.37    -43.63       1.0      3DQW
+ASG  MET C  495  237    H    AlphaHelix    -55.82    -46.90       0.0      3DQW
+ASG  CYS C  496  238    H    AlphaHelix    -65.29    -28.21      41.4      3DQW
+ASG  GLN C  497  239    H    AlphaHelix    -69.76    -38.31      25.9      3DQW
+ASG  CYS C  498  240    H    AlphaHelix    -66.19    -22.78       0.0      3DQW
+ASG  TRP C  499  241    H    AlphaHelix   -102.91     20.08       0.3      3DQW
+ASG  ARG C  500  242    T          Turn    -64.27    140.45      99.6      3DQW
+ASG  LYS C  501  243    T          Turn    -59.19    -45.87     153.8      3DQW
+ASG  ASP C  502  244    T          Turn    -81.99    115.33      71.2      3DQW
+ASG  PRO C  503  245    G      310Helix    -58.58    -30.00      28.5      3DQW
+ASG  GLU C  504  246    G      310Helix    -80.48    -12.40     139.2      3DQW
+ASG  GLU C  505  247    G      310Helix    -87.36     -9.17     110.8      3DQW
+ASG  ARG C  506  248    C          Coil    -75.50    143.17       4.0      3DQW
+ASG  PRO C  507  249    C          Coil    -66.58    163.94      14.9      3DQW
+ASG  THR C  508  250    C          Coil    -87.46    163.97      50.6      3DQW
+ASG  PHE C  509  251    H    AlphaHelix    -65.00    -31.75       0.0      3DQW
+ASG  GLU C  510  252    H    AlphaHelix    -59.21    -42.47      12.9      3DQW
+ASG  TYR C  511  253    H    AlphaHelix    -68.65    -43.57      50.3      3DQW
+ASG  LEU C  512  254    H    AlphaHelix    -61.06    -43.53       0.0      3DQW
+ASG  GLN C  513  255    H    AlphaHelix    -58.25    -49.48       1.2      3DQW
+ASG  ALA C  514  256    H    AlphaHelix    -67.03    -43.76       4.0      3DQW
+ASG  PHE C  515  257    H    AlphaHelix    -58.80    -43.79      38.6      3DQW
+ASG  LEU C  516  258    H    AlphaHelix    -71.66    -38.15       3.5      3DQW
+ASG  GLU C  517  259    H    AlphaHelix    -60.83    -40.09      45.2      3DQW
+ASG  ASP C  518  260    H    AlphaHelix    -94.50      5.32       9.0      3DQW
+ASG  TYR C  519  261    H    AlphaHelix    -46.61    -46.13       0.0      3DQW
+ASG  PHE C  520  262    H    AlphaHelix    -88.90      4.39      56.3      3DQW
+ASG  THR C  521  263    H    AlphaHelix   -112.17    -34.85      40.9      3DQW
+ASG  SER C  522  264    H    AlphaHelix   -101.09    -23.57      57.2      3DQW
+ASG  THR C  523  265    H    AlphaHelix   -117.23    -46.16      29.8      3DQW
+ASG  GLU C  524  266    T          Turn   -127.89     63.32      30.3      3DQW
+ASG  PRO C  525  267    T          Turn    -62.70    -21.11      58.3      3DQW
+ASG  GLN C  526  268    T          Turn   -114.57     24.77     118.0      3DQW
+ASG  TYR C  527  269    T          Turn    -53.23    133.81      48.8      3DQW
+ASG  GLN C  528  270    C          Coil   -127.74    119.38     164.9      3DQW
+ASG  PRO C  529  271    C          Coil    -62.08    145.07      59.1      3DQW
+ASG  GLY C  530  272    C          Coil   -101.93   -143.82      35.9      3DQW
+ASG  GLU C  531  273    C          Coil    -73.75    -43.73     146.2      3DQW
+ASG  ASN C  532  274    C          Coil   -114.36    -45.27      64.3      3DQW
+ASG  LEU C  533  275    C          Coil   -112.32    360.00       4.0      3DQW
+ASG  LYS D  257    1    C          Coil    360.00    137.01     189.4      3DQW
+ASG  ASP D  258    2    T          Turn    -76.81   -171.15      72.8      3DQW
+ASG  ALA D  259    3    T          Turn    -78.73     -3.46     105.8      3DQW
+ASG  TRP D  260    4    T          Turn    -80.77    -20.82      84.7      3DQW
+ASG  GLU D  261    5    B        Bridge    -67.55    134.65      41.5      3DQW
+ASG  ILE D  262    6    C          Coil   -125.76    162.33      23.7      3DQW
+ASG  PRO D  263    7    C          Coil    -72.93    144.81      67.3      3DQW
+ASG  ARG D  264    8    G      310Helix    -64.94    -31.78      90.0      3DQW
+ASG  GLU D  265    9    G      310Helix    -65.31    -14.11     145.5      3DQW
+ASG  SER D  266   10    G      310Helix    -88.08     -5.39      17.0      3DQW
+ASG  LEU D  267   11    E        Strand   -110.04    134.86      16.1      3DQW
+ASG  ARG D  268   12    E        Strand   -128.38    120.94     159.8      3DQW
+ASG  LEU D  269   13    E        Strand    -91.85    116.30      61.4      3DQW
+ASG  GLU D  270   14    E        Strand   -104.31    -48.57      95.2      3DQW
+ASG  VAL D  271   15    E        Strand   -139.38    128.57      76.5      3DQW
+ASG  LYS D  272   16    E        Strand    -68.93    128.41      86.9      3DQW
+ASG  LEU D  273   17    E        Strand    -98.24    -40.88      86.8      3DQW
+ASG  GLY D  274   18    E        Strand   -172.62   -175.56      31.3      3DQW
+ASG  GLN D  275   19    E        Strand   -164.72    175.15     123.8      3DQW
+ASG  GLY D  276   20    E        Strand   -152.41   -158.99      42.6      3DQW
+ASG  CYS D  277   21    T          Turn    -79.55    -19.00      80.3      3DQW
+ASG  PHE D  278   22    T          Turn   -105.38     -8.90      96.5      3DQW
+ASG  GLY D  279   23    E        Strand    169.29   -156.94      10.6      3DQW
+ASG  GLU D  280   24    E        Strand   -137.14    165.82      57.2      3DQW
+ASG  VAL D  281   25    E        Strand   -124.44    130.43      39.3      3DQW
+ASG  TRP D  282   26    E        Strand   -123.75    137.95      60.1      3DQW
+ASG  MET D  283   27    E        Strand    -77.66    135.14      29.9      3DQW
+ASG  GLY D  284   28    E        Strand   -155.74   -172.17       0.0      3DQW
+ASG  THR D  285   29    E        Strand   -121.78    142.23      25.4      3DQW
+ASG  TRP D  286   30    E        Strand   -117.67    126.48      47.5      3DQW
+ASG  ASN D  287   31    T          Turn     60.30     22.16      96.2      3DQW
+ASG  GLY D  288   32    T          Turn     69.50      3.93      70.7      3DQW
+ASG  THR D  289   33    T          Turn   -141.27      1.49     112.7      3DQW
+ASG  THR D  290   34    E        Strand   -132.80    119.45      47.2      3DQW
+ASG  ARG D  291   35    E        Strand    -71.74    133.58     152.8      3DQW
+ASG  VAL D  292   36    E        Strand   -144.70    163.11       0.0      3DQW
+ASG  ALA D  293   37    E        Strand   -100.90    141.11       6.6      3DQW
+ASG  ILE D  294   38    E        Strand   -126.72    118.06       0.0      3DQW
+ASG  LYS D  295   39    E        Strand    -93.20    131.28      27.3      3DQW
+ASG  THR D  296   40    E        Strand   -113.67    163.14      22.3      3DQW
+ASG  LEU D  297   41    E        Strand   -111.09    122.06      32.0      3DQW
+ASG  LYS D  298   42    T          Turn    -77.14    107.12     112.9      3DQW
+ASG  PRO D  299   43    T          Turn    -53.73    137.24     111.0      3DQW
+ASG  GLY D  300   44    T          Turn     93.60    -26.62      82.8      3DQW
+ASG  THR D  301   45    T          Turn    -80.34    -15.55      50.2      3DQW
+ASG  MET D  302   46    T          Turn   -164.99    146.91      48.8      3DQW
+ASG  SER D  303   47    T          Turn    -68.37    148.66      54.1      3DQW
+ASG  PRO D  304   48    H    AlphaHelix    -52.70    -38.42      45.3      3DQW
+ASG  GLU D  305   49    H    AlphaHelix    -61.29    -44.15     142.4      3DQW
+ASG  ALA D  306   50    H    AlphaHelix    -67.21    -43.00      40.9      3DQW
+ASG  PHE D  307   51    H    AlphaHelix    -60.26    -40.11      10.7      3DQW
+ASG  LEU D  308   52    H    AlphaHelix    -79.07    -13.59      23.8      3DQW
+ASG  GLN D  309   53    H    AlphaHelix    -56.64    -36.49      72.9      3DQW
+ASG  GLU D  310   54    H    AlphaHelix    -56.96    -43.97      14.6      3DQW
+ASG  ALA D  311   55    H    AlphaHelix    -67.50    -42.33       1.2      3DQW
+ASG  GLN D  312   56    H    AlphaHelix    -58.54    -47.23      97.4      3DQW
+ASG  VAL D  313   57    H    AlphaHelix    -57.44    -43.25       3.7      3DQW
+ASG  MET D  314   58    H    AlphaHelix    -67.97    -23.07      14.6      3DQW
+ASG  LYS D  315   59    H    AlphaHelix    -69.53    -23.27      45.1      3DQW
+ASG  LYS D  316   60    H    AlphaHelix   -100.16    -32.30     140.2      3DQW
+ASG  LEU D  317   61    C          Coil    -99.99    115.35       8.9      3DQW
+ASG  ARG D  318   62    C          Coil   -133.49    120.08     172.4      3DQW
+ASG  HIS D  319   63    B        Bridge   -162.41    150.31      20.4      3DQW
+ASG  GLU D  320   64    T          Turn    -62.47    -20.19     100.4      3DQW
+ASG  LYS D  321   65    T          Turn   -108.96     20.11      29.2      3DQW
+ASG  LEU D  322   66    B        Bridge   -120.75    135.90       3.7      3DQW
+ASG  VAL D  323   67    C          Coil    -54.97    136.29       7.2      3DQW
+ASG  GLN D  324   68    C          Coil    -88.13    134.33      65.8      3DQW
+ASG  LEU D  325   69    E        Strand    -78.81    132.78      14.8      3DQW
+ASG  TYR D  326   70    E        Strand   -103.09    -40.00      73.1      3DQW
+ASG  ALA D  327   71    E        Strand   -170.72    165.41       0.8      3DQW
+ASG  VAL D  328   72    E        Strand   -140.86    147.62       1.4      3DQW
+ASG  VAL D  329   73    E        Strand   -118.83    105.56       1.0      3DQW
+ASG  SER D  330   74    C          Coil    -97.30     12.41      27.8      3DQW
+ASG  GLU D  331   75    T          Turn   -129.01    147.21     115.1      3DQW
+ASG  GLU D  332   76    T          Turn    -61.50    139.55     155.5      3DQW
+ASG  PRO D  333   77    T          Turn    -66.36    126.44      76.5      3DQW
+ASG  ILE D  334   78    T          Turn    -90.75    147.63       9.4      3DQW
+ASG  TYR D  335   79    E        Strand   -141.29    146.88      48.7      3DQW
+ASG  ILE D  336   80    E        Strand   -119.29    120.97       0.0      3DQW
+ASG  VAL D  337   81    E        Strand   -104.57    124.61       0.0      3DQW
+ASG  ILE D  338   82    E        Strand   -136.88    163.34      11.2      3DQW
+ASG  GLU D  339   83    E        Strand    -43.30    127.31      25.7      3DQW
+ASG  TYR D  340   84    C          Coil    -80.71    124.97      59.1      3DQW
+ASG  MET D  341   85    T          Turn   -108.12    107.78      16.9      3DQW
+ASG  SER D  342   86    T          Turn    -67.10    -16.58      38.4      3DQW
+ASG  LYS D  343   87    T          Turn   -101.22      1.07      83.7      3DQW
+ASG  GLY D  344   88    E        Strand     71.95   -153.48      30.7      3DQW
+ASG  SER D  345   89    E        Strand    -73.13    150.59      17.3      3DQW
+ASG  LEU D  346   90    H    AlphaHelix    -55.39    -42.42       0.0      3DQW
+ASG  LEU D  347   91    H    AlphaHelix    -56.17    -57.09      33.1      3DQW
+ASG  ASP D  348   92    H    AlphaHelix    -58.42    -47.19      99.8      3DQW
+ASG  PHE D  349   93    H    AlphaHelix    -56.67    -36.97      20.4      3DQW
+ASG  LEU D  350   94    H    AlphaHelix    -70.89    -28.81       2.6      3DQW
+ASG  LYS D  351   95    H    AlphaHelix    -94.68    -23.12     128.0      3DQW
+ASG  GLY D  352   96    T          Turn    -61.38   -169.23      37.8      3DQW
+ASG  GLU D  353   97    T          Turn    -75.57    -12.75     172.7      3DQW
+ASG  MET D  354   98    T          Turn    -91.64    -14.59      89.3      3DQW
+ASG  GLY D  355   99    G      310Helix    -61.20    -50.61       0.4      3DQW
+ASG  LYS D  356  100    G      310Helix    -56.52    -21.34     132.8      3DQW
+ASG  TYR D  357  101    G      310Helix    -92.56     -9.51     166.4      3DQW
+ASG  LEU D  358  102    C          Coil    -75.48    135.86       6.0      3DQW
+ASG  ARG D  359  103    C          Coil   -120.25    174.75      79.6      3DQW
+ASG  LEU D  360  104    H    AlphaHelix    -48.97    -44.97       0.2      3DQW
+ASG  PRO D  361  105    H    AlphaHelix    -59.06    -42.24      51.8      3DQW
+ASG  GLN D  362  106    H    AlphaHelix    -66.07    -48.11      69.1      3DQW
+ASG  LEU D  363  107    H    AlphaHelix    -61.37    -37.23       2.6      3DQW
+ASG  VAL D  364  108    H    AlphaHelix    -72.30    -39.73       4.8      3DQW
+ASG  ASP D  365  109    H    AlphaHelix    -61.69    -37.64      87.1      3DQW
+ASG  MET D  366  110    H    AlphaHelix    -65.21    -42.86       0.0      3DQW
+ASG  ALA D  367  111    H    AlphaHelix    -59.32    -40.86       2.2      3DQW
+ASG  ALA D  368  112    H    AlphaHelix    -67.15    -37.05       7.1      3DQW
+ASG  GLN D  369  113    H    AlphaHelix    -63.12    -44.41      13.9      3DQW
+ASG  ILE D  370  114    H    AlphaHelix    -64.49    -40.21       0.0      3DQW
+ASG  ALA D  371  115    H    AlphaHelix    -63.55    -36.97       0.0      3DQW
+ASG  SER D  372  116    H    AlphaHelix    -66.46    -42.07       4.6      3DQW
+ASG  GLY D  373  117    H    AlphaHelix    -60.82    -44.05       0.0      3DQW
+ASG  MET D  374  118    H    AlphaHelix    -73.55    -27.73       0.0      3DQW
+ASG  ALA D  375  119    H    AlphaHelix    -65.20    -31.32       0.0      3DQW
+ASG  TYR D  376  120    H    AlphaHelix    -70.00    -47.72      24.9      3DQW
+ASG  VAL D  377  121    H    AlphaHelix    -52.69    -47.32       0.2      3DQW
+ASG  GLU D  378  122    H    AlphaHelix    -51.92    -57.16      26.8      3DQW
+ASG  ARG D  379  123    H    AlphaHelix    -69.95    -20.39     103.3      3DQW
+ASG  MET D  380  124    H    AlphaHelix    -82.45      0.97      66.3      3DQW
+ASG  ASN D  381  125    C          Coil     66.87     34.21     100.8      3DQW
+ASG  TYR D  382  126    E        Strand   -108.46    169.74      27.3      3DQW
+ASG  VAL D  383  127    E        Strand   -133.78    137.15       4.4      3DQW
+ASG  HIS D  384  128    T          Turn    -81.74    -56.17       0.4      3DQW
+ASG  ARG D  385  129    T          Turn     86.40    -15.46      27.5      3DQW
+ASG  ASP D  386  130    T          Turn   -131.13     35.99      35.5      3DQW
+ASG  LEU D  387  131    T          Turn    -74.98    117.69       0.7      3DQW
+ASG  ARG D  388  132    C          Coil   -167.09    167.58      55.3      3DQW
+ASG  ALA D  389  133    G      310Helix    -60.33    -32.11       0.2      3DQW
+ASG  ALA D  390  134    G      310Helix    -64.41    -18.80      32.3      3DQW
+ASG  ASN D  391  135    G      310Helix   -112.69     19.11      18.2      3DQW
+ASG  ILE D  392  136    E        Strand   -111.47    129.76       0.0      3DQW
+ASG  LEU D  393  137    E        Strand   -102.75    145.26      34.5      3DQW
+ASG  VAL D  394  138    E        Strand   -120.30    139.49       0.0      3DQW
+ASG  GLY D  395  139    T          Turn   -120.53   -149.38       6.7      3DQW
+ASG  GLU D  396  140    T          Turn    -71.79    150.71     103.3      3DQW
+ASG  ASN D  397  141    T          Turn     60.27     35.57     152.5      3DQW
+ASG  LEU D  398  142    T          Turn     54.45     31.07      44.7      3DQW
+ASG  VAL D  399  143    T          Turn    -74.17    130.32      43.7      3DQW
+ASG  CYS D  400  144    E        Strand   -120.95    134.45       0.2      3DQW
+ASG  LYS D  401  145    E        Strand   -133.36    139.92      16.6      3DQW
+ASG  VAL D  402  146    E        Strand    -70.91    135.58       0.2      3DQW
+ASG  ALA D  403  147    C          Coil   -135.25   -176.07       5.9      3DQW
+ASG  ASP D  404  148    C          Coil     62.11     64.12      46.2      3DQW
+ASG  PHE D  405  149    T          Turn    -89.05     15.75       3.8      3DQW
+ASG  GLY D  406  150    T          Turn    -51.86    -37.09      25.8      3DQW
+ASG  LEU D  407  151    T          Turn    -94.97     -2.51      58.5      3DQW
+ASG  ALA D  408  152    T          Turn    -65.88    141.16       0.6      3DQW
+ASG  ARG D  409  153    E        Strand   -137.47    140.08      81.6      3DQW
+ASG  LEU D  410  154    E        Strand    -72.39    125.85      83.4      3DQW
+ASG  ILE D  411  155    T          Turn    -76.82    132.55      30.7      3DQW
+ASG  GLU D  412  156    B        Bridge   -127.47    136.41     115.6      3DQW
+ASG  ASP D  413  157    T          Turn     61.37     36.52     150.7      3DQW
+ASG  ASN D  414  158    T          Turn     72.61    -23.47     149.9      3DQW
+ASG  GLU D  415  159    B        Bridge   -135.94    360.00      80.4      3DQW
+ASG  THR D  417  160    C          Coil    360.00    126.06     120.6      3DQW
+ASG  ALA D  418  161    C          Coil    -75.01    155.35      20.0      3DQW
+ASG  ARG D  419  162    T          Turn    -59.14    157.60     210.6      3DQW
+ASG  GLN D  420  163    T          Turn    -77.49    144.34     202.2      3DQW
+ASG  GLY D  421  164    T          Turn     88.18    -25.51      74.1      3DQW
+ASG  ALA D  422  165    T          Turn    -60.21    126.66      49.7      3DQW
+ASG  LYS D  423  166    C          Coil   -120.41    149.47     197.2      3DQW
+ASG  PHE D  424  167    C          Coil   -128.09    155.96      38.8      3DQW
+ASG  PRO D  425  168    C          Coil    -55.17     98.07      42.6      3DQW
+ASG  ILE D  426  169    G      310Helix    -49.10    -40.45      27.1      3DQW
+ASG  LYS D  427  170    G      310Helix    -67.99    -16.44      14.5      3DQW
+ASG  TRP D  428  171    G      310Helix   -110.98    -11.45      25.9      3DQW
+ASG  THR D  429  172    C          Coil    -92.54    134.61      10.3      3DQW
+ASG  ALA D  430  173    C          Coil    -65.33    144.36       0.5      3DQW
+ASG  PRO D  431  174    H    AlphaHelix    -48.83    -45.53      19.9      3DQW
+ASG  GLU D  432  175    H    AlphaHelix    -73.02    -14.39      20.3      3DQW
+ASG  ALA D  433  176    H    AlphaHelix    -82.95    -41.39       3.1      3DQW
+ASG  ALA D  434  177    H    AlphaHelix    -74.81    -35.66      41.0      3DQW
+ASG  LEU D  435  178    H    AlphaHelix    -77.66    -51.53      67.1      3DQW
+ASG  TYR D  436  179    H    AlphaHelix   -113.66      0.98      70.0      3DQW
+ASG  GLY D  437  180    C          Coil     69.74     23.73      13.7      3DQW
+ASG  ARG D  438  181    C          Coil    -91.16     98.18      81.4      3DQW
+ASG  PHE D  439  182    C          Coil   -102.59    118.18      13.2      3DQW
+ASG  THR D  440  183    C          Coil   -132.87    172.60      24.7      3DQW
+ASG  ILE D  441  184    H    AlphaHelix    -54.63    -32.29      27.8      3DQW
+ASG  LYS D  442  185    H    AlphaHelix    -66.72    -26.41      24.3      3DQW
+ASG  SER D  443  186    H    AlphaHelix    -81.87    -26.85       2.3      3DQW
+ASG  ASP D  444  187    H    AlphaHelix    -62.63    -38.89       0.8      3DQW
+ASG  VAL D  445  188    H    AlphaHelix    -61.91    -41.25       0.0      3DQW
+ASG  TRP D  446  189    H    AlphaHelix    -55.22    -52.62       2.4      3DQW
+ASG  SER D  447  190    H    AlphaHelix    -55.51    -40.95       6.8      3DQW
+ASG  PHE D  448  191    H    AlphaHelix    -59.99    -37.06       0.0      3DQW
+ASG  GLY D  449  192    H    AlphaHelix    -61.00    -42.56       0.0      3DQW
+ASG  ILE D  450  193    H    AlphaHelix    -61.05    -44.77       0.0      3DQW
+ASG  LEU D  451  194    H    AlphaHelix    -57.53    -32.91       0.0      3DQW
+ASG  LEU D  452  195    H    AlphaHelix    -63.79    -36.36       3.6      3DQW
+ASG  THR D  453  196    H    AlphaHelix    -68.02    -42.09       5.4      3DQW
+ASG  GLU D  454  197    H    AlphaHelix    -54.00    -44.84       2.8      3DQW
+ASG  LEU D  455  198    H    AlphaHelix    -63.46    -42.83       2.4      3DQW
+ASG  THR D  456  199    H    AlphaHelix    -88.83     -2.19       8.6      3DQW
+ASG  THR D  457  200    H    AlphaHelix   -115.76      6.07      31.5      3DQW
+ASG  LYS D  458  201    T          Turn     55.18     45.07      27.8      3DQW
+ASG  GLY D  459  202    T          Turn    108.26     -1.15       7.2      3DQW
+ASG  ARG D  460  203    T          Turn    -61.39    147.63     162.7      3DQW
+ASG  VAL D  461  204    T          Turn    -66.37    139.61      86.0      3DQW
+ASG  PRO D  462  205    T          Turn    -61.95    152.61       1.7      3DQW
+ASG  TYR D  463  206    T          Turn     46.26     61.34       3.6      3DQW
+ASG  PRO D  464  207    T          Turn    -47.01    -47.74     111.2      3DQW
+ASG  GLY D  465  208    T          Turn    -91.92     69.58      69.1      3DQW
+ASG  MET D  466  209    T          Turn   -172.07    145.18      31.7      3DQW
+ASG  VAL D  467  210    C          Coil    -97.77    153.42      63.9      3DQW
+ASG  ASN D  468  211    H    AlphaHelix    -47.85    -20.46     100.5      3DQW
+ASG  ARG D  469  212    H    AlphaHelix    -76.79    -39.76     211.1      3DQW
+ASG  GLU D  470  213    H    AlphaHelix    -72.57    -28.61      99.3      3DQW
+ASG  VAL D  471  214    H    AlphaHelix    -56.43    -63.60       2.2      3DQW
+ASG  LEU D  472  215    H    AlphaHelix    -48.73    -48.40      43.7      3DQW
+ASG  ASP D  473  216    H    AlphaHelix    -68.23    -36.08      83.7      3DQW
+ASG  GLN D  474  217    H    AlphaHelix    -66.61    -37.28      60.3      3DQW
+ASG  VAL D  475  218    H    AlphaHelix    -73.92    -36.40       9.3      3DQW
+ASG  GLU D  476  219    H    AlphaHelix    -60.46    -37.88      94.2      3DQW
+ASG  ARG D  477  220    H    AlphaHelix    -72.79     -3.89     190.1      3DQW
+ASG  GLY D  478  221    C          Coil    100.19     10.82      47.5      3DQW
+ASG  TYR D  479  222    C          Coil    -69.75    134.34      91.3      3DQW
+ASG  ARG D  480  223    C          Coil   -135.17    135.66      55.0      3DQW
+ASG  MET D  481  224    C          Coil    -50.41    136.57      12.4      3DQW
+ASG  PRO D  482  225    C          Coil    -70.96    170.76      81.3      3DQW
+ASG  CYS D  483  226    C          Coil    -66.34    120.77      35.2      3DQW
+ASG  PRO D  484  227    T          Turn    -57.37    148.14      10.8      3DQW
+ASG  PRO D  485  228    T          Turn    -56.98    141.85      93.6      3DQW
+ASG  GLU D  486  229    T          Turn     74.46     -6.57     103.0      3DQW
+ASG  CYS D  487  230    T          Turn    -92.74    125.02      10.1      3DQW
+ASG  PRO D  488  231    C          Coil    -56.41    139.34      21.3      3DQW
+ASG  GLU D  489  232    H    AlphaHelix    -60.30    -25.26      86.9      3DQW
+ASG  SER D  490  233    H    AlphaHelix    -60.27    -39.10      29.1      3DQW
+ASG  LEU D  491  234    H    AlphaHelix    -69.28    -40.17       3.4      3DQW
+ASG  HIS D  492  235    H    AlphaHelix    -67.33    -30.48      19.2      3DQW
+ASG  ASP D  493  236    H    AlphaHelix    -63.80    -40.51      82.7      3DQW
+ASG  LEU D  494  237    H    AlphaHelix    -61.45    -44.47       1.4      3DQW
+ASG  MET D  495  238    H    AlphaHelix    -55.36    -48.98       0.0      3DQW
+ASG  CYS D  496  239    H    AlphaHelix    -63.85    -32.96      42.8      3DQW
+ASG  GLN D  497  240    H    AlphaHelix    -63.21    -40.38      37.1      3DQW
+ASG  CYS D  498  241    H    AlphaHelix    -66.04    -22.12       0.0      3DQW
+ASG  TRP D  499  242    H    AlphaHelix   -102.05     16.38       1.2      3DQW
+ASG  ARG D  500  243    T          Turn    -65.98    140.93     104.9      3DQW
+ASG  LYS D  501  244    T          Turn    -58.56    -43.70     158.6      3DQW
+ASG  ASP D  502  245    T          Turn    -80.05    112.21      64.6      3DQW
+ASG  PRO D  503  246    G      310Helix    -52.08    -31.58      26.3      3DQW
+ASG  GLU D  504  247    G      310Helix    -70.70    -23.73     140.1      3DQW
+ASG  GLU D  505  248    G      310Helix    -86.12     -6.41     111.5      3DQW
+ASG  ARG D  506  249    C          Coil    -74.79    145.19       3.6      3DQW
+ASG  PRO D  507  250    C          Coil    -64.57    165.14      16.0      3DQW
+ASG  THR D  508  251    C          Coil    -85.84    162.19      50.6      3DQW
+ASG  PHE D  509  252    H    AlphaHelix    -66.15    -30.87       0.0      3DQW
+ASG  GLU D  510  253    H    AlphaHelix    -57.70    -42.69      16.8      3DQW
+ASG  TYR D  511  254    H    AlphaHelix    -68.67    -46.05      48.3      3DQW
+ASG  LEU D  512  255    H    AlphaHelix    -59.69    -38.49       0.0      3DQW
+ASG  GLN D  513  256    H    AlphaHelix    -62.93    -45.00       1.4      3DQW
+ASG  ALA D  514  257    H    AlphaHelix    -74.23    -39.15       3.8      3DQW
+ASG  PHE D  515  258    H    AlphaHelix    -60.80    -48.46      40.4      3DQW
+ASG  LEU D  516  259    H    AlphaHelix    -68.47    -37.33       4.2      3DQW
+ASG  GLU D  517  260    H    AlphaHelix    -59.45    -41.68      43.7      3DQW
+ASG  ASP D  518  261    H    AlphaHelix    -95.89      5.68       9.0      3DQW
+ASG  TYR D  519  262    H    AlphaHelix    -45.84    -47.80       0.0      3DQW
+ASG  PHE D  520  263    H    AlphaHelix    -88.07      5.17      56.3      3DQW
+ASG  THR D  521  264    H    AlphaHelix   -109.37    -40.00      39.1      3DQW
+ASG  SER D  522  265    H    AlphaHelix   -101.19    -23.88      56.2      3DQW
+ASG  THR D  523  266    H    AlphaHelix   -114.34    -44.68      29.8      3DQW
+ASG  GLU D  524  267    T          Turn   -132.00     66.71      29.8      3DQW
+ASG  PRO D  525  268    T          Turn    -64.56    -20.83      61.3      3DQW
+ASG  GLN D  526  269    T          Turn   -131.68     62.68     107.0      3DQW
+ASG  TYR D  527  270    T          Turn    -80.00    142.15      50.3      3DQW
+ASG  GLN D  528  271    C          Coil   -127.79    113.18     169.7      3DQW
+ASG  PRO D  529  272    C          Coil    -63.91    134.51      59.6      3DQW
+ASG  GLY D  530  273    C          Coil    -80.32   -149.84      27.5      3DQW
+ASG  GLU D  531  274    C          Coil    -74.23    -44.63     169.8      3DQW
+ASG  ASN D  532  275    C          Coil   -103.13    -47.90      60.3      3DQW
+ASG  LEU D  533  276    C          Coil   -112.45    360.00       6.0      3DQW
