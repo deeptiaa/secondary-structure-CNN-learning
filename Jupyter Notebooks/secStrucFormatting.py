@@ -546,3 +546,48 @@ def find_index_range(int_indexes):
                              # it left off (sequenve of vals vs. 1)
         else:
             yield segment[0], segment[-1]
+
+def format_mavedb_variant(df, variant_col_name, offset):
+    new_var_col = []
+    for variant in df[variant_col_name]:
+        wild_type = Bio.PDB.Polypeptide.three_to_one(variant[2:5].upper())
+        position = int(re.findall("[0-9]+", variant)[0]) + offset
+        mut_type = Bio.PDB.Polypeptide.three_to_one(variant[-3:].upper())
+        new_var_col.append(wild_type + str(position) + mut_type)
+    return new_var_col
+
+
+# Parameters:
+#      "orig_df" -
+#      "start" -
+#      "end" -
+#      "not_included_list"
+# This method does even more helpful stuff
+def get_domain_dataset_v2(orig_df, start, end, not_included_list):
+    in_domain_list = []
+
+    for val in orig_df["positions_split"]:
+        all_vals_in_dom = []
+        for position in val:
+            if not_included_list.count(position - start) == 0:  # if value is not in the list of values to exclude
+                if position >= start and position < end:
+                    all_vals_in_dom.append(True)
+                else:
+                    all_vals_in_dom.append(False)
+            else:
+                all_vals_in_dom.append(False)
+
+        if (all_vals_in_dom.count(False) == 0):
+            in_domain_list.append(True)
+        else:
+            in_domain_list.append(False)
+
+    orig_df['in_domain'] = in_domain_list
+
+    condition = orig_df['in_domain'] == True
+    rows = orig_df.loc[condition, :]
+
+    in_domain_df = pd.DataFrame(columns=orig_df.columns)
+    in_domain_df = in_domain_df.append(rows, ignore_index=True)
+    in_domain_df = in_domain_df.drop(['in_domain'], axis=1)
+    return in_domain_df

@@ -179,7 +179,7 @@ def get_sec_struc_boolean(stride_file):
 
     for line in stride_file:
         if line.startswith('ASG'):
-            split_line = line.split();
+            split_line = line.split()
             sec_struc_assign.append(split_line[5])
 
     for sec_struc in sec_struc_assign:
@@ -547,3 +547,12 @@ def find_index_range(int_indexes):
                              # it left off (sequenve of vals vs. 1)
         else:
             yield segment[0], segment[-1]
+
+def format_mavedb_variant(df, variant_col_name, offset):
+    new_var_col = []
+    for variant in df[variant_col_name]:
+        wild_type = Bio.PDB.Polypeptide.three_to_one(variant[2:5].upper())
+        position = int(re.findall("[0-9]+", variant)[0]) + offset
+        mut_type = Bio.PDB.Polypeptide.three_to_one(variant[-3:].upper())
+        new_var_col.append(wild_type + str(position) + mut_type)
+    return new_var_col

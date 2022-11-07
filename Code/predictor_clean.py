@@ -68,6 +68,8 @@ def get_train_and_test_splits(dataset, train_size, settings=argparse.Namespace()
     print("indices length:" + str(len(indices)))
     # rng.shuffle(indices)
     test_split = (len(feats) - train_size) / len(feats)
+    print("TEST SPLIT LENGTH!!!!!!!!!!!")
+    print(test_split)
 
 
     ## A kludge for now that allows me to specify mutants to withhold for the test set
@@ -108,9 +110,9 @@ def get_train_and_test_splits(dataset, train_size, settings=argparse.Namespace()
     scores_test = np.array(scores[int(len(feats) * (1 - test_split)):])
     print("printing feats and scores to check test set is the same")
     # print(feats_test[:10])
-    print(scores_test[:10])
+    # print(scores_test[:10])
     # print(feats_test[9900:])
-    print(scores_test[9900:])
+    # print(scores_test[9900:])
     #assert all([keras.utils.to_categorical(integer_encoder(mut, settings.seq)) in feats_test for mut in to_withold])
 
     train_dataset = tf.data.Dataset.from_tensor_slices((feats_train, scores_train))
@@ -421,6 +423,8 @@ def main(dataset, settings):
 
             # Get samples to use in validation
             sample = full_size - train_size  # number of samples
+            print("SAMPLE LENGTH!!!!!!!!!!!!!!")
+            print(len(sample))
             examples, targets = list(test_dataset.unbatch().shuffle(BATCH_SIZE * 10).batch(sample))[0]
 
             predicted = model(examples).numpy()

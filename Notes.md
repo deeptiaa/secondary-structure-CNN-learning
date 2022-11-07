@@ -26,32 +26,29 @@ Documentation:
 
 ## Secondary Structure Fractions
 
-| Protein | Source | Protein Length (domain) | Dataset Size | Scaled (Ideal) | Sec. Str. % | Alpha Hel. % | Beta Sheet % |
-| ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------| ------ |
-| Pab1 | Gelman | 577 (75) | 37,710 | 147 | 69 | TBD | TBD |
-| Bgl3 | Gelman | (501) | 25,737 | 982 |54 | TBD | TBD |
-| **Ube4b** | Gelman | 1173 (**102**) | 91,031| **200** | 52
-| Thermonuclease | Curated | 231 | 1,068 | 453 | 62 |
-| Endolysin | Curated | 164 | 1,376 | 322 | 75 |
-| Immunoglobulin G-binding protein G | Curated| 448 | 1,221 | 878 | 53
-| avGFP | Gelman | 237 | 51,714 | 465| 64 |
-| GB1 | Gelman | (56) | 536,084 | 110 | 70 |
-| Human glucokinase | Biorex | | |  |
-| ~~GAL4~~ | MaveDB | 881 | 1,196 | 1727 | 47 |
-| Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 198  | 46
-| ~~TAR DNA-binding protein 43~~ | MaveDB | 414 | 1,342 | 812| 36
-| 1be9 |
+| Protein | Source | Protein Length (domain) | Dataset Size | Scaled (Ideal) | Sec. Str. % | Sec. Str. % Turns | Alpha Hel. % | Beta Sheet % |
+| ------- | ------ | ----------------------- | ------------ | ----------- | ------------ | -------------| ------ | ------ |
+| Pab1 | Gelman | 577 (75) | 37,710 | 147 | 69 | 91 |TBD | TBD |
+| Bgl3 | Gelman | (501) | 25,737 | 982 | 54 | 74 | TBD | TBD |
+| **Ube4b** | Gelman | 1173 (**102**) | 91,031| **200** | 52 | 91
+| Thermonuclease | Curated | 231 | 1,068 | 453 | 62 | |
+| Endolysin | Curated | 164 | 1,376 | 322 | 75 | |
+| ~~Immunoglobulin G-binding protein G~~ | Curated| 448 | 1,221 | 878 | 53 | |
+| avGFP | Gelman | 237 | 51,714 | 465| 64 | 88 |
+| GB1 | Gelman | (56) | 536,084 | 110 | 70 | 91 |
+| Human glucokinase | Biorex | 465 | 8570 | 912 | 69 | |
+| ~~GAL4~~ | MaveDB | 881 | 1,196 | 1727 | 47 | |
+| Small ubiquitin-related modifier 1 | MaveDb | 101 | 1,919 | 198  | 46 | |
+| ~~TAR DNA-binding protein 43~~ | MaveDB | 414 | 1,342 | 812| 36 | |
+| 1be9 | Sotomayor-Vivas | 120 | 1660 | 235 | 55 | 81 |
 | 1d5r |
-| 1nd4 |
-| 3dqw |
-| 4bz3 |
+| 1nd4 | Sotomayor-Vivas | 510 | 5095 | 1000 | 61 | 81 |
+| 3dqw | Sotomayor-Vivas | 1107 | 3315 | 2170 | 60 | 84 |
+| 4bz3 | Sotomayor-Vivas | 463 | 4554 | 908 | 59 | 82 |
 
 **CHECK OFFSET\****
 
- ratio is
-
-
-
+ ratio is 200 vals to 102 residues
 
 
 Meeting Notes (July 12th, July 21st)
@@ -85,6 +82,15 @@ Meeting Notes (July 27th)
 - retest some of the values from part 1 (mainly pab1 with more test values)
 - make powerpoint outline with template and picture locations
 - send Tucker positions, types of positions, and updated resume
+
+Meeting Notes (Sep 28th)
+- do part 1 but with the remaining proteins that I haven't done yet
+- debug part 2 (difference between sample size and test size)
+- add remaining 5 proteins to part 2
+- start writing out methods section
+
+
+- adding noise
 
 
 
