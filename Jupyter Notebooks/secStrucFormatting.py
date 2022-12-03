@@ -591,3 +591,33 @@ def get_domain_dataset_v2(orig_df, start, end, not_included_list):
     in_domain_df = in_domain_df.append(rows, ignore_index=True)
     in_domain_df = in_domain_df.drop(['in_domain'], axis=1)
     return in_domain_df
+
+# adds boolean column to dataframe to indicate whether value is in secondary structure
+# needs positions split column
+def add_sec_str_col(df, bool_ss_list, domain_start_index):
+    has_sec_str = []
+    for val in df["positions_split"]:
+        # list of boolean values that are true if all mutation positions in line are sec. strc.
+        all_pos_sec_struc = []
+
+        for position in val:
+            # print(position)
+            if (bool_ss_list[position - domain_start_index] == False):  # line up ss_indexes w/ position
+                all_pos_sec_struc.append(False)
+            else:
+                all_pos_sec_struc.append(True)
+
+        # all pos sec struc should match val list
+        # if there's a value in all_pos_sec_struc that's false, append false
+        # otherwise, append true
+        if (all_pos_sec_struc.count(False) == 0):
+            has_only_sec_str = True
+        else:
+            has_only_sec_str = False
+
+        has_sec_str.append(has_only_sec_str)
+        all_pos_sec_struc.clear()
+
+    # print(len(has_sec_str)) # should match dataframe length
+    df['in_sec_str'] = has_sec_str
+    return df
